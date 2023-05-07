@@ -69,6 +69,8 @@
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
+                                    <p class="mt-4 pb-lg-2">Belum punya Akun? <a href="register"
+                                            style="color: #208ff7;">Daftar disini</a></p><br><br>
                                 </div>
                             </div>
                         </form>
