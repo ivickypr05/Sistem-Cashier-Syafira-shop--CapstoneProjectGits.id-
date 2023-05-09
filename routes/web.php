@@ -21,6 +21,6 @@ Route::get('/', function () {
 });
 Auth::routes();
 
-Route::get('/profil', [ProfileController::class, 'index'])->name('profil');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category-index');
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
