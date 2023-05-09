@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,8 +17,10 @@ use App\Http\Controllers\ProfilController;
 */
 
 Route::get('/', function () {
-    return view('profil');
+    return view('profile');
 });
 Auth::routes();
 
-Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
+Route::get('/profil', [ProfileController::class, 'index'])->name('profil');
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category-index');
