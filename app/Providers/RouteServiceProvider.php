@@ -17,9 +17,12 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const PROFIL = '/profil';
-
+    public const PROFILE = '/profile',
+        LOGIN = '/login';
     /**
+    
+    
+    
      * Define your route model bindings, pattern filters, and other route configuration.
      *
      * @return void
