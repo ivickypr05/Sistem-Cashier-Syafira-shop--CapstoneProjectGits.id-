@@ -1,27 +1,35 @@
-<nav class="navbar navbar-expand-lg p-1 navbar-light">
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm fixed-top">
     <div class="container">
-        <li class="nav-item d-none d-lg-block">
-            <a class="nav-link mx-2" href="#">
-                <h1>SRC SYAFIRA</h1>
-            </a>
-        </li>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <hr>
-        <hr>
-        <div class=" collapse navbar-collapse " id="navbarNavDropdown">
-            <ul class="navbar-nav ms-auto ">
-                <div class="collapse navbar-collapse">
-                    <!-- Authentication Links -->
-                    @guest
+      <a class="navbar-brand " href="/home"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-center ">
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#home">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="#profil">PROFIL</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="#contact">CONTACT</a>
+          </li>
+        </ul>
+        <center class="navbar-nav ms-auto ">
+          @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎ /') }}</a>
                             </li>
                         @endif
-                    @else
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                            </li>
+                        @endif
+                        @else
                         <li class="navbar-nav nav-item dropdown">
                             <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button"
                                 data-bs-toggle="dropdown">
@@ -40,7 +48,8 @@
                             </div>
                         </li>
                     @endguest
-                </div>
+                </center>
+            </div>
         </div>
     </div>
 </nav>
