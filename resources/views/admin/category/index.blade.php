@@ -1,7 +1,6 @@
-@extends('layouts.app')
-
+@extends('layouts.admin')
+@section('title', 'SRC Syafira | Category Page')
 @section('content')
-
     <div class="row">
         <!-- <div class="col-md-4"> -->
         <div class="card">

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 
@@ -19,8 +20,15 @@ use App\Http\Controllers\CategoryController;
 Route::get('/', function () {
     return view('profile');
 });
+
+// Authentication -----------------------------------------------------------------------------------
 Auth::routes();
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
+
+// Admin --------------------------------------------------------------------------------------------
+Route::get('/admin', [AdminController::class, 'index']);
+
+// CRUD Category
+Route::get('/category', [CategoryController::class, 'index']);
