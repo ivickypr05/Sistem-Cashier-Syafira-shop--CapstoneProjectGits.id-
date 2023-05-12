@@ -16,6 +16,7 @@ class CategoryController extends Controller
     {
         $data['categories'] = Category::all();
         return view('admin.category.index', $data);
+
     }
 
     /**
@@ -25,7 +26,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.add');
+        return view ('admin.product.add',compact('categories'));
     }
 
     /**
@@ -36,7 +38,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData=$request->validate([
+            'name'=> 'required|min:2|max:50'
+        ]);
+        Category::create($validatedData);
+        return redirect('/category')->with('toast_success', 'Product Created Successfully!');
     }
 
     /**
@@ -58,7 +64,9 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['categories'] = Category::all();
+        $data['category'] = Category::find($id);
+        return view('admin.category.edit', $data);
     }
 
     /**
@@ -70,7 +78,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:50',
+        ]);
+        $category = Category::find($id);
+        $category->update($validatedData);
+        return redirect('/category')->with('toast_success', 'Product Updated Successfully!');
     }
 
     /**
@@ -81,6 +94,7 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Category::destroy($id);
+        return redirect('/category')->with('toast_success', 'Data berhasil di hapus');
     }
 }

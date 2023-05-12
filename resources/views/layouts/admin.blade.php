@@ -44,7 +44,7 @@
             }
         </style>
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="">ReStyle Fourteen</a>
+        <a class="navbar-brand  mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -56,7 +56,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
-                    {{ Auth::user()->name }}</a>
+                    {{-- {{ Auth::user()->name }}</a> --}}
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/">Home</a>
                     <li><a class="dropdown-item" href="/logout">Logout</a></li>
@@ -108,7 +108,7 @@
             </main>
             <div class="container">
                 <div class=" align-items-center small">
-                    <div class="text-center">Copyright &copy; ReStyle Fourteen 2023</div>
+                    <div class="text-center">Copyright &copy; Thorny Devil</div>
                 </div>
             </div>
             </footer>
