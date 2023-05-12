@@ -32,3 +32,11 @@ Route::get('/admin', [AdminController::class, 'index']);
 
 // CRUD Category
 Route::get('/category', [CategoryController::class, 'index']);
+// Create Category
+Route::get('/category/add', [CategoryController::class, 'create']);
+Route::post('/category', [CategoryController::class, 'store']);
+// Edit Category
+Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
+Route::put('/category/{id}', [CategoryController::class, 'update']);
+// Delete Category
+Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);

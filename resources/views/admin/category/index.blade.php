@@ -41,10 +41,10 @@
                                 <td>{{ $item->name }}</td>
                                 <td>
                                     <center>
-                                        <a href="/Category/{{ $item->id }}/edit" class="btn btn-xs btn-warning"><i
+                                        <a href="/category/{{ $item->id }}/edit" class="btn btn-xs btn-warning"><i
                                                 class="fas fa-edit"></i>Edit</a>
-                                        <a href="/Category/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                            onclick="return confirm('Are u Sure?');"><i class="fas fa-trash"></i>Hapus</a>
+                                        <a href="/category/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
+                                            onclick="return confirm('Apa Anda Yakin Ingin Menghapus Data?');"><i class="fas fa-trash"></i>Hapus</a>
                                     </center>
                                 </td>
                                 </td>
