@@ -115,6 +115,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        File::delete('storage/' .  $product->photo);
+        $product->delete();
+        return redirect('/product')->with('toast_success', 'Data Berhasil di Hapus');
     }
 }
