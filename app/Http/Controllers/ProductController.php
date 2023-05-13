@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -72,7 +73,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['categories'] = Category::all();
+        $data['product'] = Product::find($id);
+        return view('admin/product/edit', $data);
     }
 
     /**
@@ -84,7 +87,24 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:50',
+            'stock' => 'required|integer',
+            'cap_price' => 'required|integer',
+            'sell_price' => 'required|integer',
+            'photo' => 'required|mimes:jpeg,jpg,png,gif',
+            'category_id' => 'required|integer|exists:categories,id',
+        ]);
+
+        $product = Product::find($id);
+        if ($request->file('photo')) {
+            $photo = $request->file('photo')->store('product-photo', 'public');
+            File::delete('storage/' .  $product->photo);
+            $validatedData['photo'] = $photo;
+        }
+        $product->update($validatedData);
+
+        return redirect('/product')->with('toast_success', 'Update Produk Berhasil!');
     }
 
     /**

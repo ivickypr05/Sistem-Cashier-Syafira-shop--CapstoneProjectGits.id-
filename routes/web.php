@@ -44,6 +44,9 @@ Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
 
 // CRUD Product
 Route::get('/product', [ProductController::class, 'index'])->name('product');
- // Add Product
- Route::get('/product/add', [ProductController::class, 'create']);
- Route::post('/product', [ProductController::class, 'store']);
+// Add Product
+Route::get('/product/add', [ProductController::class, 'create']);
+Route::post('/product', [ProductController::class, 'store']);
+// Edit Product
+Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
+Route::put('/product/{id}', [ProductController::class, 'update']);

@@ -1,8 +1,10 @@
 @extends('layouts.admin')
 @section('title', 'SRC Syafira | Product Page')
 @section('content')
+<div class="container">
+
     <a class="btn btn-dark mt-2" href="/product/">
-        <i class="fa fa-chevron-circle-left"></i> Back</a>
+        <i class="fa fa-chevron-circle-left"></i> Kembali</a>
     <br>
     <p>
     <h4>Halaman Tambah Data Produk</h4>
@@ -65,7 +67,7 @@
                     <label for="select" class="form-label">Pilih Kategori</label>
                     <select class="form-select @error('category_id') is-invalid @enderror"
                         aria-label="Default select example" name="category_id">
-                        <option selected>Category</option>
+                        <option selected>--Kategori--</option>
                         @foreach ($categories as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
