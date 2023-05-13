@@ -33,7 +33,7 @@ Route::get('/admin', [AdminController::class, 'index']);
 
 // CRUD Category
 Route::get('/category', [CategoryController::class, 'index']);
-// Create Category
+// Add Category
 Route::get('/category/add', [CategoryController::class, 'create']);
 Route::post('/category', [CategoryController::class, 'store']);
 // Edit Category
@@ -44,3 +44,6 @@ Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
 
 // CRUD Product
 Route::get('/product', [ProductController::class, 'index'])->name('product');
+ // Add Product
+ Route::get('/product/add', [ProductController::class, 'create']);
+ Route::post('/product', [ProductController::class, 'store']);

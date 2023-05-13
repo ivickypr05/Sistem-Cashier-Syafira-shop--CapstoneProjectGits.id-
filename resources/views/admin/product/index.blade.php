@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'SRC Syafira | Category Page')
+@section('title', 'SRC Syafira | Product Page')
 @section('content')
     <div class="row">
         <div class="card">
@@ -20,7 +20,6 @@
                     <thread>
                         <tr>
                             <th colspan="9">
-                                <center>Inventory</center>
                             </th>
                         </tr>
                         <tr>

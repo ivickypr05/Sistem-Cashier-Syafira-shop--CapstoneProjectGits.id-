@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -25,7 +26,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('admin.product.add', compact('categories'));
     }
 
     /**
@@ -36,7 +38,19 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:50',
+            'stock' => 'required|integer',
+            'cap_price' => 'required|integer',
+            'sell_price' => 'required|integer',
+            'photo' => 'required|mimes:jpeg,jpg,png,gif',
+            'category_id' => 'required|integer|exists:categories,id',
+        ]);
+        $photo = $request->file('photo')->store('product-photo', 'public');
+        $validatedData['photo'] = $photo;
+
+        Product::create($validatedData);
+        return redirect('/product')->with('toast_success', 'Produk Berhasil Di Buat!');
     }
 
     /**
