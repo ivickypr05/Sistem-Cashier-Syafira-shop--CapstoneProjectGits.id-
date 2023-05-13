@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data['categories'] = Category::all();
-        return view('admin.category.index', $data);
-
+        $products = Product::with('category')->get();
+        return view('admin.product.index', compact('products'));
     }
 
     /**
@@ -26,8 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.category.add');
-        return view ('admin.product.add',compact('categories'));
+        //
     }
 
     /**
@@ -38,11 +36,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData=$request->validate([
-            'name'=> 'required|min:2|max:50'
-        ]);
-        Category::create($validatedData);
-        return redirect('/category')->with('toast_success', 'Kategori Sukses di Buat!');
+        //
     }
 
     /**
@@ -64,9 +58,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $data['categories'] = Category::all();
-        $data['category'] = Category::find($id);
-        return view('admin.category.edit', $data);
+        //
     }
 
     /**
@@ -78,12 +70,7 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
-            'name' => 'required|string|min:2|max:50',
-        ]);
-        $category = Category::find($id);
-        $category->update($validatedData);
-        return redirect('/category')->with('toast_success', 'Kategori Berhasil di Edit!');
+        //
     }
 
     /**
@@ -94,7 +81,6 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::destroy($id);
-        return redirect('/category')->with('toast_success', 'Data berhasil di hapus');
+        //
     }
 }
