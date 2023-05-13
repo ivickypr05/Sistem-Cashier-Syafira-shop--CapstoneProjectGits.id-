@@ -42,7 +42,7 @@ class CategoryController extends Controller
             'name'=> 'required|min:2|max:50'
         ]);
         Category::create($validatedData);
-        return redirect('/category')->with('toast_success', 'Product Created Successfully!');
+        return redirect('/category')->with('toast_success', 'Kategori Sukses di Buat!');
     }
 
     /**
@@ -83,7 +83,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::find($id);
         $category->update($validatedData);
-        return redirect('/category')->with('toast_success', 'Product Updated Successfully!');
+        return redirect('/category')->with('toast_success', 'Kategori Berhasil di Edit!');
     }
 
     /**
