@@ -1,96 +1,106 @@
 @extends('layouts.auth')
 
 @section('content')
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
-<head>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
-</head>
-<body><br><br><br><br><br>
-	<div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
-			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<div class="brand_logo_container">
-						<img src="https://i.postimg.cc/PfRL4fqm/aa.jpg" class="brand_logo" alt="Logo">
-					</div>
-				</div>
-				<div class="d-flex justify-content-center form_container">
-					<form method="POST" action="{{ url('/login') }}">
-                        @csrf
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-							</div>
-                            <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Username"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+            integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
+            integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+    </head>
 
-                                    @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>{{ __('Name') }}
-                                        </span>
-                                    @enderror
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-envelope"></i></span>
-							</div>
-							<input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email" placeholder="Email Address"
-                                        value="{{ old('email') }}" required autocomplete="email">
+    <body><br><br><br><br><br>
+        <div class="container h-100">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="https://i.postimg.cc/PfRL4fqm/aa.jpg" class="brand_logo" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <form method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+                                <input id="name" type="text"
+                                    class="form-control @error('name') is-invalid @enderror" name="name"
+                                    placeholder="Nama Lengkap" value="{{ old('name') }}" required autocomplete="name"
+                                    autofocus>
 
-                                    @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>{{ __('Email Address') }}
-                                        </span>
-                                    @enderror
-						</div>
-                        <div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input id="password" type="password" {{ __('Password') }}
-                                        class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password"
-                                        required autocomplete="current-password">
+                                @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>{{ __('Name') }}
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                </div>
+                                <input id="email" type="email"
+                                    class="form-control @error('email') is-invalid @enderror" name="email"
+                                    placeholder="Alamat Email" value="{{ old('email') }}" required autocomplete="email">
 
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-						</div>
-                        <div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<input id="password-confirm" type="password" class="form-control"name="password_confirmation" placeholder="Confirm Password" required autocomplete="new-password">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>{{ __('Email Address') }}
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input id="password" type="password" {{ __('Password') }}
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    placeholder="Kata Sandi" required autocomplete="current-password">
 
-                                    @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>{{ __('Confirm Password') }}
-                                        </span>
-                                    @enderror
-						</div><br>
-						<div class="form-group">
-						</div>
-							<div class="d-flex justify-content-center mt-3 login_container">
-				 	<button type="submit" name="button" class="btn login_btn">{{ __('Login') }}</button>
-				   </div>
-				</div>
-				</div>
-            </form>
-			</div>
-		</div>
-	</div>
-</body>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="input-group mb-2">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input id="password-confirm" type="password"
+                                    class="form-control"name="password_confirmation" placeholder="Konfirmasi Kata Sandi"
+                                    required autocomplete="new-password">
 
-{{--
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>{{ __('Confirm Password') }}
+                                    </span>
+                                @enderror
+                            </div>
+                            <div class="d-flex justify-content-center mt-4 login_container">
+                                <button type="submit" name="button"
+                                    class="btn login_btn">{{ __('Register dan Login') }}</button>
+                            </div>
+                            <div class="mt-3 mb-4">
+                                <div class="d-flex justify-content-center links">
+                                    Sudah Memiliki Akun? <a href="login" class="ml-2">Login disini</a>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </body>
+
+    {{--
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -174,5 +184,5 @@
                 </div>
             </div>
         </div>
-    </div>--}}
+    </div> --}}
 @endsection

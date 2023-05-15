@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm fixed-top">
     <div class="container">
-        <a class="navbar-brand " href="/home"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
+        <a class="navbar-brand " href="/"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -8,35 +8,30 @@
         <div class=" collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-center ">
                 <li class="nav-item">
-                    <a class="nav-link mx-2 text-uppercase active" aria-current="page" href="#home">HOME</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link mx-2 text-uppercase" href="#profile">PROFIL</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mx-2 text-uppercase" href="#contact">CONTACT</a>
+                    <a class="nav-link mx-2 text-uppercase" href="#contact">Kontak</a>
                 </li>
-                <li class="navbar-nav nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                        data-bs-toggle="dropdown"> SISTEM SYAFIRA
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="/dashboardkasir"><i class="fa-light fa-book"></i>
-                                Kasir</a></li>
-                        <li><a class="dropdown-item" href="/admin"><i class="fa-light fa-house"></i>
-                                Admin</a></li>
-                    </ul>
+                @auth
+                    <li class="navbar-nav nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown"> SISTEM SYAFIRA
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/dashboardkasir"><i class="fa-light fa-book"></i>
+                                    Kasir</a></li>
+                            <li><a class="dropdown-item" href="/admin"><i class="fa-light fa-house"></i>
+                                    Admin</a></li>
+                        </ul>
+                    </li>
+                @endauth
             </ul>
             <center class="navbar-nav ms-auto ">
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎ /') }}</a>
-                        </li>
-                    @endif
-                    @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('REGISTER') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎') }}</a>
                         </li>
                     @endif
                 @else

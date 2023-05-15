@@ -9,7 +9,7 @@
     </style>
     <section class="py-2">
         <div class="container">
-            <div class="row" id="home">
+            <div class="row" id="profile">
                 <div class="col-lg-10 mx-auto">
                     <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                         <img src="https://w7.pngwing.com/pngs/522/396/png-transparent-computer-icons-profile-miscellaneous-logo-profile.png"
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <hr><br>
-            <div class="row" id="profile">
+            <div class="row" id="contact">
                 <div class="col-lg-50">
                     <blockquote class="blockquote blockquote-custom bg-white p-5 shadow rounded">
                         <img src="https://w7.pngwing.com/pngs/522/396/png-transparent-computer-icons-profile-miscellaneous-logo-profile.png"
