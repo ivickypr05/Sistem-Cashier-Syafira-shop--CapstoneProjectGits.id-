@@ -92,7 +92,7 @@ class ProductController extends Controller
             'stock' => 'required|integer',
             'cap_price' => 'required|integer',
             'sell_price' => 'required|integer',
-            'photo' => 'required|mimes:jpeg,jpg,png,gif',
+            'photo' => 'mimes:jpeg,jpg,png,gif',
             'category_id' => 'required|integer|exists:categories,id',
         ]);
 

@@ -44,7 +44,8 @@
                                         <a href="/category/{{ $item->id }}/edit" class="btn btn-xs btn-warning"><i
                                                 class="fas fa-edit"></i>Edit</a>
                                         <a href="/category/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                            onclick="return confirm('Apa Anda Yakin Ingin Menghapus Data?');"><i class="fas fa-trash"></i>Hapus</a>
+                                            onclick="return confirm('Apa Anda Yakin Ingin Menghapus Data?');"><i
+                                                class="fas fa-trash"></i>Hapus</a>
                                     </center>
                                 </td>
                                 </td>
