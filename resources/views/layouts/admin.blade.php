@@ -108,7 +108,7 @@
             </main>
             <div class="container">
                 <div class=" align-items-center small">
-                    <div class="text-center">Copyright &copy; Thorny Devil</div>
+                    <div class="text-center">Copyright &copy; Thorny Devilzz</div>
                 </div>
             </div>
             </footer>
