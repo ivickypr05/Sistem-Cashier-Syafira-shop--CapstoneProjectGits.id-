@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
@@ -52,3 +53,6 @@ Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
 Route::put('/product/{id}', [ProductController::class, 'update']);
 //Delete Product
 Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
+
+// Cashier --------------------------------------------------------------------------------------------
+Route::get('/cashier', [CashierController::class, 'index']);
