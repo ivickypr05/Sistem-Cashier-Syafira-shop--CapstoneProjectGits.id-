@@ -6,7 +6,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class=" collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav text-center ">
+            <ul class="navbar-nav text-center">
                 <li class="nav-item">
                     <a class="nav-link mx-2 text-uppercase" href="#profile">PROFIL</a>
                 </li>
@@ -31,7 +31,7 @@
                 @guest
                     @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('MASUK ‎') }}</a>
                         </li>
                     @endif
                 @else
