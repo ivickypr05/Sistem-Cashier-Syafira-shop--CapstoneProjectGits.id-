@@ -53,13 +53,23 @@
                         </div>
                     @enderror
                 </div>
+                <div class="mb-3">
+                    <label for="unit" class="form-label">Satuan</label>
+                    <input type="text" class="form-control @error('unit') is-invalid @enderror" id="unit"
+                        name="unit" value="{{ $product->unit }}">
+                    @error('unit')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
                 @if ($product->photo)
                     <div class="mb-3">
                         <img src="{{ url('storage/' . $product->photo) }}" width="70px" alt="">
                     </div>
                 @endif
                 <div class="mb-3">
-                    <label for="photo" class="form-label">photo</label>
+                    <label for="photo" class="form-label">Foto</label>
                     <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
                         name="photo">
                     @error('photo')

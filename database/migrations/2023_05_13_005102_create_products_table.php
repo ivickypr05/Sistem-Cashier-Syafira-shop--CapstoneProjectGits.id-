@@ -19,6 +19,7 @@ return new class extends Migration
             $table->integer('stock');
             $table->integer('cap_price');
             $table->integer('sell_price');
+            $table->string('unit');
             $table->string('photo');
             $table->foreignId('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
