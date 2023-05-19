@@ -40,7 +40,7 @@
     <nav class="sb-topnav navbar navbar-expand navbar-light ">
         <style>
             body {
-                background-image: url("https://wallpaperaccess.com/full/7889808.jpg");
+                background-image: url("https://wallpaperaccess.com/full/289380.jpg");
             }
         </style>
         <!-- Navbar Brand-->

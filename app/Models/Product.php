@@ -14,6 +14,7 @@ class Product extends Model
         'stock',
         'cap_price',
         'sell_price',
+        'unit',
         'photo',
         'category_id'
     ];

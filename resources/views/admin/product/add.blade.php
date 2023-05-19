@@ -54,7 +54,17 @@
                     @enderror
                 </div>
                 <div class="mb-3">
-                    <label for="photo" class="form-label">Photo</label>
+                    <label for="unit" class="form-label">Satuan</label>
+                    <input type="text" class="form-control @error('unit') is-invalid @enderror" id="unit"
+                        name="unit">
+                    @error('unit')
+                        <div class=invalid-feedback>
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="photo" class="form-label">Foto</label>
                     <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
                         name="photo">
                     @error('photo')
