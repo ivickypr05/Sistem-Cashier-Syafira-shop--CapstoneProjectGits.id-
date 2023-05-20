@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class CashierController extends Controller
@@ -13,7 +14,8 @@ class CashierController extends Controller
      */
     public function index()
     { {
-            return view('cashier.dcashier');
+            $products = Product::with('category')->get();
+            return view('cashier.product', compact('products'));
         }
     }
 

@@ -19,7 +19,7 @@
                             data-bs-toggle="dropdown"> SISTEM SYAFIRA
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/dashboardkasir"><i class="fa-light fa-book"></i>
+                            <li><a class="dropdown-item" href="/cashier"><i class="fa-light fa-book"></i>
                                     Kasir</a></li>
                             <li><a class="dropdown-item" href="/admin"><i class="fa-light fa-house"></i>
                                     Admin</a></li>
