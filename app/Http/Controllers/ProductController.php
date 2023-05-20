@@ -27,7 +27,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
+        $categories = Category::get();
         return view('admin.product.add', compact('categories'));
     }
 
@@ -52,7 +52,7 @@ class ProductController extends Controller
         $validatedData['photo'] = $photo;
 
         Product::create($validatedData);
-        return redirect('/product')->with('toast_success', 'Produk Berhasil Di Buat!');
+        return redirect('/product')->with('toast_success', 'Produk Berhasil Ditambah >.<');
     }
 
     /**
@@ -74,9 +74,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $data['categories'] = Category::all();
+        $data['categories'] = Category::get();
         $data['product'] = Product::find($id);
-        return view('admin/product/edit', $data);
+        return view('admin.product.edit', $data);
     }
 
     /**
@@ -106,7 +106,7 @@ class ProductController extends Controller
         }
         $product->update($validatedData);
 
-        return redirect('/product')->with('toast_success', 'Update Produk Berhasil!');
+        return redirect('/product')->with('toast_success', 'Produk berhasil diedit >.<');
     }
 
     /**
@@ -120,6 +120,6 @@ class ProductController extends Controller
         $product = Product::findOrFail($id);
         File::delete('storage/' .  $product->photo);
         $product->delete();
-        return redirect('/product')->with('toast_success', 'Data Berhasil di Hapus');
+        return redirect('/product')->with('toast_success', 'Produk berhasil dihapus ^_^');
     }
 }

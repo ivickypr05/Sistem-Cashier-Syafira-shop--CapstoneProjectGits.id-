@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $data['categories'] = Category::all();
+        $data['categories'] = Category::get();
         return view('admin.category.index', $data);
-
     }
 
     /**
@@ -27,7 +27,6 @@ class CategoryController extends Controller
     public function create()
     {
         return view('admin.category.add');
-        return view ('admin.product.add',compact('categories'));
     }
 
     /**
@@ -38,11 +37,11 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData=$request->validate([
-            'name'=> 'required|min:2|max:50'
+        $validatedData = $request->validate([
+            'name' => 'required|min:2|max:50'
         ]);
         Category::create($validatedData);
-        return redirect('/category')->with('toast_success', 'Kategori Sukses di Buat!');
+        return redirect('/category')->with('toast_success', 'Kategori berhasil ditambah >.<');
     }
 
     /**
@@ -64,7 +63,7 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        $data['categories'] = Category::all();
+        $data['categories'] = Category::get();
         $data['category'] = Category::find($id);
         return view('admin.category.edit', $data);
     }
@@ -83,7 +82,7 @@ class CategoryController extends Controller
         ]);
         $category = Category::find($id);
         $category->update($validatedData);
-        return redirect('/category')->with('toast_success', 'Kategori Berhasil di Edit!');
+        return redirect('/category')->with('toast_success', 'Kategori Berhasil di Edit >.<');
     }
 
     /**
@@ -94,7 +93,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        Category::destroy($id);
-        return redirect('/category')->with('toast_success', 'Data berhasil di hapus');
+        $products = Product::with('category')->where('category_id', $id)->count();
+        if ($products >= 1) {
+            return redirect()->back()->with('toast_error', 'Maaf kategori tidak bisa dihapus karena masih terhubung dengan beberapa produk');
+        } else {
+            Category::destroy($id);
+            return redirect('/category')->with('toast_success', 'Kategori berhasil dihapus ^_^');
+        }
     }
 }
