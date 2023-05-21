@@ -69,7 +69,7 @@
             <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Core</div>
+                        <div class="sb-sidenav-menu-heading">Utama</div>
                         <a class="nav-link text-light" href="/admin">
                             <div class="sb-nav-link-icon text-light"><i class="fas fa-home"></i></div>
                             Dashboard
@@ -78,7 +78,10 @@
                             <div class="sb-nav-link-icon text-light"><i class="fas fa-circle-info"></i></i></div>
                             Tentang Kami
                         </a>
-                        <div class="sb-sidenav-menu-heading">Interface</div>
+                        <div class="sb-sidenav-menu-heading">Transaksi Masuk</div>
+                        <a class="nav-link text-light" href="{{ url('/supplier') }}"><i class="fas fa-list-check"></i>‎
+                            Pemasukan</a>
+                        <div class="sb-sidenav-menu-heading">Data</div>
                         <a class="nav-link text-light collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon text-light"><i class="fas fa-columns"></i></div>
@@ -92,10 +95,11 @@
                                         class="fas fa-list-alt"></i>‎　Kategori</a>
                                 <a class="nav-link text-light" href="{{ url('/product') }}"><i
                                         class="fas fa-shirt"></i>‎　Produk</a>
-                                <a class="nav-link text-light" href="{{ url('/transactionlist') }}"><i
-                                        class="fas fa-list-check"></i>‎　Riwayat Transaksi</a>
                             </nav>
                         </div>
+                        <div class="sb-sidenav-menu-heading">Transaksi Keluar</div>
+                        <a class="nav-link text-light" href="{{ url('/transactionlist') }}"><i
+                                class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
                     </div>
                 </div>
             </nav>

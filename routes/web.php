@@ -7,6 +7,7 @@ use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\SupplierController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,6 +54,13 @@ Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
 Route::put('/product/{id}', [ProductController::class, 'update']);
 //Delete Product
 Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
+
+// CRUD Suppliers
+Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
+// Add Product
+Route::get('/supplier/add', [SupplierController::class, 'create']);
+Route::post('/supplier', [SupplierController::class, 'store']);
+
 
 // Cashier --------------------------------------------------------------------------------------------
 Route::get('/cashier', [CashierController::class, 'index']);
