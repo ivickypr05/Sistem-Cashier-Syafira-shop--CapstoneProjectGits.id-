@@ -38,9 +38,16 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:50',
+            'contact' => 'required|string|min:8|max:14',
+            'product_id' => 'required|integer|exists:products,id',
+            'stock' => 'required|integer',
+        ]);
 
+        Supplier::create($validatedData);
+        return redirect('/supplier')->with('toast_success', 'Data Produk Berhasil Dimasukan >.<');
+    }
     /**
      * Display the specified resource.
      *

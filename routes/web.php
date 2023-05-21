@@ -61,6 +61,5 @@ Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
 Route::get('/supplier/add', [SupplierController::class, 'create']);
 Route::post('/supplier', [SupplierController::class, 'store']);
 
-
 // Cashier --------------------------------------------------------------------------------------------
 Route::get('/cashier', [CashierController::class, 'index']);
