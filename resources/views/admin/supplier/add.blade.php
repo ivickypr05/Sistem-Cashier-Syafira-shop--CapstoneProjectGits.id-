@@ -46,7 +46,7 @@
                     <br>
                     <div class="mb-3">
                         <label for="stock" class="form-label">Stok</label>
-                        <input type="number" class="form-control @error('stock') is-invalid @enderror" name="product_id">
+                        <input type="number" class="form-control @error('stock') is-invalid @enderror" name="stock">
                         @error('stock')
                             <div class="invalid-feedback">
                                 {{ $message }}
