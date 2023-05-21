@@ -25,7 +25,9 @@
                                     <th>
                                         <center>No</center>
                                     </th>
-                                    <th>Nama Kategori</th>
+                                    <th>
+                                        <center> Nama Kategori</center>
+                                    </th>
                                     <th>
                                         <center>Aksi</center>
                                     </th>

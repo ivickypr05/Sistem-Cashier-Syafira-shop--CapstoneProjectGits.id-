@@ -25,10 +25,21 @@
                                     <th>
                                         <center>No</center>
                                     </th>
-                                    <th>Nama Supplier</th>
-                                    <th>Nama Produk</th>
-                                    <th>Stok</th>
-                                    <th>Waktu Pemasukan</th>
+                                    <th>
+                                        <center>Nama Supplier</center>
+                                    </th>
+                                    <th>
+                                        <center>Nomor Kontak</center>
+                                    </th>
+                                    <th>
+                                        <center>Nama Produk</center>
+                                    </th>
+                                    <th>
+                                        <center>Stok</center>
+                                    </th>
+                                    <th>
+                                        <center>Waktu Transaksi</center>
+                                    </th>
                                     <th>
                                         <center>Aksi</center>
                                     </th>
@@ -42,8 +53,9 @@
                                             <center>{{ $no++ }}.</center>
                                         </th>
                                         <td>{{ $item->name }}</td>
+                                        <td>{{ $item->contact }}</td>
                                         <td>{{ $item->product->name }}</td>
-                                        <td>{{ $item->stock }}</td>
+                                        <td>{{ $item->product->stock }}</td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>
                                             <center>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,15 +13,22 @@ class Supplier extends Model
     use HasFactory;
     protected $fillable = [
         'name',
-        'product_id',
-        'stock',
+        'contact',
+        'product_id'
     ];
-    public function Supplier(): BelongsTo
+    // public function addStockToProduct($product_id, $quantity)
+    // {
+    //     $product = $this->products()->find($product_id);
+
+    //     if (!$product) {
+    //         throw new \Exception('Product not found.');
+    //     }
+
+    //     $product->stock += $quantity;
+    //     $product->save();
+    // }
+    public function product(): BelongsTo
     {
-        return $this->belongsTo(Category::class, 'product_id', 'id');
-    }
-    public function products(): HasMany
-    {
-        return $this->hasMany(Products::class, 'category_id', 'id');
+        return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 }
