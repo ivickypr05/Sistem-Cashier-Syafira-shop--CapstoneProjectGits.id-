@@ -7,7 +7,7 @@
             <i class="fa fa-chevron-circle-left"></i> Kembali</a>
         <br>
         <p>
-            <h4>Halaman Tambah Data Produk</h4>
+        <h4>Halaman Tambah Data Produk</h4>
         </p>
         <div class="col-lg-8">
             <form method="post" action="/product/{{ $product->id }}" enctype="multipart/form-data">
@@ -48,16 +48,6 @@
                     <input type="number" class="form-control @error('sell_price') is-invalid @enderror" id="sell_price"
                         name="sell_price" value="{{ $product->sell_price }}">
                     @error('sell_price')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
-                <div class="mb-3">
-                    <label for="unit" class="form-label">Satuan</label>
-                    <input type="text" class="form-control @error('unit') is-invalid @enderror" id="unit"
-                        name="unit" value="{{ $product->unit }}">
-                    @error('unit')
                         <div class="invalid-feedback">
                             {{ $message }}
                         </div>

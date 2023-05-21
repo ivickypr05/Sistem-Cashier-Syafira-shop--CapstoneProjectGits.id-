@@ -14,11 +14,10 @@ class Product extends Model
         'stock',
         'cap_price',
         'sell_price',
-        'unit',
         'photo',
         'category_id'
     ];
-  /**
+    /**
      * Get the categorie that owns the Product
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -27,5 +26,4 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
     }
-
 }

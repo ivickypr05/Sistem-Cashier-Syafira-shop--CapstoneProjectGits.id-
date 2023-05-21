@@ -26,7 +26,7 @@
                                         <center>No</center>
                                     </th>
                                     <th>
-                                        <center>Nama</center>
+                                        <center>Nama Produk</center>
                                     </th>
                                     <th>
                                         <center>Stok</center>
@@ -36,9 +36,6 @@
                                     </th>
                                     <th>
                                         <center>Harga Jual</center>
-                                    </th>
-                                    <th>
-                                        <center>Satuan</center>
                                     </th>
                                     <th>
                                         <center>Foto</center>
@@ -62,7 +59,6 @@
                                         <td>{{ $item->stock }}</td>
                                         <td>Rp.{{ number_format($item->cap_price) }},-</td>
                                         <td>Rp.{{ number_format($item->sell_price) }},-</td>
-                                        <td>{{ $item->unit }}</td>
                                         <td><img src="{{ asset('storage/' . $item->photo) }}" width="70px"> </td>
                                         <td>{{ $item->category->name }}</td>
                                         <td>
