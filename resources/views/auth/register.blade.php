@@ -20,14 +20,14 @@
                 <div class="user_card">
                     <div class="d-flex justify-content-center">
                         <div class="brand_logo_container">
-                            <img src="https://i.postimg.cc/PfRL4fqm/aa.jpg" class="brand_logo" alt="Logo">
+                            <img src="https://i.postimg.cc/NGptNDpV/Syafirafix1.png" class="brand_logo" alt="Logo">
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="input-group mb-2">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
                                 <input id="name" type="text"
@@ -42,7 +42,7 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-2">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-envelope"></i></span>
                                 </div>
                                 <input id="email" type="email"
@@ -56,7 +56,7 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-2">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input id="password" type="password" {{ __('Password') }}
@@ -70,7 +70,7 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-2">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input id="password-confirm" type="password"
@@ -85,11 +85,11 @@
                             </div>
                             <div class="d-flex justify-content-center mt-4 login_container">
                                 <button type="submit" name="button"
-                                    class="btn login_btn">{{ __('Register dan Login') }}</button>
+                                    class="btn login_btn">{{ __('Daftar dan Masuk') }}</button>
                             </div>
                             <div class="mt-3 mb-4">
                                 <div class="d-flex justify-content-center links">
-                                    Sudah Memiliki Akun? <a href="login" class="ml-2">Login disini</a>
+                                    Sudah Memiliki Akun? <a href="login" class="ml-2">Masuk di sini</a>
                                 </div>
                             </div>
                     </div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger p-3 shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand " href="/"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -19,9 +19,9 @@
                             data-bs-toggle="dropdown"> SISTEM SYAFIRA
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="/cashier"><i class="fa-light fa-book"></i>
+                            <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
                                     Kasir</a></li>
-                            <li><a class="dropdown-item" href="/admin"><i class="fa-light fa-house"></i>
+                            <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
                                     Admin</a></li>
                         </ul>
                     </li>
@@ -45,7 +45,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('Keluar') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
