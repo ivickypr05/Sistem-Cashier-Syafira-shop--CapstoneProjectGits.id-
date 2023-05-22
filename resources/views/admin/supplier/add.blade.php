@@ -45,9 +45,9 @@
                     </div>
                     <br>
                     <div class="mb-3">
-                        <label for="stock" class="form-label">Stok Produk</label>
-                        <input type="number" class="form-control @error('stock') is-invalid @enderror" name="stock">
-                        @error('stock')
+                        <label for="stock" class="form-label">Jumlah Stok</label>
+                        <input type="number" class="form-control @error('amount') is-invalid @enderror" name="amount">
+                        @error('amount')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>

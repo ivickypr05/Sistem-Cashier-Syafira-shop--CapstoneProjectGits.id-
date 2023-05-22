@@ -35,7 +35,7 @@
                                         <center>Nama Produk</center>
                                     </th>
                                     <th>
-                                        <center>Stok</center>
+                                        <center>Jumlah Stok</center>
                                     </th>
                                     <th>
                                         <center>Waktu Transaksi</center>
@@ -55,7 +55,7 @@
                                         <td>{{ $item->name }}</td>
                                         <td>{{ $item->contact }}</td>
                                         <td>{{ $item->product->name }}</td>
-                                        <td>{{ $item->product->stock }}</td>
+                                        <td>{{ $item->amount }}</td>
                                         <td>{{ $item->created_at }}</td>
                                         <td>
                                             <center>

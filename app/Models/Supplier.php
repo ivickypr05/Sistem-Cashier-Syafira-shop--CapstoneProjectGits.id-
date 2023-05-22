@@ -14,6 +14,7 @@ class Supplier extends Model
     protected $fillable = [
         'name',
         'contact',
+        'amount',
         'product_id'
     ];
     // public function addStockToProduct($product_id, $quantity)

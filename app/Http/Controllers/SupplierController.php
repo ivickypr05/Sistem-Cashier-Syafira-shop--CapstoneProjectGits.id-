@@ -42,10 +42,25 @@ class SupplierController extends Controller
             'name' => 'required|string|min:2|max:50',
             'contact' => 'required|string|min:8|max:14',
             'product_id' => 'required|integer|exists:products,id',
-            'stock' => 'required|integer',
+            'amount' => 'required|integer|min:1',
+        ]);
+        $supplier = Supplier::create($validatedData);
+
+        // $supplier->produks()->attach($request->product_id, ['stock' => $request->stock]);
+
+        // Menghubungkan supplier dengan produk dan mengupdate stok dari supplier
+        $product = Product::where('id', $request->product_id)->first();
+        $amount = $request->amount + $product->stock;
+        $product->update([
+            'stock' => $amount
         ]);
 
-        Supplier::create($validatedData);
+
+        // Mengupdate stok pada produk
+        // $product = Product::find($request->produk_id);
+        // $product->stok += $request->stock;
+        // $product->save();
+
         return redirect('/supplier')->with('toast_success', 'Data Produk Berhasil Dimasukan >.<');
     }
     /**
