@@ -13,7 +13,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
             integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     </head>
-
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
     <body><br><br><br><br><br>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
@@ -27,7 +31,7 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="input-group mb-3">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-user"></i></span>
                                 </div>
                                 <input id="email" type="email" {{ __('Email Address') }}
@@ -41,7 +45,7 @@
                                 @enderror
                             </div>
                             <div class="input-group mb-2">
-                                <div class="input-group-append">
+                                <div class="input-group-append bg-danger">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input id="password" type="password" {{ __('Password') }}
@@ -65,7 +69,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-center mt-3 login_container">
+                            <div class="d-flex justify-content-center mt-3 login_container bg-danger">
                                 <button type="submit" name="button" class="btn login_btn">{{ __('Login') }}</button>
                             </div>
 
@@ -73,10 +77,10 @@
 
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
-                            Belum memiliki Akun? <a href="register" class="ml-2">Register disini</a>
+                            Belum memiliki Akun? <a href="register" class="ml-2">Daftar di sini</a>
                         </div>
                         <div class="d-flex justify-content-center links">
-                            <a href="{{ route('password.request') }}">Lupa Password?</a>
+                            <a href="{{ route('password.request') }}">Lupa Katasandi?</a>
                             @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}"></a>
                             @endif
