@@ -37,14 +37,14 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-light ">
-        <style>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
+        {{-- <style>
             body {
                 background-image: url("https://wallpaperaccess.com/full/289380.jpg");
             }
-        </style>
+        </style> --}}
         <!-- Navbar Brand-->
-        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
+        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>ADMIN SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -120,9 +120,9 @@
                     @yield('content')
                 </div>
             </main>
-            <div class="container">
+            <div class="container text-dark">
                 <div class=" align-items-center small">
-                    <div class="text-center">Copyright &copy; Thorny Devilzz</div>
+                    <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
                 </div>
             </div>
             </footer>
