@@ -24,27 +24,17 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-light ">
-        <style>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger" >
+        {{-- <style>
             body {
                 background-image: url("https://wallpaperaccess.com/full/289380.jpg");
             }
-        </style>
+        </style> --}}
         <!-- Navbar Brand-->
-        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>Kasir Syafira</strong></a>
+        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
@@ -74,9 +64,9 @@
                     @yield('content')
                 </div>
             </main>
-            <div class="container">
+            <div class="container text-dark">
                 <div class=" align-items-center small">
-                    <div class="text-center">Copyright &copy; Thorny Devilzz</div>
+                    <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
                 </div>
             </div>
             </footer>

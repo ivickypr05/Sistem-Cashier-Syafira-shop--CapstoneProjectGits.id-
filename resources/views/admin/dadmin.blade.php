@@ -4,19 +4,19 @@
 @section('content')
     <style>
         body {
-            background-image: url("https://img.freepik.com/premium-photo/supermarket-store-aisle-interior-abstract-blurred-background_293060-19514.jpg?w=2000");
+            background-image: url('/assets/img/aaa.png');
         }
     </style>
     <section data-bs-version="5.1" class="header7 cid-sUp808fGej" id="aheader7-2 mt-3">
-        <div class="mbr-overlay" style="opacity: 0.7; background-color: rgb(255, 255, 255);"></div>
+        <div class="mbr-overlay" style="opacity: 1; background-color: rgb(255, 255, 255);"></div>
 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 mt-5">
 
-                    <h1 class="mbr-section-title mbr-fonts-style align-center display-1"><strong>Selamat datang kembali
+                    <h1 class="mbr-section-title mbr-fonts-style text-light align-center display-1"><strong>Selamat datang kembali
                             Admin "SRC Syafira"</strong></h1>
-                    <p class="mbr-text mbr-fonts-style-4 align-center display-5">
+                    <p class="mbr-text mbr-fonts-style-4 align-center text-light display-5">
                         <br>
                         Silahkan Tambah, Ubah, dan Delete data sesuai yang admin inginkan, Semoga makin banyak Transaksinya
                         >.< </p>
