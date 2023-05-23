@@ -59,9 +59,19 @@
                     {{ Auth::user()->name }}</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/">Home</a>
-                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
-                </ul>
+
+                    <a class="dropdown-item" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                         document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
             </li>
+        </ul>
+        </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
@@ -80,7 +90,7 @@
                         </a>
                         <div class="sb-sidenav-menu-heading">Transaksi Masuk</div>
                         <a class="nav-link text-light" href="{{ url('/supplier') }}"><i class="fas fa-list-check"></i>‎
-                            Pemasukan</a>
+                            Produk Masuk</a>
                         <div class="sb-sidenav-menu-heading">Data</div>
                         <a class="nav-link text-light collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

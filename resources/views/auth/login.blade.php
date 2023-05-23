@@ -18,6 +18,7 @@
             background-color: rgb(255, 255, 255);
         }
     </style>
+
     <body><br><br><br><br><br>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
@@ -77,10 +78,10 @@
 
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
-                            Belum memiliki Akun? <a href="register" class="ml-2">Daftar di sini</a>
+                            Belum memiliki Akun? <a href="register" class="ml-2 text-danger">Daftar di sini</a>
                         </div>
-                        <div class="d-flex justify-content-center links">
-                            <a href="{{ route('password.request') }}">Lupa Katasandi?</a>
+                        <div class="d-flex justify-content-center links mt-2 ml-4">
+                            <a href="{{ route('password.request') }}" class="text-danger"> Lupa Katasandi?</a>
                             @if (Route::has('password.request'))
                                 <a class="btn btn-link" href="{{ route('password.request') }}"></a>
                             @endif

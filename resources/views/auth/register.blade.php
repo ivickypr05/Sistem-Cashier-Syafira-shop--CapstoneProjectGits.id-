@@ -83,13 +83,13 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="d-flex justify-content-center mt-4 login_container">
+                            <div class="d-flex justify-content-center mt-4 login_container bg-danger">
                                 <button type="submit" name="button"
-                                    class="btn login_btn">{{ __('Daftar dan Masuk') }}</button>
+                                    class="btn login_btn">{{ __('Daftar dan Login') }}</button>
                             </div>
                             <div class="mt-3 mb-4">
                                 <div class="d-flex justify-content-center links">
-                                    Sudah Memiliki Akun? <a href="login" class="ml-2">Masuk di sini</a>
+                                    Sudah Memiliki Akun? <a href="login" class="ml-2 text-danger">Login di sini</a>
                                 </div>
                             </div>
                     </div>
