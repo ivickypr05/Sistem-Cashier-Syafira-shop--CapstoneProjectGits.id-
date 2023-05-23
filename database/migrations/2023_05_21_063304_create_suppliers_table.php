@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('contact');
             $table->integer('amount');
             $table->foreignId('product_id');
-            $table->foreign('product_id')->references('id')->on('products');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->change();
             $table->timestamps();
         });
     }
