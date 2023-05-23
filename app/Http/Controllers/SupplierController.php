@@ -44,9 +44,7 @@ class SupplierController extends Controller
             'product_id' => 'required|integer|exists:products,id',
             'amount' => 'required|integer|min:1',
         ]);
-        $supplier = Supplier::create($validatedData);
-
-        // $supplier->produks()->attach($request->product_id, ['stock' => $request->stock]);
+        Supplier::create($validatedData);
 
         // Menghubungkan supplier dengan produk dan mengupdate stok dari supplier
         $product = Product::where('id', $request->product_id)->first();
@@ -54,12 +52,6 @@ class SupplierController extends Controller
         $product->update([
             'stock' => $amount
         ]);
-
-
-        // Mengupdate stok pada produk
-        // $product = Product::find($request->produk_id);
-        // $product->stok += $request->stock;
-        // $product->save();
 
         return redirect('/supplier')->with('toast_success', 'Data Produk Berhasil Dimasukan >.<');
     }
@@ -71,7 +63,6 @@ class SupplierController extends Controller
      */
     public function show($id)
     {
-        //
     }
 
     /**
@@ -82,7 +73,9 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data['products'] = Product::get();
+        $data['supplier'] = Supplier::find($id);
+        return view('admin.supplier.edit', $data);
     }
 
     /**
@@ -94,7 +87,26 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'name' => 'required|string|min:2|max:50',
+            'contact' => 'required|string|min:8|max:14',
+            'product_id' => 'required|integer|exists:products,id',
+            'amount' => 'required|integer|min:1',
+        ]);
+        $supplier = Supplier::find($id);
+
+        // mengedit jumlah stok dan menyesuaikan dengan data sebelum terupdate
+        $product = Product::where('id', $request->product_id)->first();
+        $kurang = $product->stock - $supplier->amount;
+        $amount = $request->amount + $kurang;
+        $product->update([
+            'stock' => $amount
+        ]);
+
+        $supplier->update($validatedData);
+
+
+        return redirect('/supplier')->with('toast_success', 'Data Pemasukan berhasil diedit >.<');
     }
 
     /**

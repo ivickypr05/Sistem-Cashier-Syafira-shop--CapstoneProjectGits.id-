@@ -55,11 +55,14 @@ Route::put('/product/{id}', [ProductController::class, 'update']);
 //Delete Product
 Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
 
-// CRUD Suppliers
+// CRUD Supplier
 Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
 // Add Product
 Route::get('/supplier/add', [SupplierController::class, 'create']);
 Route::post('/supplier', [SupplierController::class, 'store']);
+// Edit Supplier
+Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
+Route::put('/supplier/{id}', [SupplierController::class, 'update']);
 
 // Cashier --------------------------------------------------------------------------------------------
 Route::get('/cashier', [CashierController::class, 'index']);
