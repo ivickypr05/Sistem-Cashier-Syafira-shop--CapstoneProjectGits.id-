@@ -2,11 +2,11 @@
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading">Penjualan</div>
-            <a class="nav-link text-light" href="">
+            <a class="nav-link text-light" href="/cashier">
                 <div class="sb-nav-link-icon text-light"><i class="fas fa-home"></i></div>
                 Produk SRC Syafira
             </a>
-            <a class="nav-link text-light" href="">
+            <a class="nav-link text-light" href="/cart">
                 <div class="sb-nav-link-icon text-light"><i class="fas fa-cart-shopping"></i></div>
                 Keranjang
             </a>
