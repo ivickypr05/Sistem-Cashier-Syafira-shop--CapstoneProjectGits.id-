@@ -66,3 +66,5 @@ Route::put('/supplier/{id}', [SupplierController::class, 'update']);
 
 // Cashier --------------------------------------------------------------------------------------------
 Route::get('/cashier', [CashierController::class, 'index']);
+// Product Search
+Route::get('/product/search', [CashierController::class, 'search']);

@@ -15,21 +15,20 @@
                         @if ($items->category == null)
                             <h6 class="card-subtitle text-muted"><i>-Uncategory</i></h6>
                         @else
-                            <h6 class="card-subtitle text-muted"><i>-{{ $items->category->name }}</i></h6>
+                            <h6 class="card-subtitle text-muted"><i>Kategori : {{ $items->category->name }}</i></h6>
                         @endif
                         <hr>
-                        <h6 class="card-text md-5 small">Satuan : {{ $items->unit }}</h6>
-                        <h6 class="card-text md-5 small">Sisa Stok : {{ $items->stock }}</h6>
-                        <h5 class="d-flex text-success"><span class="ms-auto">Rp
-                                {{ number_format($items->sell_price) }}</span>
+                        <h6 class="card-text md-5 "><strong>Sisa Stok : [ {{ $items->stock }} ]</strong></h6>
+                        <h5 class="d-flex text-success"><span
+                                class="ms-auto">Rp{{ number_format($items->sell_price) }}</span>
                         </h5>
                         <p>
                         <form action="/tocart" method="post">
                             @csrf
                             <div class="row mt-3 justify-content-center">
                                 <input type="hidden" name="product_id" value="{{ $items->id }}">
-                                <div class="col-7">
-                                    <label for="qty" class="form-label">Input Quantity</label>
+                                <div class="row col-7 ">
+                                    <label for="qty" class="form-label text-muted">Jumlah beli</label>
                                     <input type="number" class="form-control" required name="qty">
                                 </div>
 

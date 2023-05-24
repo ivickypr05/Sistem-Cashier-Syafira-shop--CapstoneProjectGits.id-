@@ -37,7 +37,7 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         {{-- <style>
             body {
                 background-image: url("https://wallpaperaccess.com/full/289380.jpg");

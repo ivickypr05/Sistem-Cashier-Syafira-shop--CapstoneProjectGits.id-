@@ -27,7 +27,7 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger" >
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
         {{-- <style>
             body {
                 background-image: url("https://wallpaperaccess.com/full/289380.jpg");
@@ -39,7 +39,13 @@
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
                 class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <form action="/product/search" class="d-flex justify-content-end ms-auto me-0 me-md-3 my-2 my-md-0"
+            method="GET">
+            <input class="form-control me-2" type="search" placeholder="Search by name" name="keyword"
+                aria-label="Search">
+            <button class="btn btn-light btn-outline-danger" type="submit"><i class="fa fa-search"></i></button>
+        </form>
+        <!-- Navbar-->
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">

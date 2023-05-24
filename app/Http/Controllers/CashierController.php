@@ -18,7 +18,28 @@ class CashierController extends Controller
             return view('cashier.product', compact('products'));
         }
     }
+    /**
+     * Show the form for Search.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $products = Product::with('category')->get();
 
+        $keyword = $request->input('keyword');
+
+        $products = Product::where('name', 'like', "%$keyword%")
+            ->orWhere('category_id', 'like', "%$keyword%")
+            ->get();
+
+        if ($products->isEmpty()) {
+            alert()->error('oops...', 'product tidak ditemukan');
+            return back();
+        }
+        // mengirim data pegawai ke view index
+        return view('cashier.product', compact('products'));
+    }
     /**
      * Show the form for creating a new resource.
      *
