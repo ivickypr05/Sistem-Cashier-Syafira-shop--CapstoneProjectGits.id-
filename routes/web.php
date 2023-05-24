@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -65,6 +66,9 @@ Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
 Route::put('/supplier/{id}', [SupplierController::class, 'update']);
 
 // Cashier --------------------------------------------------------------------------------------------
+// Product 
 Route::get('/cashier', [CashierController::class, 'index']);
-// Product Search
+// product Search
 Route::get('/product/search', [CashierController::class, 'search']);
+// Cart
+Route::get('/cart', [CartController::class, 'index']);
