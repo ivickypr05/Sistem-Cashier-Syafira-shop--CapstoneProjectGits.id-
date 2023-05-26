@@ -1,16 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Hammersmith+One&family=Kanit:wght@300&family=Lancelot&family=Mukta&family=Saira+Condensed&family=Share+Tech&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
-.navbar {
-    font-family: "Hammersmith One", sans-serif;
-    font-size: medium;
-}
 
-.row {
-    font-family: "Kanit", sans-serif;
-}
-.navbar-brand {
-    font-family: 'Kdam Thmor Pro', sans-serif;
-}
 .blockquote-custom {
     position: relative;
     font-size: 1.1rem;
@@ -27,9 +17,6 @@
     position: absolute;
     top: -25px;
     left: 50px;
-}
-.text-center {
-    font-family: "Hammersmith One", sans-serif;
 }
 
 html {
@@ -53,7 +40,6 @@ body {
     color: rgb(255, 6, 6);
     font-size: 22px;
 }
-
 h2 {
     font-family: "Lancelot", cursive;
 }

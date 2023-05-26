@@ -25,14 +25,14 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-
+{{--
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
-        {{-- <style>
+         <style>
             body {
                 background-image: url("https://wallpaperaccess.com/full/289380.jpg");
             }
-        </style> --}}
+        </style> 
         <!-- Navbar Brand-->
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
@@ -59,7 +59,7 @@
                 </ul>
             </li>
         </ul>
-    </nav>
+    </nav>--}}
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
             @include('partials.sidebar')

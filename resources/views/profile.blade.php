@@ -5,7 +5,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+        <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+        <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet" />
         {{-- Font Awesome --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
             integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -34,7 +35,7 @@
     <body>
         <header>
             @include('partials.navbar');
-            <div class="hero" id="home">
+            <div class="hero" id="profile">
                 <div class="container">
                     <div class="box-hero">
                         <div class="box">
@@ -57,7 +58,7 @@
             </div>
         </header>
 
-        <div class="services" id="services">
+        <div class="services" id="produk">
             <div class="container">
                 <div class="box-services">
                     <div class="box">
@@ -112,7 +113,7 @@
         </div>
 
         {{-- Footer --}}
-        <div class="footer" id="footer">
+        <div class="footer" id="contact">
             <div class="container">
                 <div class="box-footer">
                     <div class="box">
@@ -124,18 +125,20 @@
                         <p><i class="fas fa-location"></i> Jl. Dwi Pantara, RT.03/RW.01, Argasunya, Kec.
                             Harjamukti, Kota Cirebon, Jawa Barat 45145</a></p>
                     </div>
+                    
                     <div class="box">
                         <h3>Kontak Kasir SRC Syafira</h3>
                         <li><i class="fa-solid fa-phone"></i> 085294931090</a></li>
                         <li><i class="fa-solid fa-envelope"></i> srcsyafira@gmail.com</a></li>
                     </div>
                     <div class="box">
-                        <p>&copy; Copyright by <span>Kasir Src Syafira</span> All Rights Reserved 2023.</p>
+                        <p>&copy; Copyright by <span>Kasir SRC Syafira</span> All Rights Reserved 2023.</p>
                     </div>
                 </div>
 
             </div>
         </div>
+    </div>
 
         <script src="js/script.js"></script>
     </body>

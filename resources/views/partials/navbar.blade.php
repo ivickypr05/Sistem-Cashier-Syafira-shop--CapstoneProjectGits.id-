@@ -1,33 +1,36 @@
 <header>
-    <div class="navbar">
+    <div class="navbar navbar-expand-lg p-3 shadow-sm fixed-top">
         <div class="container">
             <div class="box-navbar">
                 <div class="logo">
                     <h1>SRC SYAFIRA</h1>
+                    
                 </div>
                 <ul class="menu">
                     <li><a href="#profile">PROFIL</a></li>
+                    <li><a href="#produk">PRODUK</a></li>
                     <li><a href="#contact">KONTAK</a></li>
+                    
                     @auth
-                        <li class="navbar-nav nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown"> SISTEM SYAFIRA
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
-                                        Kasir</a></li>
-                                <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
-                                        Admin</a></li>
-                            </ul>
-                        </li>
-                    @endauth
+                    <li class="navbar-nav nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown"> SISTEM SYAFIRA
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
+                                    Kasir</a></li>
+                            <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
+                                    Admin</a></li>
+                        </ul>
+                    </li>
+                @endauth
                 </ul>
                 <i class="fa-solid fa-bars menu-bar"></i>
                 <center class=" menu navbar-nav ms-auto ">
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}">{{ __('MASUK ‎') }}</a>
                             </li>
                         @endif
                     @else
