@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Hammersmith+One&family=Kanit:wght@300&family=Lancelot&family=Mukta&family=Saira+Condensed&family=Share+Tech&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Mukta:wght@400;600&family=Pangolin&family=Poppins:wght@500;600&family=Saira+Condensed&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,8 +14,7 @@ body {
 }
 
 header {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-        url("/assets/img/aaa.png");
+    background-image: url("https://i.postimg.cc/wTKJZJ0v/aaa.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,10 +32,13 @@ header {
     width: 100%;
     transition: all 0.3s ease;
     z-index: 999;
+    background-color: rgb(0, 0, 0);
+    box-shadow: inset;
+    font-family: 'Pangolin', cursive;
 }
 
 .navbar.scrolling-active {
-    background-color: chocolate;
+    background-color: rgb(255, 0, 0);
     padding: 25px 0 25px 0;
 }
 
@@ -52,6 +56,7 @@ header {
 .navbar .box-navbar .menu {
     display: flex;
     column-gap: 20px;
+
 }
 
 .navbar .box-navbar .menu li {
@@ -65,7 +70,7 @@ header {
 }
 
 .navbar .box-navbar .menu li a:hover {
-    background-color: chocolate;
+    background-color: rgb(218, 64, 64);
     border-radius: 30px;
     transition: all 0.3s ease;
 }
@@ -161,6 +166,7 @@ header {
     display: flex;
     align-items: center;
     padding: 80px 0 50px 0;
+    background-color: rgb(255, 1, 1);
 }
 
 .services .box-services {
@@ -168,6 +174,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-evenly;
     row-gap: 50px;
+    
 }
 
 .services .box-services .box {
@@ -188,6 +195,7 @@ header {
 
 .card {
     padding: 50px 0 50px 0;
+    background-color: black;
 }
 
 .card .box-card {
@@ -290,7 +298,7 @@ header {
 
 .footer {
     padding: 50px 0 50px 0;
-    background-color: chocolate;
+    background-color: rgb(255, 1, 1);
     color: white;
 }
 
