@@ -23,36 +23,37 @@
                             </ul>
                         </li>
                     @endauth
-                </ul>
-                <i class="fa-solid fa-bars menu-bar"></i>
-                <center class=" menu navbar-nav ms-auto ">
-                    @guest
-                        @if (Route::has('login'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('MASUK ‎') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="navbar-nav nav-item dropdown">
-                            <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown">
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                    onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
+                    <center class=" menu navbar-nav ms-auto ">
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('MASUK ‎') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="navbar-nav nav-item dropdown">
+                                <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button"
+                                    data-bs-toggle="dropdown">
+                                    {{ Auth::user()->name }}
                                 </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
-                </center>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </center>
+                </ul>
+
+                <i class="fa-solid fa-bars menu-bar"></i>
             </div>
         </div>
     </div>

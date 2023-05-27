@@ -365,10 +365,7 @@ header {
         transition: all 0.3s ease;
         /* background-color: chocolate; */
     }
-    nav ul li {
-        width: 100%;
-        border-bottom: 1px solid #333333;
-    }
+
     .navbar .box-navbar .menu.menu-active {
         top: 80px;
         opacity: 1;
