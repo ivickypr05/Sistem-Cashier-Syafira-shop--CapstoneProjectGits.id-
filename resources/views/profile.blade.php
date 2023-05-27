@@ -5,8 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
-        <link href="{{ asset('assets/css/profile.css') }}" rel="stylesheet" />
+
         {{-- Font Awesome --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
             integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
@@ -19,15 +18,6 @@
             rel="stylesheet">
 
         <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
-
-        <!-- Fonts -->
-        <link rel="dns-prefetch" href="//fonts.gstatic.com">
-        <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-        <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
-            type="text/css" />
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@300;400;500&display=swap">
-
         <title>Sistem Kasir SRC Syafira</title>
 
     </head>
@@ -39,7 +29,7 @@
                 <div class="container">
                     <div class="box-hero">
                         <div class="box">
-                            <h1>Produk Terbaik dari <br> SRC Syafira</h1>
+                            <h1>Profile Toko<br> SRC Syafira</h1>
                             <p>
                                 Toko Syafira, yang didirikan pada tahun 2017, adalah sebuah perusahaan yang
                                 menawarkan pengalaman berbelanja yang unik dan memikat bagi pelanggan
@@ -62,19 +52,19 @@
             <div class="container">
                 <div class="box-services">
                     <div class="box">
-                        <i class="fa-solid fa-shirt"></i>
+                        <i class="fa-solid fa-cart-shopping"></i>
                         <h4>Produk baru</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, corporis.</p>
+                        <p>Solusi praktis kebutuhan sembako untuk sehari hari.</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-mountain-sun"></i>
-                        <h4>Tahan lama dan tidak kadaluarsa</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, corporis.</p>
+                        <h4>Pelayanan Terbaik</h4>
+                        <p>Pelayanan terbaik yang menghadirkan pengalaman belanja tak terlupakan.</p>
                     </div>
                     <div class="box">
                         <i class="fa-solid fa-wallet"></i>
                         <h4>Harga Terjangkau</h4>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, corporis.</p>
+                        <p>Kualitas terbaik dengan harga terjangkau untuk semua kalangan.</p>
                     </div>
                 </div>
             </div>
@@ -85,27 +75,24 @@
             <div class="container">
                 <div class="box-card">
                     <div class="box">
-                        <img src="img/sawah.jpg" alt="">
+                        <img src="assets/img/pokok.jpg" alt="">
                         <h3>Kebutuhan pokok harian</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae laudantium
-                            tenetur
-                            facere obcaecati. Obcaecati?</p>
+                        <p>Tersedia berbagai macam sembako, cocok untuk Ibu rumah tangga yang membutuhkan kebutuhan
+                            Pokok sehari-hari.</p>
 
                     </div>
                     <div class="box">
-                        <img src="img/pantai.jpg" alt="">
+                        <img src="assets/img/minuman.jpg" alt="">
                         <h3>Makanan Ringan dan Minuman segar</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae laudantium
-                            tenetur
-                            facere obcaecati. Obcaecati?</p>
+                        <p>Tersedia juga makanan dan minuman yang siap disantap, sehingga tidak perlu repot-repot untuk
+                            memasak.</p>
 
                     </div>
                     <div class="box">
-                        <img src="Minuman Segar" alt="">
+                        <img src="assets/img/obat.jpg" alt="">
                         <h3>Obat-obatan</h3>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat recusandae laudantium
-                            tenetur
-                            facere obcaecati. Obcaecati?</p>
+                        <p>Penyakit semakin melanda, seperti batuk, pilek dll, pertolongan pertama untuk mengobatinya
+                            yaitu obat toko</p>
 
                     </div>
                 </div>
@@ -125,7 +112,7 @@
                         <p><i class="fas fa-location"></i> Jl. Dwi Pantara, RT.03/RW.01, Argasunya, Kec.
                             Harjamukti, Kota Cirebon, Jawa Barat 45145</a></p>
                     </div>
-                    
+
                     <div class="box">
                         <h3>Kontak Kasir SRC Syafira</h3>
                         <li><i class="fa-solid fa-phone"></i> 085294931090</a></li>
@@ -138,9 +125,10 @@
 
             </div>
         </div>
-    </div>
+        </div>
+        @include('sweetalert::alert')
 
-        <script src="js/script.js"></script>
+        <script src="assets/js/script.js"></script>
     </body>
 
     </html>

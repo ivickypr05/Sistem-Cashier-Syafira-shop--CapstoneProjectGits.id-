@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -221,9 +221,9 @@
     </div>
   </div>
 </body>
-</html>
+</html> --}}
 
-{{--<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -367,7 +367,7 @@ modeSwitch.addEventListener("click" , () =>{
 </body>
 </html> --}}
 
-{{--<nav class="sb-sidenav accordion sb-sidenav-dark bg-danger" id="sidenavAccordion">
+<nav class="sb-sidenav accordion sb-sidenav-dark bg-danger" id="sidenavAccordion">
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading">Penjualan</div>
@@ -384,4 +384,4 @@ modeSwitch.addEventListener("click" , () =>{
                     class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
         </div>
     </div>
-</nav>--}}
+</nav>

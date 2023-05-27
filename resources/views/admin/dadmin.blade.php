@@ -4,7 +4,7 @@
 @section('content')
     <style>
         body {
-            background-image: url('/assets/img/aaa.png');
+            background-image: url('/assets/img/bgblur.png');
         }
     </style>
     <section data-bs-version="5.1" class="header7 cid-sUp808fGej" id="aheader7-2 mt-3">
@@ -14,7 +14,8 @@
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-10 mt-5">
 
-                    <h1 class="mbr-section-title mbr-fonts-style text-light align-center display-1"><strong>Selamat datang kembali
+                    <h1 class="mbr-section-title mbr-fonts-style text-light align-center display-1"><strong>Selamat datang
+                            kembali
                             Admin "SRC Syafira"</strong></h1>
                     <p class="mbr-text mbr-fonts-style-4 align-center text-light display-5">
                         <br>
