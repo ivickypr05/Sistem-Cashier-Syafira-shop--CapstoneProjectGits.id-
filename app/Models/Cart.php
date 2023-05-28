@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'product_id',
+        'total_price'
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function transection()
+    {
+        return $this->hasMany(Transection::class);
+    }
 }

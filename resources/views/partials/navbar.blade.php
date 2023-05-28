@@ -16,10 +16,13 @@
                                 data-bs-toggle="dropdown"> SISTEM SYAFIRA
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
-                                        Kasir</a></li>
-                                <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
-                                        Admin</a></li>
+                                @if (auth()->user()->role == 'admin')
+                                    <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
+                                            Admin</a></li>
+                                @else
+                                    <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
+                                            Kasir</a></li>
+                                @endif
                             </ul>
                         </li>
                     @endauth

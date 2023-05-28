@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cart;
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
 {
@@ -13,7 +16,9 @@ class CartController extends Controller
      */
     public function index()
     {
-        return view('cashier.cart');
+        $products = Product::with('category')->get();
+        $carts = Cart::with('product')->get();
+        return view('cashier.cart', compact('products', 'carts'));
     }
 
     /**
@@ -21,11 +26,66 @@ class CartController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
 
+    public function addtocart(Request $request, $id)
+    {
+
+
+
+        // $product = Product::where('id', $id)->first();
+        // // //temukan product
+        // // if (!$product) {
+        // //     return redirect()->back()->with('toast_error', 'Produk tidak ditemukan');
+        // // }
+        // //validasi stok
+
+        // if ($request->qty > $product->stock) {
+        //     return redirect()->back()->with('toast_error', 'maaf stok tidak mencukupi');
+        // }
+
+        // //cek validasi
+        // $cek_cart = Cart::where('user_id', Auth::user()->id)->first();
+
+
+        // //simpan ke database cart
+        // if (empty($cek_cart)) {
+        //     $cart = new Cart;
+        //     $cart->user_id = Auth::user()->id;
+        //     $cart->product_id = $request->product_id;
+        //     $cart->total_price = 0;
+        //     $cart->save();
+        // }
+
+        // // //simpan ke database cart detail
+        // // $cart_baru = Cart::where('user_id', Auth::user()->id)->first();
+
+        // // //cek cart detail
+        // // $cek_transaction = Transaction::where('product_id', $product->id)->where('cart_id', $cart_baru->id)->first();
+        // // if (empty($cek_transaction)) {
+        // //     $transaction = new Transaction;
+        // //     $transaction->product_id = $product->id;
+        // //     $transaction->cart_id = $cart_baru->id;
+        // //     $transaction->jumlah = $request->jumlah_pesan;
+        // //     $transaction->jumlah_harga = $product->price * $request->jumlah_pesan;
+        // //     $transaction->save();
+        // // } else {
+        // //     $transaction = Transaction::where('product_id', $product->id)->where('cart_id', $cart_baru->id)->first();
+
+        // //     $transaction->jumlah = $transaction->jumlah + $request->jumlah_pesan;
+
+        // //     //harga sekarang
+        // //     $harga_transaction_baru = $product->price * $request->jumlah_pesan;
+        // //     $transaction->jumlah_harga = $transaction->jumlah_harga + $harga_transaction_baru;
+        // //     $transaction->update();
+        // // }
+
+        // // //jumlah total
+        // // $cart = Cart::where('user_id', Auth::user()->id)->where('status', 0)->first();
+        // $cart->total_price = $cart->total_price + $product->sell_price * $request->qty;
+        // // $cart->update();
+        // return redirect('/cart')->with('success', 'successfully added to cart');
+
+    }
     /**
      * Store a newly created resource in storage.
      *

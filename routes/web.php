@@ -30,7 +30,8 @@ Auth::routes();
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
-
+// // route admin
+// Route::group(['middleware' => ['auth', 'Role:admin']], function () {
 // Admin --------------------------------------------------------------------------------------------
 Route::get('/admin', [AdminController::class, 'index']);
 
@@ -64,11 +65,17 @@ Route::post('/supplier', [SupplierController::class, 'store']);
 // Edit Supplier
 Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
 Route::put('/supplier/{id}', [SupplierController::class, 'update']);
+// });
 
+// // route cashier
+// Route::group(['middleware' => ['auth', 'Role:admin,cashier']], function () {
 // Cashier --------------------------------------------------------------------------------------------
+
 // Product 
 Route::get('/cashier', [CashierController::class, 'index']);
 // product Search
 Route::get('/product/search', [CashierController::class, 'search']);
 // Cart
 Route::get('/cart', [CartController::class, 'index']);
+Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
+// });
