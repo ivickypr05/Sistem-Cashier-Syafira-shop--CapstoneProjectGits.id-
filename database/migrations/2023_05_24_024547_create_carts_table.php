@@ -16,8 +16,11 @@ return new class extends Migration
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('qty');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->change();
+            $table->foreignId('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->change();
+            $table->string('cashier_name')->nullable();
+            $table->integer('amount');
             $table->timestamps();
         });
     }

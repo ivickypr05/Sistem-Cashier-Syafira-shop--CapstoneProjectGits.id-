@@ -30,45 +30,51 @@ Auth::routes();
 
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 
+// route admin
+Route::middleware(['auth', 'admin'])->group(function () {
+    // Admin --------------------------------------------------------------------------------------------
+    Route::get('/admin', [AdminController::class, 'index']);
 
-// Admin --------------------------------------------------------------------------------------------
-Route::get('/admin', [AdminController::class, 'index']);
+    // CRUD Category
+    Route::get('/category', [CategoryController::class, 'index']);
+    // Add Category
+    Route::get('/category/add', [CategoryController::class, 'create']);
+    Route::post('/category', [CategoryController::class, 'store']);
+    // Edit Category
+    Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
+    Route::put('/category/{id}', [CategoryController::class, 'update']);
+    // Delete Category
+    Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
 
-// CRUD Category
-Route::get('/category', [CategoryController::class, 'index']);
-// Add Category
-Route::get('/category/add', [CategoryController::class, 'create']);
-Route::post('/category', [CategoryController::class, 'store']);
-// Edit Category
-Route::get('/category/{id}/edit', [CategoryController::class, 'edit']);
-Route::put('/category/{id}', [CategoryController::class, 'update']);
-// Delete Category
-Route::get('/category/{id}/delete', [CategoryController::class, 'destroy']);
+    // CRUD Product
+    Route::get('/product', [ProductController::class, 'index'])->name('product');
+    // Add Product
+    Route::get('/product/add', [ProductController::class, 'create']);
+    Route::post('/product', [ProductController::class, 'store']);
+    // Edit Product
+    Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
+    Route::put('/product/{id}', [ProductController::class, 'update']);
+    //Delete Product
+    Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
 
-// CRUD Product
-Route::get('/product', [ProductController::class, 'index'])->name('product');
-// Add Product
-Route::get('/product/add', [ProductController::class, 'create']);
-Route::post('/product', [ProductController::class, 'store']);
-// Edit Product
-Route::get('/product/{id}/edit', [ProductController::class, 'edit']);
-Route::put('/product/{id}', [ProductController::class, 'update']);
-//Delete Product
-Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
+    // CRUD Supplier
+    Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
+    // Add Product
+    Route::get('/supplier/add', [SupplierController::class, 'create']);
+    Route::post('/supplier', [SupplierController::class, 'store']);
+    // Edit Supplier
+    Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
+    Route::put('/supplier/{id}', [SupplierController::class, 'update']);
+});
 
-// CRUD Supplier
-Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
-// Add Product
-Route::get('/supplier/add', [SupplierController::class, 'create']);
-Route::post('/supplier', [SupplierController::class, 'store']);
-// Edit Supplier
-Route::get('/supplier/{id}/edit', [SupplierController::class, 'edit']);
-Route::put('/supplier/{id}', [SupplierController::class, 'update']);
+Route::middleware(['auth', 'cashier'])->group(function () {
+    // Cashier --------------------------------------------------------------------------------------------
 
-// Cashier --------------------------------------------------------------------------------------------
-// Product 
-Route::get('/cashier', [CashierController::class, 'index']);
-// product Search
-Route::get('/product/search', [CashierController::class, 'search']);
-// Cart
-Route::get('/cart', [CartController::class, 'index']);
+    // Product 
+    Route::get('/cashier', [CashierController::class, 'index']);
+    // product Search
+    Route::get('/product/search', [CashierController::class, 'search']);
+    // Cart
+    Route::get('/cart', [CartController::class, 'index']);
+    Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
+});

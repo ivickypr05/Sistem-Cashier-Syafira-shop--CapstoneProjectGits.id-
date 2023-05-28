@@ -23,15 +23,15 @@
                                 class="ms-auto">Rp{{ number_format($items->sell_price) }}</span>
                         </h5>
                         <p>
-                        <form action="/tocart" method="post">
+                        <form action="/addtocart/{{ $items->id }}" method="post">
                             @csrf
                             <div class="row mt-3 justify-content-center">
-                                <input type="hidden" name="product_id" value="{{ $items->id }}">
+                                {{-- <input type="hidden" name="product_id" value="{{ $items->id }}"> --}}
                                 <div class="row col-7 ">
-                                    <label for="qty" class="form-label text-muted">Jumlah beli</label>
-                                    <input type="number" class="form-control" required name="qty">
+                                    @csrf
+                                    <label for="amount" class="form-label text-muted">Jumlah beli</label>
+                                    <input type="number" name="amount" value="1" min="1" required>
                                 </div>
-
                                 <div class="row mt-2">
                                     <button type="submit" class="btn btn-primary ms-auto" role="button"><i
                                             class="fa-solid fa-cart-plus"></i> Add to Cart</button>
