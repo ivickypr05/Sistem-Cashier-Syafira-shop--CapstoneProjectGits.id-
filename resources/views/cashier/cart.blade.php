@@ -39,7 +39,7 @@
                                 <td>
                                     <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i>Edit</button>
                                     <a href="cart/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                        onclick="return confirm('Are u Sure?');"><i class="fas fa-trash"></i>Delete</a>
+                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i>Delete</a>
                                 </td>
                         </form>
                         </tr>

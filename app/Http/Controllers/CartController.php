@@ -37,8 +37,6 @@ class CartController extends Controller
     {
         $user = Auth::user();
         $product = Product::findOrFail($id);
-
-
         if ($request->amount > $product->stock) {
             return redirect()->back()->with('error', 'maaf stok tidak mencukupi');
         }
@@ -156,7 +154,15 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cart = Cart::findOrFail($id);
+        if ($request->amount > $cart->product->stock) {
+            return redirect()->back()->with('error', 'maaf stok tidak mencukupi');
+        }
+        // dd($product);
+        $cart->update([
+            'amount' => $request->amount,
+        ]);
+        return redirect('cart')->with('toast_success', 'Jumlah berhasil diubah');
     }
 
     /**
@@ -167,6 +173,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::destroy($id);
+        return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
     }
 }
