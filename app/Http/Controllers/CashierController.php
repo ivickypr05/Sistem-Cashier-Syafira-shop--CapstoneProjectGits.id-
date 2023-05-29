@@ -37,7 +37,7 @@ class CashierController extends Controller
             alert()->error('oops...', 'product tidak ditemukan');
             return back();
         }
-        // mengirim data pegawai ke view index
+        // mengirim data produk ke view index
         return view('cashier.product', compact('products'));
     }
     /**

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -16,9 +18,13 @@ class CartController extends Controller
      */
     public function index()
     {
+        $user = User::where('id', Auth::user()->id)->first();
         $products = Product::with('category')->get();
         $carts = Cart::with('product')->get();
-        return view('cashier.cart', compact('products', 'carts'));
+        $total = Cart::join('products', 'carts.product_id', '=', 'products.id')
+            ->sum(DB::raw('carts.amount * products.sell_price'));
+
+        return view('cashier.cart', compact('user', 'products', 'carts', 'total'));
     }
 
     /**
@@ -29,7 +35,27 @@ class CartController extends Controller
 
     public function addtocart(Request $request, $id)
     {
+        $user = Auth::user();
+        $product = Product::findOrFail($id);
+        if ($request->amount > $product->stock) {
+            return redirect()->back()->with('error', 'maaf stok tidak mencukupi');
+        }
 
+        $cart = Cart::where('user_id', $user->id)->where('product_id', $product->id)->first();
+        // dd($cart);
+        if ($cart) {
+            Cart::where('id', $cart->id)->update(['amount' => $cart->amount + $request->amount]);
+        } else {
+            $cart = new Cart;
+            $cart->user_id = $user->id;
+            $cart->product_id = $product->id;
+            $cart->cashier_name = $user->name;
+            $cart->amount = $request->amount;
+            $cart->save();
+        }
+
+
+        return redirect('/cashier')->with('success', 'Product berhasil ditambah ke keranjang');
 
 
         // $product = Product::where('id', $id)->first();
@@ -128,7 +154,15 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cart = Cart::findOrFail($id);
+        if ($request->amount > $cart->product->stock) {
+            return redirect()->back()->with('error', 'maaf stok tidak mencukupi');
+        }
+        // dd($product);
+        $cart->update([
+            'amount' => $request->amount,
+        ]);
+        return redirect('cart')->with('toast_success', 'Jumlah berhasil diubah');
     }
 
     /**
@@ -139,6 +173,7 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Cart::destroy($id);
+        return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
     }
 }

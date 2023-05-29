@@ -71,10 +71,12 @@ Route::middleware(['auth', 'cashier'])->group(function () {
     // Cashier --------------------------------------------------------------------------------------------
 
     // Product 
-    Route::get('/cashier', [CashierController::class, 'index']);
+    Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
     // product Search
     Route::get('/product/search', [CashierController::class, 'search']);
     // Cart
-    Route::get('/cart', [CartController::class, 'index']);
+    Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
+    Route::put('/cart/{id}/edit', [CartController::class, 'update']);
+    Route::get('/cart/{id}/delete', [CartController::class, 'destroy']);
 });
