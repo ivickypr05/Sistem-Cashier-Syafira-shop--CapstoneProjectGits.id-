@@ -70,6 +70,7 @@ header {
 }
 .navbar ul.dropdown-menu{
     margin-top: 25px;
+    position: fixed;
     display:none;
 }
 
