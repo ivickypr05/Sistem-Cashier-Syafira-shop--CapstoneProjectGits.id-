@@ -68,13 +68,13 @@ header {
     border-radius: 30px;
     transition: all 0.3s ease;
 }
-.navbar ul.dropdown-menu{
-    margin-top: 25px;
+.navbar ul.dropdown-menu {
+    margin-top: 20px;
     position: fixed;
-    display:none;
+    display: none;
 }
 
-.navbar li.dropdown:hover ul.dropdown-menu{
+.navbar li.dropdown:hover ul.dropdown-menu {
     display: block;
 }
 

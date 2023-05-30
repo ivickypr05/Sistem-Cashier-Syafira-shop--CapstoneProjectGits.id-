@@ -21,8 +21,8 @@ class CartController extends Controller
         $user = User::where('id', Auth::user()->id)->first();
         $user_id = Auth::user()->id;
         $products = Product::with('category')->get();
-        $carts = Cart::with('product')->where('user_id',$user_id)->get();
-        $total = Cart::join('products', 'carts.product_id', '=', 'products.id')
+        $carts = Cart::with('product')->where('user_id', $user_id)->get();
+        $total = Cart::join('products', 'carts.product_id', '=', 'products.id')->where('user_id', $user_id)->get()
             ->sum(DB::raw('carts.amount * products.sell_price'));
 
         return view('cashier.cart', compact('user', 'products', 'carts', 'total'));
