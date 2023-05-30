@@ -70,7 +70,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
 Route::middleware(['auth', 'cashier'])->group(function () {
     // Cashier --------------------------------------------------------------------------------------------
 
-    // Product 
+    // Product
     Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
     // product Search
     Route::get('/product/search', [CashierController::class, 'search']);
