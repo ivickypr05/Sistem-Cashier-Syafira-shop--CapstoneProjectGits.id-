@@ -19,8 +19,9 @@ class CartController extends Controller
     public function index()
     {
         $user = User::where('id', Auth::user()->id)->first();
+        $user_id = Auth::user()->id;
         $products = Product::with('category')->get();
-        $carts = Cart::with('product')->get();
+        $carts = Cart::with('product')->where('user_id',$user_id)->get();
         $total = Cart::join('products', 'carts.product_id', '=', 'products.id')
             ->sum(DB::raw('carts.amount * products.sell_price'));
 
