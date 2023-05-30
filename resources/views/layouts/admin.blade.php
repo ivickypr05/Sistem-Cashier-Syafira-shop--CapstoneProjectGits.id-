@@ -37,12 +37,13 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        {{-- <style>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
+        <style>
             body {
-                background-image: url("https://wallpaperaccess.com/full/289380.jpg");
+                background-color: rgb(224, 224, 224) ;
             }
-        </style> --}}
+        </style>
+
         <!-- Navbar Brand-->
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>ADMIN SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
@@ -76,39 +77,39 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading">Utama</div>
-                        <a class="nav-link text-light" href="/admin">
-                            <div class="sb-nav-link-icon text-light"><i class="fas fa-home"></i></div>
+                        <div class="sb-sidenav-menu-heading text-dark">Utama</div>
+                        <a class="nav-link text-dark" href="/admin">
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-home"></i></div>
                             Dashboard
                         </a>
-                        <a class="nav-link text-light" href="/aboutus">
-                            <div class="sb-nav-link-icon text-light"><i class="fas fa-circle-info"></i></i></div>
+                        <a class="nav-link text-dark" href="/aboutus">
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-circle-info"></i></i></div>
                             Tentang Kami
                         </a>
-                        <div class="sb-sidenav-menu-heading">Transaksi Masuk</div>
-                        <a class="nav-link text-light" href="{{ url('/supplier') }}"><i class="fas fa-list-check"></i>‎
+                        <div class="sb-sidenav-menu-heading text-dark">Transaksi Masuk</div>
+                        <a class="nav-link text-dark" href="{{ url('/supplier') }}"><i class="fas fa-list-check"></i>‎
                             Produk Masuk</a>
-                        <div class="sb-sidenav-menu-heading">Data</div>
-                        <a class="nav-link text-light collapsed" href="#" data-bs-toggle="collapse"
+                        <div class="sb-sidenav-menu-heading text-dark">Data</div>
+                        <a class="nav-link text-dark collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon text-light"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-columns"></i></div>
                             Manajemen Data
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse text-light" id="collapseLayouts" aria-labelledby="headingOne"
+                        <div class="collapse text-dark" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link text-light" href="{{ url('/category') }}"><i
+                                <a class="nav-link text-dark" href="{{ url('/category') }}"><i
                                         class="fas fa-list-alt"></i>‎　Kategori</a>
-                                <a class="nav-link text-light" href="{{ url('/product') }}"><i
+                                <a class="nav-link text-dark" href="{{ url('/product') }}"><i
                                         class="fas fa-shirt"></i>‎　Produk</a>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading">Transaksi Keluar</div>
-                        <a class="nav-link text-light" href="{{ url('/transactionlist') }}"><i
+                        <div class="sb-sidenav-menu-heading text-dark">Transaksi Keluar</div>
+                        <a class="nav-link text-dark" href="{{ url('/transactionlist') }}"><i
                                 class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
                     </div>
                 </div>

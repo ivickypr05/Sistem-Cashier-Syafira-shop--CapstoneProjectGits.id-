@@ -30,7 +30,7 @@
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
         <style>
             body {
-                background-image: url("https://wallpaperaccess.com/full/289380.jpg");
+                background-color: rgb(224, 224, 224) ;
             }
         </style>
         <!-- Navbar Brand-->
