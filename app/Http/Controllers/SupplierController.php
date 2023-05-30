@@ -97,8 +97,8 @@ class SupplierController extends Controller
 
         // mengedit jumlah stok dan menyesuaikan dengan data sebelum terupdate
         $product = Product::where('id', $request->product_id)->first();
-        $kurang = $product->stock - $supplier->amount;
-        $amount = $request->amount + $kurang;
+        $reduce = $product->stock - $supplier->amount;
+        $amount = $request->amount + $reduce;
         $product->update([
             'stock' => $amount
         ]);

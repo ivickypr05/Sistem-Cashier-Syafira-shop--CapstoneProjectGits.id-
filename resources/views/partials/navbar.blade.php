@@ -26,7 +26,7 @@
                             </ul>
                         </li>
                     @endauth
-                    <i class="navbar-nav d-flex justify-content-end">
+                    <i class="navbar-nav d-flex justify-content-space-between">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
