@@ -62,7 +62,7 @@
     </div>
 </header>
 
-{{-- 
+{{--
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger p-3 shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand " href="/"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
