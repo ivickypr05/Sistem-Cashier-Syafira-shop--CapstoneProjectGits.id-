@@ -101,28 +101,28 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-{
-    $cart = Cart::findOrFail($id);
-    $product = Product::findOrFail($cart->product_id);
+    {
+        $cart = Cart::findOrFail($id);
+        $product = Product::findOrFail($cart->product_id);
 
-    if ($request->amount > $product->stock) {
-        return redirect()->back()->with('error', 'Maaf, stok tidak mencukupi');
+        if ($request->amount > $product->stock) {
+            return redirect()->back()->with('error', 'Maaf, stok tidak mencukupi');
+        }
+
+        $data = $request->validate(['amount' => 'required|min:1|max:' . $product->stock]);
+        $oldAmount = $cart->amount;
+        $cart->update($data);
+
+        $difference = $request->amount - $oldAmount;
+
+        if ($difference > 0) {
+            $product->decrement('stock', $difference);
+        } elseif ($difference < 0) {
+            $product->increment('stock', abs($difference));
+        }
+
+        return redirect('cart')->with('toast_success', 'Jumlah berhasil diubah');
     }
-
-    $data = $request->validate(['amount' => 'required|min:1|max:'.$product->stock]);
-    $oldAmount = $cart->amount;
-    $cart->update($data);
-
-    $difference = $request->amount - $oldAmount;
-
-    if ($difference > 0) {
-        $product->decrement('stock', $difference);
-    } elseif ($difference < 0) {
-        $product->increment('stock', abs($difference));
-    }
-
-    return redirect('cart')->with('toast_success', 'Jumlah berhasil diubah');
-}
 
 
     /**
@@ -132,15 +132,14 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-{
-    $cart = Cart::findOrFail($id);
-    $product = Product::findOrFail($cart->product_id);
+    {
+        $cart = Cart::findOrFail($id);
+        $product = Product::findOrFail($cart->product_id);
 
-    $product->increment('stock', $cart->amount);
+        $product->increment('stock', $cart->amount);
 
-    $cart->delete();
+        $cart->delete();
 
-    return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
-}
-
+        return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
+    }
 }

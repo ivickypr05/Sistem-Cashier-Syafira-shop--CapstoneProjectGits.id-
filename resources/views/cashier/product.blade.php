@@ -1,6 +1,11 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Produk')
 @section('content')
+    <style>
+        body {
+            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220510/pngtree-white-brick-block-shape-on-gradient-gray-background-vector-image_1330040.jpg');
+        }
+    </style>
     <div class="container row mt-4">
         @foreach ($products as $items)
             {{-- col --}}

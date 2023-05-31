@@ -29,7 +29,7 @@
                 <div class="container">
                     <div class="box-hero">
                         <div class="box">
-                            <h1>Profile Toko<br> SRC Syafira</h1>
+                            <h1>PROFIL TOKO<br> SRC Syafira</h1>
                             <p>
                                 Toko Syafira, yang didirikan pada tahun 2017, adalah sebuah perusahaan yang
                                 menawarkan pengalaman berbelanja yang unik dan memikat bagi pelanggan
@@ -41,7 +41,8 @@
                             </p>
                         </div>
                         <div class="box">
-                            <img src="assets/img/sembako.png" alt="">
+                            <img src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=-mQDhvUfUBmidu_JV9JHSg&cb_client=search.gws-prod.gps&w=408&h=240&yaw=74.24352&pitch=0&thumbfov=100"
+                                alt="">
                         </div>
                     </div>
                 </div>
