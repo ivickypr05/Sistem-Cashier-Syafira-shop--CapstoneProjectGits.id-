@@ -80,7 +80,7 @@
               <tr>
                 <td>2</td>
                 <td>29, July, 2022</td>
-                
+
                 <td>Code Info</td>
                 <td>Silver</td>
                 <td>$5,000.00</td>
@@ -88,7 +88,7 @@
               <tr>
                 <td>3</td>
                 <td>15, July, 2022</td>
-              
+
                 <td>Jhon David</td>
                 <td>Startup</td>
                 <td>$3000.00</td>
@@ -156,19 +156,19 @@
                 <td>Pic</td>
                 <td>Jpg</td>
                 <td>22</td>
-              </tr> 
+              </tr>
               <tr>
                 <td>5</td>
                 <td>CNIC</td>
                 <td>Jpg</td>
                 <td>22</td>
-              </tr> 
+              </tr>
               <tr>
                 <td>6</td>
                 <td>Docx</td>
                 <td>Word</td>
                 <td>22</td>
-              </tr> 
+              </tr>
             </tbody>
           </table>
         </div>
@@ -177,7 +177,7 @@
 
     <div class="sidebar">
       <h4>Account Balance</h4>
-      
+
       <div class="balance">
         <i class="fas fa-dollar icon"></i>
         <div class="info">
@@ -185,7 +185,7 @@
           <span><i class="fas fa-dollar"></i>25,000.00</span>
         </div>
       </div>
-      
+
       <div class="balance">
         <i class="fa-solid fa-rupee-sign icon"></i>
         <div class="info">
@@ -230,14 +230,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <!----======== CSS ======== -->
     <link href="{{ asset('assets/css/sidebar.css') }}" rel="stylesheet" />
-    
+
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-    
-    <!--<title>Dashboard Sidebar Menu</title>--> 
+
+    <!--<title>Dashboard Sidebar Menu</title>-->
 </head>
 <body>
     <nav class="sidebar close">
@@ -329,7 +329,7 @@
                         <span class="switch"></span>
                     </div>
                 </li>
-                
+
             </div>
         </div>
 
@@ -354,12 +354,12 @@ searchBtn.addEventListener("click" , () =>{
 
 modeSwitch.addEventListener("click" , () =>{
     body.classList.toggle("dark");
-    
+
     if(body.classList.contains("dark")){
         modeText.innerText = "Light mode";
     }else{
         modeText.innerText = "Dark mode";
-        
+
     }
 });
     </script>
@@ -367,20 +367,20 @@ modeSwitch.addEventListener("click" , () =>{
 </body>
 </html> --}}
 
-<nav class="sb-sidenav accordion sb-sidenav-dark bg-danger" id="sidenavAccordion">
+<nav class="sb-sidenav accordion sb-sidenav-dark bg-white" id="sidenavAccordion">
     <div class="sb-sidenav-menu">
         <div class="nav">
-            <div class="sb-sidenav-menu-heading">Penjualan</div>
-            <a class="nav-link text-light" href="/cashier">
-                <div class="sb-nav-link-icon text-light"><i class="fas fa-home"></i></div>
+            <div class="sb-sidenav-menu-heading text-dark">Penjualan</div>
+            <a class="nav-link text-dark" href="/cashier">
+                <div class="sb-nav-link-icon text-dark"><i class="fas fa-home"></i></div>
                 Produk SRC Syafira
             </a>
-            <a class="nav-link text-light" href="/cart">
-                <div class="sb-nav-link-icon text-light"><i class="fas fa-cart-shopping"></i></div>
+            <a class="nav-link text-dark" href="/cart">
+                <div class="sb-nav-link-icon text-dark"><i class="fas fa-cart-shopping"></i></div>
                 Keranjang
             </a>
-            <div class="sb-sidenav-menu-heading">Riwayat Penjualan</div>
-            <a class="nav-link text-light collapsed" href="{{ url('/transactionlist') }}"><i
+            <div class="sb-sidenav-menu-heading text-dark">Riwayat Penjualan</div>
+            <a class="nav-link text-dark collapsed" href="{{ url('/transactionlist') }}"><i
                     class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
         </div>
     </div>

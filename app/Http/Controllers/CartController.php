@@ -19,11 +19,12 @@ class CartController extends Controller
     public function index()
     {
         $user = User::where('id', Auth::user()->id)->first();
+        $user_id = Auth::user()->id;
         $products = Product::with('category')->get();
-        $carts = Cart::with('product')->get();
+        $carts = Cart::with('product')->where('user_id', $user_id)->get();
         $total = Cart::join('products', 'carts.product_id', '=', 'products.id')
+            ->where('user_id', $user_id)
             ->sum(DB::raw('carts.amount * products.sell_price'));
-
         return view('cashier.cart', compact('user', 'products', 'carts', 'total'));
     }
 
@@ -53,64 +54,11 @@ class CartController extends Controller
             $cart->amount = $request->amount;
             $cart->save();
         }
-
-
+        $amount = $product->stock - $request->amount;
+        $product->update([
+            'stock' => $amount
+        ]);
         return redirect('/cashier')->with('success', 'Product berhasil ditambah ke keranjang');
-
-
-        // $product = Product::where('id', $id)->first();
-        // // //temukan product
-        // // if (!$product) {
-        // //     return redirect()->back()->with('toast_error', 'Produk tidak ditemukan');
-        // // }
-        // //validasi stok
-
-        // if ($request->qty > $product->stock) {
-        //     return redirect()->back()->with('toast_error', 'maaf stok tidak mencukupi');
-        // }
-
-        // //cek validasi
-        // $cek_cart = Cart::where('user_id', Auth::user()->id)->first();
-
-
-        // //simpan ke database cart
-        // if (empty($cek_cart)) {
-        //     $cart = new Cart;
-        //     $cart->user_id = Auth::user()->id;
-        //     $cart->product_id = $request->product_id;
-        //     $cart->total_price = 0;
-        //     $cart->save();
-        // }
-
-        // // //simpan ke database cart detail
-        // // $cart_baru = Cart::where('user_id', Auth::user()->id)->first();
-
-        // // //cek cart detail
-        // // $cek_transaction = Transaction::where('product_id', $product->id)->where('cart_id', $cart_baru->id)->first();
-        // // if (empty($cek_transaction)) {
-        // //     $transaction = new Transaction;
-        // //     $transaction->product_id = $product->id;
-        // //     $transaction->cart_id = $cart_baru->id;
-        // //     $transaction->jumlah = $request->jumlah_pesan;
-        // //     $transaction->jumlah_harga = $product->price * $request->jumlah_pesan;
-        // //     $transaction->save();
-        // // } else {
-        // //     $transaction = Transaction::where('product_id', $product->id)->where('cart_id', $cart_baru->id)->first();
-
-        // //     $transaction->jumlah = $transaction->jumlah + $request->jumlah_pesan;
-
-        // //     //harga sekarang
-        // //     $harga_transaction_baru = $product->price * $request->jumlah_pesan;
-        // //     $transaction->jumlah_harga = $transaction->jumlah_harga + $harga_transaction_baru;
-        // //     $transaction->update();
-        // // }
-
-        // // //jumlah total
-        // // $cart = Cart::where('user_id', Auth::user()->id)->where('status', 0)->first();
-        // $cart->total_price = $cart->total_price + $product->sell_price * $request->qty;
-        // // $cart->update();
-        // return redirect('/cart')->with('success', 'successfully added to cart');
-
     }
     /**
      * Store a newly created resource in storage.
@@ -155,15 +103,27 @@ class CartController extends Controller
     public function update(Request $request, $id)
     {
         $cart = Cart::findOrFail($id);
-        if ($request->amount > $cart->product->stock) {
-            return redirect()->back()->with('error', 'maaf stok tidak mencukupi');
+        $product = Product::findOrFail($cart->product_id);
+
+        if ($request->amount > $product->stock) {
+            return redirect()->back()->with('error', 'Maaf, stok tidak mencukupi');
         }
-        // dd($product);
-        $cart->update([
-            'amount' => $request->amount,
-        ]);
+
+        $data = $request->validate(['amount' => 'required|min:1|max:' . $product->stock]);
+        $oldAmount = $cart->amount;
+        $cart->update($data);
+
+        $difference = $request->amount - $oldAmount;
+
+        if ($difference > 0) {
+            $product->decrement('stock', $difference);
+        } elseif ($difference < 0) {
+            $product->increment('stock', abs($difference));
+        }
+
         return redirect('cart')->with('toast_success', 'Jumlah berhasil diubah');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -173,7 +133,13 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        Cart::destroy($id);
+        $cart = Cart::findOrFail($id);
+        $product = Product::findOrFail($cart->product_id);
+
+        $product->increment('stock', $cart->amount);
+
+        $cart->delete();
+
         return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
     }
 }

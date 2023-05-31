@@ -68,6 +68,15 @@ header {
     border-radius: 30px;
     transition: all 0.3s ease;
 }
+.navbar ul.dropdown-menu {
+    margin-top: 20px;
+    position: fixed;
+    display: none;
+}
+
+.navbar li.dropdown:hover ul.dropdown-menu {
+    display: block;
+}
 
 /* .navbar .box-navbar .menu li a:hover {
     content: "";
@@ -444,7 +453,7 @@ header {
     }
 }
 
-/* 
+/*
 
 body {
     background: #dd1111;
@@ -495,7 +504,7 @@ h2::after {
     width: 100%;
     position: relative;
 }
-.carousel .item img {	
+.carousel .item img {
     max-width: 100%;
     max-height: 100%;
     display: inline-block;
@@ -544,7 +553,7 @@ h2::after {
 .carousel-control-prev, .carousel-control-next {
     height: 44px;
     width: 40px;
-    background: #ff0101;	
+    background: #ff0101;
     margin: auto 0;
     border-radius: 4px;
     opacity: 0.8;
@@ -571,7 +580,7 @@ h2::after {
 }
 .carousel-control-next i {
     margin-right: -4px;
-}		
+}
 .carousel-indicators {
     bottom: -50px;
 }
@@ -582,10 +591,10 @@ h2::after {
     border-radius: 50%;
     border: none;
 }
-.carousel-indicators li {	
+.carousel-indicators li {
     background: rgb(255, 4, 4);
 }
-.carousel-indicators li.active {	
+.carousel-indicators li.active {
     background: rgba(0, 0, 0, 0.6);
 }
 .carousel .wish-icon {

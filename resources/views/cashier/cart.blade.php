@@ -1,12 +1,16 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Keranjang')
 @section('content')
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/511661914/photo/white-marble-patterned-texture-background.webp?b=1&s=170667a&w=0&k=20&c=K77fw3FThWPhj3iuZRpl5ZOCzXfpT1HmwuGxCIOKt2w=');
+        }
+    </style>
     <div class="container mt-4 px-2">
         <div class="table-responsive mt-5">
-            <table class="table table-responsive table-borderless table-bordered">
-
+            <table class="table table-responsive table-striped table-bordered">
                 <thead>
-                    <tr class="bg-light">
+                    <tr>
                         {{-- <th scope="col" colspan="2"></th> --}}
                         <th>No</th>
                         <th scope="col">Pict Product</th>
@@ -46,7 +50,7 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="container-fluid bg-light border rounded py-1 mx-1">
+            <div class="container-fluid bg-light border-responsive rounded py-1 mx-1">
                 <tr>
                     <td><b> Total order price : {{ number_format($total) }},-</b></td>
                     <td>

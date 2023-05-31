@@ -26,43 +26,39 @@
                             </ul>
                         </li>
                     @endauth
-                    <center class=" menu navbar-nav ms-auto ">
+                    <i class="navbar-nav d-flex justify-content-space-between">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('MASUK ‎') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="navbar-nav nav-item dropdown">
-                                <a class="nav-link dropdown-toggle active" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown">
+                                <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">
                                     {{ Auth::user()->name }}
                                 </a>
-
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                                </div>
+                                </ul>
                             </li>
                         @endguest
-                    </center>
+                    </i>
                 </ul>
-
                 <i class="fa-solid fa-bars menu-bar"></i>
             </div>
         </div>
     </div>
 </header>
 
-{{-- 
+{{--
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger p-3 shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand " href="/"><i class="fa-solid fa-shop me-2"></i> <strong>SRC SYAFIRA</strong></a>
