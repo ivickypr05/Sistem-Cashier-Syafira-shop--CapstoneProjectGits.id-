@@ -380,8 +380,8 @@ modeSwitch.addEventListener("click" , () =>{
                 Keranjang
             </a>
             <div class="sb-sidenav-menu-heading text-dark">Riwayat Penjualan</div>
-            <a class="nav-link text-dark collapsed" href="{{ url('/transactionlist') }}"><i
-                    class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
+            <a class="nav-link text-dark collapsed" href="{{ url('/transaction') }}"><i class="fas fa-list-check"></i>‎
+                Riwayat Transaksi</a>
         </div>
     </div>
 </nav>

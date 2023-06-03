@@ -74,11 +74,12 @@
                     @yield('content')
                 </div>
             </main>
-            <div class="container text-dark">
-                <div class=" align-items-center small">
-                    <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
+            <footer>
+                <div class="container text-dark">
+                    <div class=" align-items-center small">
+                        <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
+                    </div>
                 </div>
-            </div>
             </footer>
         </div>
     </div>
