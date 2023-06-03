@@ -74,15 +74,15 @@
                     @yield('content')
                 </div>
             </main>
-            <footer>
-                <div class="container text-dark">
-                    <div class=" align-items-center small">
-                        <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
-                    </div>
-                </div>
-            </footer>
         </div>
     </div>
+    <footer>
+        <div class="container text-dark">
+            <div class=" align-items-center small">
+                <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
     @include('sweetalert::alert')
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">

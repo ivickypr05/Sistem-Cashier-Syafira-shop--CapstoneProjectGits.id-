@@ -50,18 +50,22 @@
                     @endforeach
                 </tbody>
             </table>
-            <div class="container-fluid bg-light border-responsive rounded py-1 mx-1">
-                <tr>
-                    <td><b> Total order price : {{ number_format($total) }},-</b></td>
-                    <td>
-                        <a href="{{ url('/transactions') }}" class="btn btn-success"
-                            onclick="return confirm('Anda yakin akan Check Out ?');">
-                            <i class="fa fa-shopping-cart"></i> Check Out
-                        </a>
-                    </td>
-                </tr>
-            </div>
+            <tr>
+                <td>
+                    <h4> Total order price : {{ number_format($total) }},-</h4>
+                </td>
+                <td>
+                    <form action="{{ url('/checkout') }}" method="POST">
+                        @csrf
+                        <div class="mt-3 mb-3">
+                            <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
+                            <input type="number" class="form-control" name="payment" min="1" required>
+                        </div>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                            Check Out</button>
+                    </form>
+                </td>
+            </tr>
         </div>
-
     </div>
 @endsection

@@ -20,7 +20,6 @@ return new class extends Migration
             $table->foreignId('product_id');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->change();
             $table->string('cashier_name')->nullable();
-            $table->string('total_price')->nullable();
             $table->integer('amount');
             $table->timestamps();
         });

@@ -70,7 +70,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'cashier'])->group(function () {
     // Cashier --------------------------------------------------------------------------------------------
-
     // Products
     Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
     // products Search
@@ -82,4 +81,6 @@ Route::middleware(['auth', 'cashier'])->group(function () {
     Route::get('/cart/{id}/delete', [CartController::class, 'destroy']);
     // Transactions
     Route::get('/transaction', [TransactionController::class, 'index'])->name('Transaction');
+    //Checkout payment
+    Route::post('/checkout', [TransactionController::class, 'getpayment']);
 });
