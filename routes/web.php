@@ -82,5 +82,5 @@ Route::middleware(['auth', 'cashier'])->group(function () {
     // Transactions
     Route::get('/transaction', [TransactionController::class, 'index'])->name('Transaction');
     //Checkout payment
-    Route::post('/checkout', [TransactionController::class, 'getpayment']);
+    Route::post('/checkout', [CartController::class, 'getpayment']);
 });

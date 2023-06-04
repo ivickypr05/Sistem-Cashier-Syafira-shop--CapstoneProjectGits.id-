@@ -17,13 +17,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->change();
-            $table->foreignId('product_id');
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade')->change();
-            $table->foreignId('cart_id');
-            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade')->change();
-            $table->string('invoice')->nullable();
-            $table->integer('total_price')->nullable();
-            $table->integer('amount')->nullable();
+            $table->string('invoice_nomor');
+            $table->integer('total_price');
             $table->integer('payment');
             $table->timestamps();
         });

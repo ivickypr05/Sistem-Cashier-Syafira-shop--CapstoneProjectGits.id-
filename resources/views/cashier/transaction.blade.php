@@ -10,9 +10,11 @@
                     <table class="table table-responsive table-striped">
                         <thead>
                             <tr>
+                                <th>No</th>
                                 <th>Tanggal</th>
-                                <th>Jumlah Harga</th>
-                                <th>Kembalian</th>
+                                <th>Nomor Invoice</th>
+                                <th>Total Harga</th>
+                                <th>Total Pembayaran</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -24,8 +26,9 @@
                                         <center>{{ $no++ }}.</center>
                                     </th>
                                     <td>{{ $item->created_at }}</td>
+                                    <td>{{ $item->invoice_nomor }}</td>
                                     <td>{{ number_format($item->total_price) }}</td>
-                                    <td>{{ number_format($item->change) }}</td>
+                                    <td>{{ number_format($item->payment) }}</td>
                                     <td>
                                         <a href="{{ url('history') }}/{{ $item->id }}" class="btn btn-primary"><i
                                                 class="fa fa-file-text-o"></i> Detail</a>
