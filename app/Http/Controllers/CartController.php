@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Transaction;
+use App\Models\Detail_transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -141,5 +143,49 @@ class CartController extends Controller
         $cart->delete();
 
         return redirect('cart')->with('toast_success', 'Produk berhasil dihapus');
+    }
+    // UNTUK MEMINDAHKAN DATA KE TRANSAKSI
+
+    public function getpayment(Request $request)
+    {
+        $carts = Cart::with('product')->where('user_id', Auth::user()->id)->get();
+        // dd($carts);
+        $payment = $request->input('payment');
+        // dd($payment);
+
+        if ($carts == null) {
+            return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
+        }
+        $total_price = 0;
+        foreach ($carts as $cart) {
+            $total_price += $cart->product->sell_price * $cart->amount;
+        }
+        // dd($total_price);
+
+        if ($payment >= $total_price) {
+            $transaction = Transaction::create([
+                'user_id' => Auth::user()->id,
+                'invoice_nomor' => 'Invoice - ' . rand(1000, 9999),
+                'total_price' => $total_price,
+                'payment' => $payment
+            ]);
+
+            foreach ($carts as $cart) {
+                Detail_transaction::create([
+                    'transaction_id' => $transaction->id,
+                    'name' => $cart->product->name,
+                    'cap_price' => $cart->product->cap_price,
+                    'sell_price' => $cart->product->sell_price,
+                    'photo' => $cart->product->photo,
+                    'amount' => $cart->amount
+                ]);
+                // Menghapus entri cart
+                $cart->delete();
+            }
+
+            return redirect('/transaction')->with('success', 'Pembayaran Berhasil');
+        } else {
+            return redirect()->back()->with('error', 'Uang Pembayaran tidak Mencukupi');
+        }
     }
 }
