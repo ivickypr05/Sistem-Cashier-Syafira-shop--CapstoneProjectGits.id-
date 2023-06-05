@@ -151,11 +151,11 @@ class CartController extends Controller
         $carts = Cart::with('product')->where('user_id', Auth::user()->id)->get();
         // dd($carts);
         $payment = $request->input('payment');
-        // dd($payment);
+        // dd($carts);
 
-        if ($carts == null) {
-            return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
-        }
+        // if (!empty($carts)) {
+        //     return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
+        // }
         $total_price = 0;
         foreach ($carts as $cart) {
             $total_price += $cart->product->sell_price * $cart->amount;

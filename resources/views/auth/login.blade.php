@@ -59,17 +59,21 @@
                                     </span>
                                 @enderror
                             </div>
-                            <div class="form-group">
-                                <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember"
-                                        {{ old('remember') ? 'checked' : '' }}>
+                            <input class="form-cek-input" type="checkbox" name="" onclick="showPassword()">
+                            <label>
+                                Show Password
+                            </label>
+                            <script>
+                                function showPassword() {
+                                    var password = document.getElementById('password');
 
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
+                                    if (password.type == 'password') {
+                                        password.type = 'text';
+                                    } else {
+                                        password.type = 'password';
+                                    }
+                                }
+                            </script>
                             <div class="d-flex justify-content-center mt-3 login_container bg-danger">
                                 <button type="submit" name="button" class="btn login_btn">{{ __('Login') }}</button>
                             </div>
@@ -92,8 +96,6 @@
             </div>
         </div>
     </body>
-
-
 
 
 

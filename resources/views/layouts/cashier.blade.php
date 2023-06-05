@@ -27,7 +27,12 @@
 </head>
 
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-light">
+    <style>
+        body {
+            background-image: url('https://media.istockphoto.com/id/511661914/photo/white-marble-patterned-texture-background.webp?b=1&s=170667a&w=0&k=20&c=K77fw3FThWPhj3iuZRpl5ZOCzXfpT1HmwuGxCIOKt2w=');
+        }
+    </style>
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-white">
 
         <!-- Navbar Brand-->
         <a class="navbar-brand text-dark mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR
@@ -54,45 +59,9 @@
                     <a class="dropdown-item" href="/profile">Profile</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-    <div id="layoutSidenav">
-        <div id="layoutSidenav_nav">
-            @include('partials.sidebar')
-        </div>
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid">
-                    @yield('content')
-                </div>
-            </main>
-        </div>
-    </div>
-    <footer>
-        <div class="container text-dark">
-            <div class=" align-items-center small">
-                <div class="text-center fw-bold">Copyright &copy; THORNY DEVIL 2023 - All Rights Reserved</div>
-            </div>
-        </div>
-    </footer>
-    @include('sweetalert::alert')
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
-    <script src="{{ asset('assets/js/admin.js') }}"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    {{-- <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}}
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="{{ asset('assets/js/datatables-simple-demo.js') }}"></script>
-</body>
-
-</html>
+                                         document.getElementById('logout-form').submit();
+            ">
+{{ __('Logout') }} </a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form></ul></li></ul></nav><div id="layoutSidenav"><div id="layoutSidenav_nav">@include('partials.sidebar') </div><div id="layoutSidenav_content"><main><div class="container-fluid">@yield('content') </div></main><footer><div class="container text-dark"><div class=" align-items-center small"><div class="text-center fw-bold">Copyright &copy;
+            THORNY DEVIL 2023 - All Rights Reserved</div></div></div></footer></div></div>@include('sweetalert::alert') <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+            </script><script src="{{ asset('assets/js/admin.js') }}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>{{-- <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}} <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script><script src="{{ asset('assets/js/datatables-simple-demo.js') }}"></script></body></html>
