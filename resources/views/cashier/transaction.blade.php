@@ -30,7 +30,7 @@
                                     <td>{{ number_format($item->total_price) }}</td>
                                     <td>{{ number_format($item->payment) }}</td>
                                     <td>
-                                        <a href="{{ url('history') }}/{{ $item->id }}" class="btn btn-primary"><i
+                                        <a href="{{ url('detail') }}/{{ $item->id }}" class="btn btn-primary"><i
                                                 class="fa fa-file-text-o"></i> Detail</a>
                                     </td>
                                 </tr>

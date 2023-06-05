@@ -153,9 +153,9 @@ class CartController extends Controller
         $payment = $request->input('payment');
         // dd($carts);
 
-        if (!empty($carts)) {
-            return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
-        }
+        // if (!empty($carts)) {
+        //     return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
+        // }
         $total_price = 0;
         foreach ($carts as $cart) {
             $total_price += $cart->product->sell_price * $cart->amount;
