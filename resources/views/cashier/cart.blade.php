@@ -50,15 +50,18 @@
                     <h4> Total order price : {{ number_format($total) }},-</h4>
                 </td>
                 <td>
+                    @if ($total > 0)
                     <form action="{{ url('/checkout') }}" method="POST">
                         @csrf
                         <div class="mt-3 mb-3">
                             <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
                             <input type="number" class="form-control" name="payment" min="1" required>
                         </div>
+
                         <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
                             Check Out</button>
                     </form>
+                    @endif
                 </td>
             </tr>
         </div>
