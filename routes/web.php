@@ -35,6 +35,8 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::middleware(['auth', 'admin'])->group(function () {
     // Admin --------------------------------------------------------------------------------------------
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/transactionlist', [AdminController::class, 'transactionlist']);
+    Route::get('/transaction_detail/{id}', [AdminController::class, 'transaction_detail']);
 
     // CRUD Category
     Route::get('/category', [CategoryController::class, 'index']);
