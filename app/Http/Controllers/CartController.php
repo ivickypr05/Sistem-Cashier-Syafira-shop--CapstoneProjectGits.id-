@@ -183,7 +183,7 @@ class CartController extends Controller
                 $cart->delete();
             }
 
-            return redirect('/transaction')->with('success', 'Pembayaran Berhasil');
+            return redirect()->route('detail',$transaction->id)->with('success', 'Pembayaran Berhasil');
         } else {
             return redirect()->back()->with('error', 'Uang Pembayaran tidak Mencukupi');
         }
