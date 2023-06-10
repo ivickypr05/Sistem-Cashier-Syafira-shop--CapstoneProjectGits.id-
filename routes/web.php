@@ -86,5 +86,5 @@ Route::middleware(['auth', 'cashier'])->group(function () {
     //Checkout payment
     Route::post('/checkout', [CartController::class, 'getpayment']);
     // Transaction List
-    Route::get('/detail/{id}', [TransactionController::class, 'detail']);
+    Route::get('/detail/{id}', [TransactionController::class, 'detail'])->name('detail');
 });
