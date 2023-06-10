@@ -13,6 +13,7 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,13 +30,13 @@
 <body class="sb-nav-fixed">
     <style>
         body {
-            background-image: url('https://media.istockphoto.com/id/511661914/photo/white-marble-patterned-texture-background.webp?b=1&s=170667a&w=0&k=20&c=K77fw3FThWPhj3iuZRpl5ZOCzXfpT1HmwuGxCIOKt2w=');
+            font-family: 'Familjen Grotesk', sans-serif;
         }
     </style>
-    <nav class="sb-topnav navbar navbar-expand navbar-light bg-white">
+    <nav class="sb-topnav navbar navbar-expand navbar-light bg-dark">
 
         <!-- Navbar Brand-->
-        <a class="navbar-brand text-dark mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR
+        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR
                 SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
@@ -52,16 +53,16 @@
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-dark" id="navbarDropdown" href="#" role="button"
+                <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
                     {{ Auth::user()->name }}</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/profile">Profile</a>
+                    <a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profil</a>
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();
             ">
-{{ __('Logout') }} </a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form></ul></li></ul></nav><div id="layoutSidenav"><div id="layoutSidenav_nav">@include('partials.sidebar') </div><div id="layoutSidenav_content"><main><div class="container-fluid">@yield('content') </div></main><footer><div class="container text-dark"><div class=" align-items-center small"><div class="text-center fw-bold">Copyright &copy;
+<i class="fa-solid fa-right-to-bracket"></i>{{ __(' Keluar') }} </a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form></ul></li></ul></nav><div id="layoutSidenav"><div id="layoutSidenav_nav">@include('partials.sidebar') </div><div id="layoutSidenav_content"><main><div class="container-fluid">@yield('content') </div></main><footer><div class="container text-dark"><div class=" align-items-center small"><div class="text-center fw-bold">Copyright &copy;
             THORNY DEVIL 2023 - All Rights Reserved</div></div></div></footer></div></div>@include('sweetalert::alert') <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
             </script><script src="{{ asset('assets/js/admin.js') }}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>{{-- <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
     <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}} <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script><script src="{{ asset('assets/js/datatables-simple-demo.js') }}"></script></body></html>

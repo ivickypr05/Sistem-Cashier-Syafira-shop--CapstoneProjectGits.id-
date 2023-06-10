@@ -3,18 +3,18 @@
 @section('content')
     <div class="container mt-4 px-2">
         <div class="table-responsive mt-5">
-            <table class="table table-responsive table-striped table-bordered">
+            <table class="table table-responsive table-striped table-bordered text-center">
                 <thead>
                     <tr>
                         {{-- <th scope="col" colspan="2"></th> --}}
                         <th>No</th>
-                        <th scope="col">Pict Product</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Gambar</th>
+                        <th scope="col">Produk</th>
+                        <th scope="col">Kategori</th>
                         <th scope="col">Jumlah Pesanan</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Subtotal</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,7 +47,7 @@
             </table>
             <tr>
                 <td>
-                    <h4> Total order price : {{ number_format($total) }},-</h4>
+                    <h4> Total Bayar: {{ number_format($total) }},-</h4>
                 </td>
                 <td>
                     @if ($total > 0)

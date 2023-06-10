@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <style>
-    body{background-image: url("/assets/img/bgblur.png");}
     .h1 .p {
         background-color: rgb(146, 140, 140);
         font-family: 'Familjen Grotesk', sans-serif;

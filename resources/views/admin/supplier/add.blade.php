@@ -2,6 +2,9 @@
 @section('title', 'SRC Syafira | Product Page')
 @section('content')
     <div class="container">
+        <a class="btn btn-dark mt-2" href="/supplier/">
+            <i class="fa fa-chevron-circle-left"></i> Kembali</a>
+        <br><br>
         <h4>Halaman Tambah Data Pemasukan</h4>
         </p>
         <div class="col-lg-8">
@@ -54,7 +57,7 @@
                         @enderror
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Tambah</button>
                 </form>
             </div>
         @endsection
