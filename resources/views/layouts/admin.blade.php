@@ -38,11 +38,7 @@
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
-        <style>
-            body {
-                background-color: rgb(224, 224, 224) ;
-            }
-        </style>
+
 
         <!-- Navbar Brand-->
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>ADMIN SYAFIRA</strong></a>

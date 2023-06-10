@@ -5,7 +5,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
-
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -16,6 +16,7 @@
     <style>
         body {
             background-color: rgb(255, 255, 255);
+            font-family: 'Familjen Grotesk', sans-serif;
         }
     </style>
 
@@ -51,7 +52,7 @@
                                 </div>
                                 <input id="password" type="password" {{ __('Password') }}
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    placeholder="Kata Sandi" required autocomplete="current-password">
+                                    placeholder="Katasandi" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +62,7 @@
                             </div>
                             <input class="form-cek-input" type="checkbox" name="" onclick="showPassword()">
                             <label>
-                                Show Password
+                                Lihat Katasandi
                             </label>
                             <script>
                                 function showPassword() {

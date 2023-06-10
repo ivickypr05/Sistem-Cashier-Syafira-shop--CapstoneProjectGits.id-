@@ -78,7 +78,7 @@
                     <div class="box">
                         <img src="assets/img/pokok.jpg" alt="">
                         <h3>Kebutuhan pokok harian</h3>
-                        <p>Tersedia berbagai macam sembako, cocok untuk Ibu rumah tangga yang membutuhkan kebutuhan
+                        <p>Tersedia berbagai macam sembako, untuk Ibu rumah tangga yang membutuhkan kebutuhan
                             Pokok sehari-hari.</p>
 
                     </div>
