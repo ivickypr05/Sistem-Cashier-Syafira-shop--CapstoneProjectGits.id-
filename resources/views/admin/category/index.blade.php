@@ -44,10 +44,10 @@
                                         <td>
                                             <center>
                                                 <a href="/category/{{ $item->id }}/edit"
-                                                    class="btn btn-xs btn-warning"><i class="fas fa-edit"></i>Edit</a>
+                                                    class="btn btn-xs btn-warning"><i class="fas fa-edit"></i></a>
                                                 <a href="/category/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
                                                     onclick="return confirm('Apa Anda Yakin Ingin Menghapus Data?');"><i
-                                                        class="fas fa-trash"></i>Hapus</a>
+                                                        class="fas fa-trash"></i></a>
                                             </center>
                                         </td>
                                     </tr>

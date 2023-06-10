@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <button type="submit" class="btn btn-primary ms-auto" role="button"><i
-                                            class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                            class="fa-solid fa-cart-plus"></i> Masukkan Keranjang</button>
                                 </div>
                             </div>
                         </form>
