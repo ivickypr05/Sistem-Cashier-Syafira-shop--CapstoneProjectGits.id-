@@ -87,7 +87,7 @@
 
                 </div>
                 <br>
-                <button type="submit" class="btn btn-success">Submit</button>
+                <button type="submit" class="btn btn-success">Simpan</button>
             </form>
         </div>
     @endsection

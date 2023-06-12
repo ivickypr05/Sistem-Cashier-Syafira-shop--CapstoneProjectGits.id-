@@ -40,16 +40,28 @@
 <style>
     body {background-color:aliceblue: 'Familjen Grotesk', sans-serif;
     }
-    .nav h6:hover{
-    background-color: rgb(179, 203, 212);
-    transition: all 0.5s ease;
-    display: block;
+
+    .nav h6:hover {
+        --c: #ff0000;
+        --s: .15em;
+  
+        line-height:1.1em;
+        padding-bottom: calc(2.1*var(--s));
+        background: 
+        conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+        left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+        conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+        left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+        -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+        transition: .3s;
     }
-    .nav .sb-topnav  {
-        color: white;
-    font-size: 3vw;
-    line-height: 1.3;
-    margin-bottom: 20px;}
+    .hover-h6:hover {
+        --_p: 100%;
+        color: var(--c);
+        }
+
 </style>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -58,7 +70,8 @@
         <!-- Navbar Brand-->
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2 text-light"></i> <strong>ADMIN SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
-        
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+            class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-light">
         </form>
@@ -90,23 +103,18 @@
             <nav class="sb-sidenav accordion bg-light" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading text-dark "><h6>UTAMA</h6></div>
+                        <div class="sb-sidenav-menu-heading text-dark "><h6><i class="fa-solid fa-house"></i>‎ UTAMA</h6></div>
                         <a class="nav-link text-dark" href="/admin">
-                            <div class="sb-nav-link-icon text-dark"></div>
-                            Dashboard
+                            <div class="sb-nav-link-icon text-dark"></div>Dashboard
                         </a>
-                        <a class="nav-link text-dark" href="/aboutus">
-                            <div class="sb-nav-link-icon text-dark"></div>
-                            Tentang Kami
-                        </a>
-                        <div class="sb-sidenav-menu-heading text-dark"><h6>Transaksi Masuk</h6></div>
+                        <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Masuk</h6></div>
                         <a class="nav-link text-dark" href="{{ url('/supplier') }}">‎
                             Produk Masuk</a>
-                        <div class="sb-sidenav-menu-heading text-dark"><h6>Data</h6></div>
+                        <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa-regular fa-folder-open"></i>‎ Data</h6></div>
                         <a class="nav-link text-dark collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon text-dark"></div>
-                            Manajemen Data
+                            <div class="sb-nav-link-icon text-dark text-center"></div>
+                             Manajemen Data
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse text-dark" id="collapseLayouts" aria-labelledby="headingOne"
@@ -116,8 +124,8 @@
                                 <a class="nav-link text-dark" href="{{ url('/product') }}">‎　Produk</a>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading text-dark"><h6>Keluar</h6></div>
-                        <a class="nav-link text-dark" href="{{ url('/transactionlist') }}">‎ Riwayat Transaksi</a>
+                        <div class="sb-sidenav-menu-heading text-dark "><h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Keluar</h6></div>
+                        <a class="nav-link text-dark " href="{{ url('/transactionlist') }}">  Riwayat Transaksi</a>
                     </div>
                 </div>
             </nav>

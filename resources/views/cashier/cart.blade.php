@@ -36,9 +36,9 @@
                                 <td>Rp. {{ number_format($item->product->sell_price) }},-</td>
                                 <td>Rp. {{ number_format($item->product->sell_price * $item->amount) }},-</td>
                                 <td>
-                                    <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i>Edit</button>
+                                    <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i></button>
                                     <a href="cart/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i>Delete</a>
+                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i></a>
                                 </td>
                         </form>
                         </tr>
