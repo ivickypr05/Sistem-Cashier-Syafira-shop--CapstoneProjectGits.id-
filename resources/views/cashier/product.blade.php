@@ -1,18 +1,13 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Produk')
 @section('content')
-    <style>
-        body {
-            background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20220510/pngtree-white-brick-block-shape-on-gradient-gray-background-vector-image_1330040.jpg');
-        }
-    </style>
     <div class="container row mt-4">
         @foreach ($products as $items)
             {{-- col --}}
-            <div class="mt-1 mb-5 col-md-3 col-20">
+            <div class="mt-1 mb-5 col-md-3 col-15">
                 {{-- card --}}
                 <div class="card card-deck">
-                    <img src="{{ asset('storage/' . $items->photo) }}" class="card-img-top" alt="...">
+                    <img src="{{ asset('storage/' . $items->photo) }}" class="card-img-top" width="100px" height="200px" alt="...">
                     <div class="card-body">
 
                         <h5 class="card-title text-danger">{{ $items->name }}</h5>
@@ -39,7 +34,7 @@
                                 </div>
                                 <div class="row mt-2">
                                     <button type="submit" class="btn btn-primary ms-auto" role="button"><i
-                                            class="fa-solid fa-cart-plus"></i> Add to Cart</button>
+                                            class="fa-solid fa-cart-plus"></i> Masukkan Keranjang</button>
                                 </div>
                             </div>
                         </form>

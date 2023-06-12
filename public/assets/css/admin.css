@@ -86,7 +86,7 @@
 
 body {
     margin: 0;
-    font-family: var(--bs-body-font-family);
+    font-family: 'Familjen Grotesk', sans-serif;
     font-size: var(--bs-body-font-size);
     font-weight: var(--bs-body-font-weight);
     line-height: var(--bs-body-line-height);
@@ -4176,12 +4176,12 @@ fieldset:disabled .btn {
 }
 
 .dropdown-header {
-    display: block;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0;
-    font-size: 0.875rem;
-    color: #6c757d;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    padding: 20px;
+    background: #d81818;
 }
 
 .dropdown-item-text {
@@ -4514,7 +4514,7 @@ fieldset:disabled .btn {
     overflow-y: auto;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 56px) {
     .navbar-expand-sm {
         flex-wrap: nowrap;
         justify-content: flex-start;
@@ -11960,7 +11960,7 @@ body {
     z-index: 1039;
 }
 .sb-topnav .navbar-brand {
-    width: 225px;
+    width: 188px;
     margin: 0;
 }
 .sb-topnav.navbar-dark #sidebarToggle {

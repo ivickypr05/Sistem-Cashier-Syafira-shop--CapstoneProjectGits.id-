@@ -1,28 +1,16 @@
 @extends('layouts.admin')
-@section('title', 'SRC Syafira | Category Page')
+@section('title', 'SRC Syafira | Transactions List Page')
 @section('content')
-<style>
-    body{
-        background-color: 
-    }
-</style>
     <main>
         <div class="row">
             <div class="card">
                 <div class="card-header">
                     <h3 class="card-tittle">
-                        <center>Halaman Pemasukan Produk</center>
+                        <center>Halaman List Transaksi</center>
                     </h3>
                 </div>
-                <br>
-                <nav>
-                    <div class='d-flex justify-content-start'>
-                        <a class="btn btn-success btn-md" href="/supplier/add"><i class="fa fa-plus"></i> Tambah
-                            Data Baru</a>
-                    </div>
-                </nav>
-                <br>
-                <div class="card mb-4">
+
+                <div class="card mt-4 mb-4">
                     <div class="card-body">
                         <table class="table table-bordered table-striped mt-1" id="datatablesSimple">
                             <thead>
@@ -31,43 +19,40 @@
                                         <center>No</center>
                                     </th>
                                     <th>
-                                        <center>Nama Supplier</center>
+                                        <center>Nama Kasir</center>
                                     </th>
                                     <th>
-                                        <center>Nomor Kontak</center>
+                                        <center>Invoice</center>
                                     </th>
                                     <th>
-                                        <center>Nama Produk</center>
+                                        <center>Tanggal Transaksi</center>
                                     </th>
                                     <th>
-                                        <center>Jumlah Stok</center>
+                                        <center>Total Harga</center>
                                     </th>
                                     <th>
-                                        <center>Waktu Transaksi</center>
+                                        <center>Bayar</center>
                                     </th>
                                     <th>
-                                        <center>Aksi</center>
+                                        <center>Kembali</center>
                                     </th>
+
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php $no = 1; ?>
-                                @foreach ($suppliers as $item)
+                                @foreach ($transactions as $item)
                                     <tr>
                                         <th>
                                             <center>{{ $no++ }}.</center>
                                         </th>
-                                        <td>{{ $item->name }}</td>
-                                        <td>{{ $item->contact }}</td>
-                                        <td>{{ $item->product->name }}</td>
-                                        <td>{{ $item->amount }}</td>
+                                        <td>{{ $item->user->name }}</td>
+                                        <td>{{ $item->invoice_nomor }}</td>
                                         <td>{{ $item->created_at }}</td>
-                                        <td>
-                                            <center>
-                                                <a href="/supplier/{{ $item->id }}/edit"
-                                                    class="btn btn-xs btn-warning"><i class="fas fa-edit"></i>Edit</a>
-                                            </center>
-                                        </td>
+                                        <td>Rp.{{ number_format($item->total_price) }},-</td>
+                                        <td>Rp.{{ number_format($item->payment) }},-</td>
+                                        <td>Rp.{{ number_format($item->payment - $item->total_price) }},-</td>
+                                        <td colspan="2"><a class="btn btn-primary" href="/transaction_detail/{{ $item->id }}" role="button">Detail</a></td>
                                     </tr>
                                 @endforeach
                             </tbody>

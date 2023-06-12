@@ -5,6 +5,7 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
 
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -13,7 +14,11 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css"
             integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
     </head>
-
+    <style>
+        body {
+            font-family: 'Familjen Grotesk', sans-serif;
+        }
+    </style>
     <body><br><br><br><br><br>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
@@ -61,7 +66,7 @@
                                 </div>
                                 <input id="password" type="password" {{ __('Password') }}
                                     class="form-control @error('password') is-invalid @enderror" name="password"
-                                    placeholder="Kata Sandi" required autocomplete="current-password">
+                                    placeholder="Katasandi" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -74,7 +79,7 @@
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
                                 <input id="password-confirm" type="password"
-                                    class="form-control"name="password_confirmation" placeholder="Konfirmasi Kata Sandi"
+                                    class="form-control"name="password_confirmation" placeholder="Konfirmasi Katasandi"
                                     required autocomplete="new-password">
 
                                 @error('password')
@@ -85,11 +90,11 @@
                             </div>
                             <div class="d-flex justify-content-center mt-4 login_container bg-danger">
                                 <button type="submit" name="button"
-                                    class="btn login_btn">{{ __('Daftar dan Login') }}</button>
+                                    class="btn login_btn">{{ __('Daftar dan Masuk') }}</button>
                             </div>
                             <div class="mt-3 mb-4">
                                 <div class="d-flex justify-content-center links">
-                                    Sudah Memiliki Akun? <a href="login" class="ml-2 text-danger">Login di sini</a>
+                                    Sudah Memiliki Akun? <a href="login" class="ml-2 text-danger">Masuk di sini</a>
                                 </div>
                             </div>
                     </div>

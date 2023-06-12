@@ -2,13 +2,14 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +35,8 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::middleware(['auth', 'admin'])->group(function () {
     // Admin --------------------------------------------------------------------------------------------
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/transactionlist', [AdminController::class, 'transactionlist']);
+    Route::get('/transaction_detail/{id}', [AdminController::class, 'transaction_detail']);
 
     // CRUD Category
     Route::get('/category', [CategoryController::class, 'index']);
@@ -69,14 +72,19 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
 Route::middleware(['auth', 'cashier'])->group(function () {
     // Cashier --------------------------------------------------------------------------------------------
-
-    // Product
+    // Products
     Route::get('/cashier', [CashierController::class, 'index'])->name('cashier');
-    // product Search
+    // products Search
     Route::get('/product/search', [CashierController::class, 'search']);
-    // Cart
+    // Carts
     Route::get('/cart', [CartController::class, 'index'])->name('cart');
     Route::post('/addtocart/{id}', [CartController::class, 'addtocart']);
     Route::put('/cart/{id}/edit', [CartController::class, 'update']);
     Route::get('/cart/{id}/delete', [CartController::class, 'destroy']);
+    // Transactions
+    Route::get('/transaction', [TransactionController::class, 'index'])->name('Transaction');
+    //Checkout payment
+    Route::post('/checkout', [CartController::class, 'getpayment']);
+    // Transaction List
+    Route::get('/detail/{id}', [TransactionController::class, 'detail'])->name('detail');
 });

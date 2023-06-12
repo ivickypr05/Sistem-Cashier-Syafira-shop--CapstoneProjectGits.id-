@@ -24,6 +24,7 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -31,40 +32,62 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 </head>
+<style>
+    body {background-color:aliceblue: 'Familjen Grotesk', sans-serif;
+    }
 
+    .nav h6:hover {
+        --c: #ff0000;
+        --s: .15em;
+  
+        line-height:1.1em;
+        padding-bottom: calc(2.1*var(--s));
+        background: 
+        conic-gradient(from 135deg at top,var(--c) 90deg,#0000 0) 
+        left 0 bottom var(--s)/calc(2*var(--s)) var(--s) repeat-x,
+        conic-gradient(from -45deg at bottom,var(--c) 90deg,#0000 0) 
+        left var(--s) bottom 0/calc(2*var(--s)) var(--s) repeat-x;
+        -webkit-mask:
+        linear-gradient(#000 0 0) content-box,
+        linear-gradient(#000 0 0) 0/var(--_p,0%) padding-box no-repeat;
+        transition: .3s;
+    }
+    .hover-h6:hover {
+        --_p: 100%;
+        color: var(--c);
+        }
+
+</style>
 <body class="sb-nav-fixed">
-    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-danger">
-        <style>
-            body {
-                background-color: rgb(224, 224, 224) ;
-            }
-        </style>
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+
 
         <!-- Navbar Brand-->
-        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>ADMIN SYAFIRA</strong></a>
+        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2 text-light"></i> <strong>ADMIN SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
-                class="fas fa-bars"></i></button>
+            class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-light">
         </form>
         <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 ">
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
                     {{ Auth::user()->name }}</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/">Home</a>
+                    <a class="dropdown-item" href="/"><i class="fa-solid fa-house"></i> Home</a>
 
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        <i class="fa-solid fa-right-to-bracket"></i>{{ __('‎ Logout') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -77,40 +100,32 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion sb-sidenav-light" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion bg-light" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
-                        <div class="sb-sidenav-menu-heading text-dark">Utama</div>
+                        <div class="sb-sidenav-menu-heading text-dark "><h6><i class="fa-solid fa-house"></i>‎ UTAMA</h6></div>
                         <a class="nav-link text-dark" href="/admin">
-                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-home"></i></div>
-                            Dashboard
+                            <div class="sb-nav-link-icon text-dark"></div>Dashboard
                         </a>
-                        <a class="nav-link text-dark" href="/aboutus">
-                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-circle-info"></i></i></div>
-                            Tentang Kami
-                        </a>
-                        <div class="sb-sidenav-menu-heading text-dark">Transaksi Masuk</div>
-                        <a class="nav-link text-dark" href="{{ url('/supplier') }}"><i class="fas fa-list-check"></i>‎
+                        <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Masuk</h6></div>
+                        <a class="nav-link text-dark" href="{{ url('/supplier') }}">‎
                             Produk Masuk</a>
-                        <div class="sb-sidenav-menu-heading text-dark">Data</div>
+                        <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa-regular fa-folder-open"></i>‎ Data</h6></div>
                         <a class="nav-link text-dark collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon text-dark"><i class="fas fa-columns"></i></div>
-                            Manajemen Data
+                            <div class="sb-nav-link-icon text-dark text-center"></div>
+                             Manajemen Data
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse text-dark" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link text-dark" href="{{ url('/category') }}"><i
-                                        class="fas fa-list-alt"></i>‎　Kategori</a>
-                                <a class="nav-link text-dark" href="{{ url('/product') }}"><i
-                                        class="fas fa-shirt"></i>‎　Produk</a>
+                                <a class="nav-link text-dark" href="{{ url('/category') }}">‎　Kategori</a>
+                                <a class="nav-link text-dark" href="{{ url('/product') }}">‎　Produk</a>
                             </nav>
                         </div>
-                        <div class="sb-sidenav-menu-heading text-dark">Transaksi Keluar</div>
-                        <a class="nav-link text-dark" href="{{ url('/transactionlist') }}"><i
-                                class="fas fa-list-check"></i>‎ Riwayat Transaksi</a>
+                        <div class="sb-sidenav-menu-heading text-dark "><h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Keluar</h6></div>
+                        <a class="nav-link text-dark " href="{{ url('/transactionlist') }}">  Riwayat Transaksi</a>
                     </div>
                 </div>
             </nav>

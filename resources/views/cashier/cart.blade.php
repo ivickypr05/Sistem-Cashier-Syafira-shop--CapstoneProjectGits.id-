@@ -1,25 +1,20 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Keranjang')
 @section('content')
-    <style>
-        body {
-            background-image: url('https://media.istockphoto.com/id/511661914/photo/white-marble-patterned-texture-background.webp?b=1&s=170667a&w=0&k=20&c=K77fw3FThWPhj3iuZRpl5ZOCzXfpT1HmwuGxCIOKt2w=');
-        }
-    </style>
     <div class="container mt-4 px-2">
         <div class="table-responsive mt-5">
-            <table class="table table-responsive table-striped table-bordered">
+            <table class="table table-responsive table-striped table-bordered text-center">
                 <thead>
                     <tr>
                         {{-- <th scope="col" colspan="2"></th> --}}
                         <th>No</th>
-                        <th scope="col">Pict Product</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Category</th>
+                        <th scope="col">Gambar</th>
+                        <th scope="col">Produk</th>
+                        <th scope="col">Kategori</th>
                         <th scope="col">Jumlah Pesanan</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Subtotal</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,27 +36,34 @@
                                 <td>Rp. {{ number_format($item->product->sell_price) }},-</td>
                                 <td>Rp. {{ number_format($item->product->sell_price * $item->amount) }},-</td>
                                 <td>
-                                    <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i>Edit</button>
+                                    <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i></button>
                                     <a href="cart/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i>Delete</a>
+                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i></a>
                                 </td>
                         </form>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
-            <div class="container-fluid bg-light border-responsive rounded py-1 mx-1">
-                <tr>
-                    <td><b> Total order price : {{ number_format($total) }},-</b></td>
-                    <td>
-                        <a href="{{ url('/transactions') }}" class="btn btn-success"
-                            onclick="return confirm('Anda yakin akan Check Out ?');">
-                            <i class="fa fa-shopping-cart"></i> Check Out
-                        </a>
-                    </td>
-                </tr>
-            </div>
-        </div>
+            <tr>
+                <td>
+                    <h4> Total Bayar: {{ number_format($total) }},-</h4>
+                </td>
+                <td>
+                    @if ($total > 0)
+                    <form action="{{ url('/checkout') }}" method="POST">
+                        @csrf
+                        <div class="mt-3 mb-3">
+                            <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
+                            <input type="number" class="form-control" name="payment" min="1" required>
+                        </div>
 
+                        <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                            Check Out</button>
+                    </form>
+                    @endif
+                </td>
+            </tr>
+        </div>
     </div>
 @endsection

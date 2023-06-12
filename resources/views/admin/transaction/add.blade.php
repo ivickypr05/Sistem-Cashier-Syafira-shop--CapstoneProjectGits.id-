@@ -79,7 +79,7 @@
                         @enderror
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-success">Simpan</button>
+                    <button type="submit" class="btn btn-success">Submit</button>
                 </form>
             </div>
         @endsection
