@@ -1,6 +1,11 @@
 @extends('layouts.admin')
 @section('title', 'SRC Syafira | Category Page')
 @section('content')
+<style>
+    body{
+        background-color: 
+    }
+</style>
     <main>
         <div class="row">
             <div class="card">

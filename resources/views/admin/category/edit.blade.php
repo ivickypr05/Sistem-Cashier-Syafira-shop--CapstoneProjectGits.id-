@@ -23,7 +23,7 @@
                                 </div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-success">Selesai</button>
+                        <button type="submit" class="btn btn-success">Simpan</button>
                     </form>
                 </div>
             @endsection
