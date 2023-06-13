@@ -29,9 +29,15 @@
 
 <body class="sb-nav-fixed">
     <style>
-        body {
-            font-family: 'Familjen Grotesk', sans-serif;
+        body {background-color:aliceblue: 'Familjen Grotesk', sans-serif;
         }
+    
+        .nav h6:hover {
+            text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
+            transform:translateY(0%) translateZ(0) scale(1.1);
+             font-weight:600;
+        }
+    
     </style>
     <nav class="sb-topnav navbar navbar-expand navbar-light bg-dark">
 

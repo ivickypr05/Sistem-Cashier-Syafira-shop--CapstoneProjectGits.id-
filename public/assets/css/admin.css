@@ -12239,3 +12239,16 @@ body {
     font-size: 0.75rem;
     border-radius: 0.25rem !important;
 }
+
+
+
+    .btn:hover {
+        text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
+        transform:translateY(0%) translateZ(0) scale(1.1);
+         font-weight:600;
+    }
+    .nav .d-flex:hover{
+        text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
+        transform:translateY(0%) translateZ(0) scale(1.1);
+         font-weight:600;
+    }
