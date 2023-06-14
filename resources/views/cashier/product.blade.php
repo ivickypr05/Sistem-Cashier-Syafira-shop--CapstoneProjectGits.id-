@@ -1,6 +1,20 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Produk')
 @section('content')
+<style>
+    .card {
+    font-family: 'Familjen Grotesk', sans-serif;
+	line-height: 1.5;
+	min-height: 30vh;
+	background-color: rgb(240, 240, 240);
+    &:hover, &:focus-within {
+    transform: translatey(-3px);
+    box-shadow: 0 1rem 1rem rgb(0, 0, 0);
+	transform: translateY(-1rem);
+	backdrop-filter: blur(1.5rem);
+	}
+}
+</style>
     <div class="container row mt-4">
         @foreach ($products as $items)
             {{-- col --}}
