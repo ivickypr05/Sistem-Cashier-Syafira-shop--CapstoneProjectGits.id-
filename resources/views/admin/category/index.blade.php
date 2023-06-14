@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'SRC Syafira | Category Page')
+@section('title', 'SRC Syafira | Kategori Page')
 @section('content')
     <main>
         <div class="row">
