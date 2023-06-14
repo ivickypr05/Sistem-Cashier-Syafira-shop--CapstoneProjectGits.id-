@@ -13,7 +13,9 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
-    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,15 +31,15 @@
 
 <body class="sb-nav-fixed">
     <style>
-        body {background-color:aliceblue: 'Familjen Grotesk', sans-serif;
+        body {
+            background-color: aliceblue: 'Familjen Grotesk', sans-serif;
         }
-    
+
         .nav h6:hover {
-            text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
-            transform:translateY(0%) translateZ(0) scale(1.1);
-             font-weight:600;
+            text-shadow: 0px -40px 0px rgba(255, 0, 0, 0);
+            transform: translateY(0%) translateZ(0) scale(1.1);
+            font-weight: 600;
         }
-    
     </style>
     <nav class="sb-topnav navbar navbar-expand navbar-light bg-dark">
 
@@ -45,19 +47,19 @@
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR
                 SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light" id="sidebarToggle" href="#!"><i
-            class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light" id="sidebarToggle"
+            href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
-        <form action="/product/search" class="d-flex justify-content-end ms-auto me-0 me-md-3 my-2 my-md-0"
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        </form>
+        {{-- <form action="/product/search" class="d-flex justify-content-end ms-auto me-0 me-md-3 my-2 my-md-0"
             method="GET">
             <input class="form-control btn-outline-light me-2" type="search" placeholder="Search by name"
                 name="keyword" aria-label="Search">
             <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
-        </form>
+        </form> --}}
         <!-- Navbar-->
-        </form>
-        <!-- Navbar-->
-        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+        <ul class=" d-flex justify-content-end navbar-nav  ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
@@ -68,7 +70,36 @@
                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();
             ">
-<i class="fa-solid fa-right-to-bracket"></i>{{ __(' Keluar') }} </a><form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form></ul></li></ul></nav><div id="layoutSidenav"><div id="layoutSidenav_nav">@include('partials.sidebar') </div><div id="layoutSidenav_content"><main><div class="container-fluid">@yield('content') </div></main><footer><div class="container text-dark"><div class=" align-items-center small"><div class="text-center fw-bold">Copyright &copy;
-            THORNY DEVIL 2023 - All Rights Reserved</div></div></div></footer></div></div>@include('sweetalert::alert') <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-            </script><script src="{{ asset('assets/js/admin.js') }}"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>{{-- <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
-    <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}} <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script><script src="{{ asset('assets/js/datatables-simple-demo.js') }}"></script></body></html>
+                        <i class="fa-solid fa-right-to-bracket"></i>{{ __(' Keluar') }} </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">@include('partials.sidebar') </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid">@yield('content') </div>
+            </main>
+            <footer>
+                <div class="container text-dark">
+                    <div class=" align-items-center small">
+                        <div class="text-center fw-bold">Copyright &copy;
+                            THORNY DEVIL 2023 - All Rights Reserved</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>@include('sweetalert::alert')
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('assets/js/admin.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>{{-- <script src="{{ asset('assets/demo/chart-area-demo.js') }}"></script>
+    <script src="{{ asset('assets/demo/chart-bar-demo.js') }}"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/datatables-simple-demo.js') }}"></script>
+</body>
+
+</html>

@@ -36,6 +36,9 @@
                                     <th>
                                         <center>Kembali</center>
                                     </th>
+                                    <th>
+                                        <center>Action</center>
+                                    </th>
 
                                 </tr>
                             </thead>
@@ -52,7 +55,9 @@
                                         <td>Rp.{{ number_format($item->total_price) }},-</td>
                                         <td>Rp.{{ number_format($item->payment) }},-</td>
                                         <td>Rp.{{ number_format($item->payment - $item->total_price) }},-</td>
-                                        <td colspan="2"><a class="btn btn-primary" href="/transaction_detail/{{ $item->id }}" role="button">Detail</a></td>
+                                        <td colspan="2"><a class="btn btn-primary"
+                                                href="/transaction_detail/{{ $item->id }}" role="button">Detail</a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

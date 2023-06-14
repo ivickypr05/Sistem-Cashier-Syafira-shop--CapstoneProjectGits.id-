@@ -1,5 +1,5 @@
 @extends('layouts.cashier')
-@section('title', 'SRC Syafira | Keranjang')
+@section('title', 'SRC Syafira | Keranjang Page')
 @section('content')
     <div class="container mt-4 px-2">
         <div class="table-responsive mt-5">
@@ -14,7 +14,8 @@
                         <th scope="col">Jumlah Pesanan</th>
                         <th scope="col">Harga</th>
                         <th scope="col">Subtotal</th>
-                        <th scope="col">Aksi</th>
+                        <th scope="col">Ubah</th>
+                        <th scope="col">Hapus</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,10 +38,18 @@
                                 <td>Rp. {{ number_format($item->product->sell_price * $item->amount) }},-</td>
                                 <td>
                                     <button type="submit" class="btn btn-warning"><i class=" fas fa-edit"></i></button>
-                                    <a href="cart/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
-                                        onclick="return confirm('yakin mau hapus?');"><i class="fas fa-trash"></i></a>
                                 </td>
                         </form>
+                        <td>
+                            <form action="cart/{{ $item->id }}/delete" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-xs btn-danger"
+                                    onclick="event.preventDefault(); deleteConfirmation('{{ $item->id }}');">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </form>
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>
@@ -51,19 +60,38 @@
                 </td>
                 <td>
                     @if ($total > 0)
-                    <form action="{{ url('/checkout') }}" method="POST">
-                        @csrf
-                        <div class="mt-3 mb-3">
-                            <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
-                            <input type="number" class="form-control" name="payment" min="1" required>
-                        </div>
+                        <form action="{{ url('/checkout') }}" method="POST">
+                            @csrf
+                            <div class="mt-3 mb-3">
+                                <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
+                                <input type="number" class="form-control" name="payment" min="1" required>
+                            </div>
 
-                        <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
-                            Check Out</button>
-                    </form>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
+                                Check Out</button>
+                        </form>
                     @endif
                 </td>
             </tr>
         </div>
     </div>
+    <script>
+        function deleteConfirmation(itemId) {
+            Swal.fire({
+                title: 'Apakah yakin ingin menghapus?',
+                text: "Item yang terhapus tidak bisa dikembalikan lagi!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Hapus',
+                cancelButtonText: 'Batal',
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Lakukan tindakan penghapusan
+                    window.location.href = "/cart/" + itemId + "/delete";
+                }
+            });
+        }
+    </script>
 @endsection

@@ -55,7 +55,7 @@
                 </div>
                 @if ($product->photo)
                     <div class="mb-3">
-                        <img src="{{ url('storage/' . $product->photo) }}" width="70px" alt="">
+                        <img id="product-image" src="{{ url('storage/' . $product->photo) }}" width="70px" alt="">
                     </div>
                 @endif
                 <div class="mb-3">
@@ -90,4 +90,22 @@
                 <button type="submit" class="btn btn-success">Simpan</button>
             </form>
         </div>
+
+        <script>
+            function showPreview(event) {
+                var input = event.target;
+                var reader = new FileReader();
+
+                reader.onload = function() {
+                    var imgElement = document.getElementById("product-image");
+                    imgElement.src = reader.result;
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+
+            var photoInput = document.getElementById("photo");
+            photoInput.addEventListener("change", showPreview);
+        </script>
+
     @endsection

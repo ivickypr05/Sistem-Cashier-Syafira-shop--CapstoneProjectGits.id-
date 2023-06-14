@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'SRC Syafira | Product Page')
+@section('title', 'SRC Syafira | Edit Produk Masuk Page')
 @section('content')
     <div class="container">
         <h4>Halaman Edit Data Pemasukan</h4>

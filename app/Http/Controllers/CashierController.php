@@ -12,10 +12,19 @@ class CashierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     { {
+            $keyword = $request->input('keyword');
+            $products = Product::where('name', 'like', "%$keyword%")
+                ->orWhere('category_id', 'like', "%$keyword%")
+                ->get();
+
+            if ($products->isEmpty()) {
+                alert()->error('Oops...', 'Product tidak ditemukan');
+                return back()->withInput();
+            }
             $products = Product::with('category')->get();
-            return view('cashier.product', compact('products'));
+            return view('cashier.product', ['products' => $products, 'keyword' => $keyword]);
         }
     }
     /**
@@ -25,8 +34,6 @@ class CashierController extends Controller
      */
     public function search(Request $request)
     {
-        $products = Product::with('category')->get();
-
         $keyword = $request->input('keyword');
 
         $products = Product::where('name', 'like', "%$keyword%")
@@ -34,12 +41,15 @@ class CashierController extends Controller
             ->get();
 
         if ($products->isEmpty()) {
-            alert()->error('oops...', 'product tidak ditemukan');
-            return back();
+            alert()->error('Oops...', 'Product tidak ditemukan');
+            return back()->withInput();
         }
-        // mengirim data produk ke view index
-        return view('cashier.product', compact('products'));
+
+        // Mengirim data produk dan keyword ke view product
+        return view('cashier.product', ['products' => $products, 'keyword' => $keyword]);
     }
+
+
     /**
      * Show the form for creating a new resource.
      *

@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'SRC Syafira | Product Page')
+@section('title', 'SRC Syafira | Tambah Produk Masuk Page')
 @section('content')
     <div class="container">
         <a class="btn btn-dark mt-2" href="/supplier/">

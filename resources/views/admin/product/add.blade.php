@@ -54,15 +54,19 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <img id="product-image" src="" width="70px" alt="">
+                    </div>
+                    <div class="mb-3">
                         <label for="photo" class="form-label">Foto</label>
                         <input type="file" class="form-control @error('photo') is-invalid @enderror" id="photo"
-                            name="photo">
+                            name="photo" onchange="showPreview(event)">
                         @error('photo')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                         @enderror
                     </div>
+
                     <div>
                         <label for="select" class="form-label">Pilih Kategori</label>
                         <select class="form-select @error('category_id') is-invalid @enderror"
@@ -82,4 +86,19 @@
                     <button type="submit" class="btn btn-success">Simpan</button>
                 </form>
             </div>
-        @endsection
+        </div>
+    </div>
+    <script>
+        function showPreview(event) {
+            var input = event.target;
+            var reader = new FileReader();
+
+            reader.onload = function() {
+                var imgElement = document.getElementById("product-image");
+                imgElement.src = reader.result;
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
+@endsection

@@ -1,13 +1,30 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Produk')
 @section('content')
-    <div class="container row mt-4">
+    <div class="d-flex justify-content-center mt-3 mb-2 sticky-container">
+        <!-- Navbar Search-->
+        <div class="col-6">
+            <form class="" action="/product/search" method="GET">
+                <div class="input-group">
+                    <input class="form-control mr-2" type="search" placeholder="Search by name" name="keyword"
+                        value="{{ $keyword }}" />
+                    <div class="input-group-append">
+                        <button class="btn btn-light btn-outline-dark" type="submit">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex container row mt-4 mb-5">
         @foreach ($products as $items)
             {{-- col --}}
             <div class="mt-1 mb-5 col-md-3 col-15">
                 {{-- card --}}
                 <div class="card card-deck">
-                    <img src="{{ asset('storage/' . $items->photo) }}" class="card-img-top" width="100px" height="200px" alt="...">
+                    <img src="{{ asset('storage/' . $items->photo) }}" class="card-img-top" width="100px" height="200px"
+                        alt="...">
                     <div class="card-body">
 
                         <h5 class="card-title text-danger">{{ $items->name }}</h5>
