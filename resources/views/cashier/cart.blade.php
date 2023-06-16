@@ -64,7 +64,8 @@
                             @csrf
                             <div class="mt-3 mb-3">
                                 <label for="payment" class="form-label">Masukan Uang Pembayaran</label>
-                                <input type="number" class="form-control" name="payment" min="1" required>
+                                <input type="number" class="form-control" placeholder="Rp" name="payment" min="1"
+                                    required>
                             </div>
 
                             <button type="submit" class="btn btn-success"><i class="fa fa-shopping-cart"></i>
