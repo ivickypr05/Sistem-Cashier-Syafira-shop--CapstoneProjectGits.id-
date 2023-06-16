@@ -157,8 +157,11 @@ class CartController extends Controller
         //     return redirect()->back()->with('error', 'Produk dalam keranjang tidak ditemukan');
         // }
         $total_price = 0;
+        $total_profit = 0;
+
         foreach ($carts as $cart) {
             $total_price += $cart->product->sell_price * $cart->amount;
+            $total_profit += ($cart->product->sell_price * $cart->amount) -  ($cart->product->cap_price * $cart->amount);
         }
         // dd($total_price);
 
@@ -167,6 +170,7 @@ class CartController extends Controller
                 'user_id' => Auth::user()->id,
                 'invoice_nomor' => 'Invoice - ' . rand(1000, 9999),
                 'total_price' => $total_price,
+                'total_profit' => $total_profit,
                 'payment' => $payment
             ]);
 
@@ -183,10 +187,9 @@ class CartController extends Controller
                 $cart->delete();
             }
 
-            return redirect()->route('detail',$transaction->id)->with('success', 'Pembayaran Berhasil');
+            return redirect()->route('detail', $transaction->id)->with('success', 'Pembayaran Berhasil');
         } else {
             return redirect()->back()->with('error', 'Uang Pembayaran tidak Mencukupi');
         }
-
     }
 }

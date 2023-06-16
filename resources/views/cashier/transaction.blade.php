@@ -15,6 +15,7 @@
                                 <th>Nomor Invoice</th>
                                 <th>Total Harga</th>
                                 <th>Total Pembayaran</th>
+                                <th>Total Kembalian</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -27,8 +28,9 @@
                                     </th>
                                     <td>{{ $item->created_at }}</td>
                                     <td>{{ $item->invoice_nomor }}</td>
-                                    <td>{{ number_format($item->total_price) }}</td>
+                                    <td>Rp{{ number_format($item->total_price) }}</td>
                                     <td>{{ number_format($item->payment) }}</td>
+                                    <td>Rp{{ number_format($item->payment - $item->total_price) }}</td>
                                     <td>
                                         <a href="{{ url('detail') }}/{{ $item->id }}" class="btn btn-primary"><i
                                                 class="fa fa-file-text-o"></i> Detail</a>

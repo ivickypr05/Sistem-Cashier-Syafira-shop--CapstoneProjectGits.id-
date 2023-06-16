@@ -5,7 +5,10 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
+
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
             integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -83,7 +86,7 @@
 
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
-                            Belum memiliki Akun? <a href="register" class="ml-2 text-danger">Daftar di sini</a>
+                            Belum memiliki Akun? <a href="register" class="ml-2 text-danger">Register di sini</a>
                         </div>
                         <div class="d-flex justify-content-center links mt-2 ml-4">
                             <a href="{{ route('password.request') }}" class="text-danger"> Lupa Katasandi?</a>

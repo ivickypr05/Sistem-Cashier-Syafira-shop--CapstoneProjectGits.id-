@@ -19,22 +19,19 @@
                                         <center>No</center>
                                     </th>
                                     <th>
+                                        <center>Tanggal Transaksi</center>
+                                    </th>
+                                    <th>
                                         <center>Nama Kasir</center>
                                     </th>
                                     <th>
                                         <center>Invoice</center>
                                     </th>
                                     <th>
-                                        <center>Tanggal Transaksi</center>
-                                    </th>
-                                    <th>
                                         <center>Total Harga</center>
                                     </th>
                                     <th>
-                                        <center>Bayar</center>
-                                    </th>
-                                    <th>
-                                        <center>Kembali</center>
+                                        <center>Keuntungan</center>
                                     </th>
                                     <th>
                                         <center>Action</center>
@@ -49,12 +46,11 @@
                                         <th>
                                             <center>{{ $no++ }}.</center>
                                         </th>
+                                        <td>{{ $item->created_at }}</td>
                                         <td>{{ $item->user->name }}</td>
                                         <td>{{ $item->invoice_nomor }}</td>
-                                        <td>{{ $item->created_at }}</td>
-                                        <td>Rp.{{ number_format($item->total_price) }},-</td>
-                                        <td>Rp.{{ number_format($item->payment) }},-</td>
-                                        <td>Rp.{{ number_format($item->payment - $item->total_price) }},-</td>
+                                        <td>Rp{{ number_format($item->total_price) }}</td>
+                                        <td>Rp{{ number_format($item->total_profit) }}</td>
                                         <td colspan="2"><a class="btn btn-primary"
                                                 href="/transaction_detail/{{ $item->id }}" role="button">Detail</a>
                                         </td>

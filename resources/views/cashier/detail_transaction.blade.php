@@ -8,7 +8,9 @@
                     <div class="card-body">
                         <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
                         {{-- <p align="right">Tanggal Pesan : {{ $transaction->created_at }}</p> --}}
-                        <button class="cetak btn btn-primary">Cetak</button>
+                        <div class="mt-3 d-flex justify-content-start">
+                            <button class="cetak btn btn-primary"><i class="fa-solid fa-print"></i> Cetak</button>
+                        </div>
                         <div class="card mt-4 mb-4 cetak-area">
                             <div class="card-body">
                                 <table class="col-4" class="table table-bordered table-striped mt-1">
@@ -17,26 +19,24 @@
                                     </tr>
                                     <tr>
                                         <td>Nama Kasir</td>
-                                        <td>{{ $transaction->user->name }}</td>
+                                        <td>: {{ $transaction->user->name }}</td>
                                     </tr>
                                     <tr>
-                                        <td>Tanggal</td>
-                                        <td>{{ $transaction->created_at }}</td>
+                                        <td>Tanggal Transaksi</td>
+                                        <td>: {{ $transaction->created_at }}</td>
                                     </tr>
                                 </table>
+                                <br>
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
                                             <center>
-
-
                                                 <th>No</th>
                                                 <th>Gambar</th>
                                                 <th>Nama Barang</th>
                                                 <th>Jumlah</th>
                                                 <th>Harga</th>
                                                 <th>Sub Total</th>
-
                                             </center>
                                         </tr>
                                     </thead>
@@ -60,21 +60,21 @@
 
                                         <tr>
                                             <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-                                            <td align="right"><strong>Rp.
+                                            <td align="right"><strong>Rp
                                                     {{ number_format($transaction->total_price) }}</strong>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td colspan="5" align="right"><strong>Total Pembayaran :</strong></td>
-                                            <td align="right"><strong>Rp.
+                                            <td align="right"><strong>Rp
                                                     {{ number_format($transaction->payment) }}</strong>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td colspan="5" align="right"><strong>Kembalian :</strong></td>
-                                            <td align="right"><strong>Rp.
+                                            <td align="right"><strong>Rp
                                                     {{ number_format($transaction->payment - $transaction->total_price) }}</strong>
                                             </td>
 

@@ -5,7 +5,9 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="{{ asset('assets/css/login.css') }}" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@600&family=Merriweather+Sans:wght@400;600&display=swap"
+        rel="stylesheet">
 
     <head>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -19,6 +21,7 @@
             font-family: 'Familjen Grotesk', sans-serif;
         }
     </style>
+
     <body><br><br><br><br><br>
         <div class="container h-100">
             <div class="d-flex justify-content-center h-100">
@@ -90,11 +93,11 @@
                             </div>
                             <div class="d-flex justify-content-center mt-4 login_container bg-danger">
                                 <button type="submit" name="button"
-                                    class="btn login_btn">{{ __('Daftar dan Masuk') }}</button>
+                                    class="btn login_btn">{{ __('Regist dan Login') }}</button>
                             </div>
                             <div class="mt-3 mb-4">
                                 <div class="d-flex justify-content-center links">
-                                    Sudah Memiliki Akun? <a href="login" class="ml-2 text-danger">Masuk di sini</a>
+                                    Sudah Memiliki Akun? <a href="login" class="ml-2 text-danger">Login di sini</a>
                                 </div>
                             </div>
                     </div>

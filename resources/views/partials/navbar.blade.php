@@ -13,24 +13,24 @@
                     @auth
                         <li class="navbar-nav nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button"
-                                data-bs-toggle="dropdown"> SISTEM SYAFIRA
+                                data-bs-toggle="dropdown">SISTEM SYAFIRA
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 @if (auth()->user()->role == 'admin')
                                     <li><a class="dropdown-item" href="/admin"><i class="fa-solid fa-user-gear"></i>
-                                            Admin</a></li>
+                                            ADMIN</a></li>
                                 @else
                                     <li><a class="dropdown-item" href="/cashier"><i class="fa-solid fa-computer"></i>
-                                            Kasir</a></li>
+                                            KASIR</a></li>
                                 @endif
                             </ul>
                         </li>
                     @endauth
-                    <i class="navbar-nav d-flex justify-content-space-between">
+                    <i class="navbar-nav d-flex justify-content-end">
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN ‎') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                                 </li>
                             @endif
                         @else

@@ -9,8 +9,10 @@
                         <center>Halaman Detail Transaksi</center>
                     </h3>
                 </div>
-                <button class="cetak btn btn-primary">Cetak</button>
-                <div class="card mt-4 mb-4 cetak-area">
+                <div class="mt-2 d-flex justify-content-center">
+                    <button class="cetak btn btn-primary"><i class="fa-solid fa-print"></i> Cetak</button>
+                </div>
+                <div class="card mt-2 mb-4 cetak-area">
                     <div class="card-body">
                         <table class="col-4" class="table table-bordered table-striped mt-1">
                             <tr>
@@ -18,26 +20,31 @@
                             </tr>
                             <tr>
                                 <td>Nama Kasir</td>
-                                <td>{{ $transactions->user->name }}</td>
+                                <td>: {{ $transactions->user->name }}</td>
                             </tr>
                             <tr>
-                                <td>Tanggal</td>
-                                <td>{{ $transactions->created_at }}</td>
+                                <td>Tanggal Transaksi</td>
+                                <td>: {{ $transactions->created_at }}</td>
                             </tr>
                             <tr>
-                                <td>Total</td>
-                                <td>{{ $transactions->total_price }}</td>
+                                <td>Total Harga</td>
+                                <td>: Rp{{ number_format($transactions->total_price) }}</td>
                             </tr>
                             <tr>
-                                <td>Bayar</td>
-                                <td>{{ $transactions->payment }}</td>
+                                <td>Bayar Cash</td>
+                                <td>: Rp{{ number_format($transactions->payment) }}</td>
                             </tr>
                             <tr>
-                                <td>Kembali</td>
-                                <td>{{ $transactions->payment - $transactions->total_price }}</td>
+                                <td>Kembalian</td>
+                                <td>: Rp{{ number_format($transactions->payment - $transactions->total_price) }}</td>
+                            </tr>
+                            <tr>
+                                <td>Total Keuntungan</td>
+                                <td>: Rp{{ number_format($transactions->total_profit) }}</td>
                             </tr>
                         </table>
-                        <table class="table table-bordered table-striped mt-1" id="datatablesSimple">
+                        <br>
+                        <table class="table table-bordered table-striped mt-1">
                             <thead>
                                 <tr>
                                     <th>
@@ -47,13 +54,19 @@
                                         <center>Nama Produk</center>
                                     </th>
                                     <th>
-                                        <center>Harga</center>
+                                        <center>Harga Modal</center>
+                                    </th>
+                                    <th>
+                                        <center>Harga Jual</center>
                                     </th>
                                     <th>
                                         <center>Kuantitas</center>
                                     </th>
                                     <th>
                                         <center>Subtotal Harga</center>
+                                    </th>
+                                    <th>
+                                        <center>Subtotal Keuntungan</center>
                                     </th>
 
                                 </tr>
@@ -66,9 +79,12 @@
                                             <center>{{ $no++ }}.</center>
                                         </th>
                                         <td>{{ $item->name }}</td>
-                                        <td>Rp.{{ number_format($item->sell_price) }}</td>
+                                        <td>Rp{{ number_format($item->cap_price) }}</td>
+                                        <td>Rp{{ number_format($item->sell_price) }}</td>
                                         <td>{{ $item->amount }}</td>
-                                        <td>Rp.{{ number_format($transactions->total_price * $item->amount) }},-</td>
+                                        <td>Rp{{ number_format($item->sell_price * $item->amount) }}</td>
+                                        <td>Rp{{ number_format($item->sell_price * $item->amount - $item->cap_price * $item->amount) }}
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

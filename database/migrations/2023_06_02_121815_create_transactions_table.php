@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->change();
             $table->string('invoice_nomor');
             $table->integer('total_price');
+            $table->integer('total_profit');
             $table->integer('payment');
             $table->timestamps();
         });

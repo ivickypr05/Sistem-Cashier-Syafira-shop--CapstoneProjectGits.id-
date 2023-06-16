@@ -16,6 +16,7 @@ class Transaction extends Model
         'user_id',
         'invoice_nomor',
         'total_price',
+        'total_profit',
         'payment'
     ];
 
