@@ -12,7 +12,8 @@
 
                 <div class="card mt-4 mb-4">
                     <div class="card-body">
-                        <table class="table table-bordered table-striped mt-1" id="datatablesSimple">
+                        <div class="table-responsive">
+                        <table class="table table-bordered table-responsive table-striped mt-1" id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>
