@@ -43,10 +43,11 @@ class UserController extends Controller
             'name' => 'required|string|min:2|max:50',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|max:50',
+            'role' => 'required'
         ]);
         $data['password'] = Hash::make($request->password);
         User::create($data);
-        return redirect('/user')->with('toast_success', 'User Berhasil Ditambah >.<');
+        return redirect('/user')->with('toast_success', 'Pengguna Berhasil Ditambah >.<');
     }
 
     /**
@@ -81,15 +82,16 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
         $data = $request->validate([
             'name' => 'required|string|min:2|max:50',
+            'role' => 'required|in:admin,cashier',
             'email' => 'required|email|unique:users,email,' . $id]);
 
+        $data['role'] = $request->role;
+        $user = User::findOrFail($id);
         $data['password'] = $request->password ? Hash::make($request->password) : $user->password;
-        $user->update($data);
-
-        return redirect('/user')->with('toast_success', 'Produk berhasil diedit >.<');
+        user::where('id', $id)->update($data);
+        return redirect('/user')->with('toast_success', 'Pengguna berhasil diedit >.<');
     }
 
     /**
@@ -101,8 +103,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::findOrFail($id);
-        File::delete('storage/' .  $user->photo);
         $user->delete();
-        return redirect('/user')->with('toast_success', 'Produk berhasil dihapus ^_^');
+        return redirect('/user')->with('toast_success', 'Pengguna berhasil dihapus ^_^');
     }
 }

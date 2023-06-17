@@ -47,6 +47,20 @@
                     @enderror
                 </div>
 
+                <div class="mb-3">
+                    <label for="role" class="form-label">Role</label>
+                    <select class="form-select" name="role">
+                        <option hidden>Pilih Role</option>
+                        <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                        <option value="cashier" {{ $user->role == 'cashier' ? 'selected' : '' }}>Kasir</option>
+                    </select>
+                    @error('role')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
                 <button type="submit" class="btn btn-success">Simpan</button>
             </form>
         </div>
