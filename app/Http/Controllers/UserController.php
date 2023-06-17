@@ -37,19 +37,14 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $data = $request->validate(
+        [
             'name' => 'required|string|min:2|max:50',
-            'stock' => 'required|integer',
-            'cap_price' => 'required|integer',
-            'sell_price' => 'required|integer',
-            'photo' => 'required|mimes:jpeg,jpg,png,gif',
-            'category_id' => 'required|integer|exists:categories,id',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|string|min:8|max:50',
         ]);
-        $photo = $request->file('photo')->store('user-photo', 'public');
-        $validatedData['photo'] = $photo;
-
-        User::create($validatedData);
-        return redirect('/user')->with('toast_success', 'Produk Berhasil Ditambah >.<');
+        User::create($data);
+        return redirect('/user')->with('toast_success', 'User Berhasil Ditambah >.<');
     }
 
     /**
