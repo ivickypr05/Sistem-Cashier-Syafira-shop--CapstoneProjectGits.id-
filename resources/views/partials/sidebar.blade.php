@@ -13,7 +13,7 @@
         }
 
 </style>
-<nav class="sb-sidenav accordion sb-sidenav-dark bg-white" id="sidenavAccordion">
+<nav class="sb-sidenav accordion sb-sidenav-dark bg-white" id="sidenavAccordion" style="background:#F7F7F7 !important">
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa fa-receipt"></i>‎ Penjualan</h6></div>

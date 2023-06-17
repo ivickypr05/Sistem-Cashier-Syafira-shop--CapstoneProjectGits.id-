@@ -18,7 +18,7 @@
                 </nav>
                 <br>
                 <div class="card mb-4">
-                    <div class="card-body">
+                    <div class="card-body table-responsive">
                         <table class="table table-bordered table-striped mt-1" id="datatablesSimple">
                             <thead>
                                 <tr>

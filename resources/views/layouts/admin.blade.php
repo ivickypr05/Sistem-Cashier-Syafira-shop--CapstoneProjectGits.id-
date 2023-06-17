@@ -81,7 +81,7 @@
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
-                        <i class="fa-solid fa-right-to-bracket"></i>{{ __('‎ Logout') }}
+                        <i class="fa-solid fa-right-to-bracket"></i>{{ __(' Logout') }}
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -94,17 +94,17 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion bg-light" id="sidenavAccordion">
+            <nav class="sb-sidenav accordion bg-light" id="sidenavAccordion" style="background:#F7F7F7 !important">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading text-dark ">
-                            <h6><i class="fa-solid fa-house"></i>‎ Utama</h6>
+                            <h6><i class="fa-solid fa-house"></i> Utama</h6>
                         </div>
                         <a class="nav-link text-dark" href="/admin">
                             <div class="sb-nav-link-icon text-dark"></div>Dashboard
                         </a>
                         <div class="sb-sidenav-menu-heading text-dark">
-                            <h6><i class="fa-regular fa-folder-open"></i>‎ Data Inventaris</h6>
+                            <h6><i class="fa-regular fa-folder-open"></i> Data Inventaris</h6>
                         </div>
                         <a class="nav-link text-dark collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -115,17 +115,18 @@
                         <div class="collapse text-dark" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link text-dark" href="{{ url('/category') }}">‎　Kategori</a>
-                                <a class="nav-link text-dark" href="{{ url('/product') }}">‎　Produk</a>
+                                <a class="nav-link text-dark" href="{{ url('/category') }}">　Kategori</a>
+                                <a class="nav-link text-dark" href="{{ url('/product') }}">　Produk</a>
+                                <a class="nav-link text-dark" href="{{ url('/user') }}">Pengguna</a>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading text-dark">
-                            <h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Masuk</h6>
+                            <h6><i class="fa-solid fa-chart-line"></i> Transaksi Masuk</h6>
                         </div>
-                        <a class="nav-link text-dark" href="{{ url('/supplier') }}">‎
+                        <a class="nav-link text-dark" href="{{ url('/supplier') }}">
                             Produk Masuk</a>
                         <div class="sb-sidenav-menu-heading text-dark ">
-                            <h6><i class="fa-solid fa-chart-line"></i>‎ Transaksi Keluar</h6>
+                            <h6><i class="fa-solid fa-chart-line"></i> Transaksi Keluar</h6>
                         </div>
                         <a class="nav-link text-dark " href="{{ url('/transactionlist') }}"> Riwayat Transaksi</a>
                     </div>
