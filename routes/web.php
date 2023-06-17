@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ProductController;
@@ -59,6 +60,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::put('/product/{id}', [ProductController::class, 'update']);
     //Delete Product
     Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
+    // CRUD Product
+
+    Route::get('/user', [UserController::class, 'index'])->name('user');
+    // Add Product
+    Route::get('/user/add', [UserController::class, 'create']);
+    Route::post('/user', [UserController::class, 'store']);
+    // Edit Product
+    Route::get('/user/{id}/edit', [UserController::class, 'edit']);
+    Route::put('/user/{id}', [UserController::class, 'update']);
+    //Delete Product
+    Route::get('/user/{id}/delete', [UserController::class, 'destroy']);
 
     // CRUD Supplier
     Route::get('/supplier', [SupplierController::class, 'index'])->name('supplier');
