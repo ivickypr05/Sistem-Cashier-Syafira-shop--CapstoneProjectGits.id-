@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -43,6 +44,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|string|min:8|max:50',
         ]);
+        $data['password'] = Hash::make($request->password);
         User::create($data);
         return redirect('/user')->with('toast_success', 'User Berhasil Ditambah >.<');
     }
@@ -79,22 +81,13 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $validatedData = $request->validate([
+        $user = User::findOrFail($id);
+        $data = $request->validate([
             'name' => 'required|string|min:2|max:50',
-            'stock' => 'required|integer',
-            'cap_price' => 'required|integer',
-            'sell_price' => 'required|integer',
-            'photo' => 'mimes:jpeg,jpg,png,gif',
-            'category_id' => 'required|integer|exists:categories,id',
-        ]);
+            'email' => 'required|email|unique:users,email,' . $id]);
 
-        $user = User::find($id);
-        if ($request->file('photo')) {
-            $photo = $request->file('photo')->store('user-photo', 'public');
-            File::delete('storage/' .  $user->photo);
-            $validatedData['photo'] = $photo;
-        }
-        $user->update($validatedData);
+        $data['password'] = $request->password ? Hash::make($request->password) : $user->password;
+        $user->update($data);
 
         return redirect('/user')->with('toast_success', 'Produk berhasil diedit >.<');
     }
