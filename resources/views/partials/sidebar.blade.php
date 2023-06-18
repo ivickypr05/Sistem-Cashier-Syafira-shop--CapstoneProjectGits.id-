@@ -11,9 +11,9 @@
         --_p: 100%;
         color: var(--c);
         }
-
+        
 </style>
-<nav class="sb-sidenav accordion sb-sidenav-dark bg-white" id="sidenavAccordion" style="background:#F7F7F7 !important">
+    <nav class="sb-sidenav accordion sb-sidenav-dark bg-dark " id="sidenavAccordion">
     <div class="sb-sidenav-menu">
         <div class="nav">
             <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa fa-receipt"></i>‎ Penjualan</h6></div>
@@ -22,7 +22,7 @@
                 Produk SRC Syafira
             </a>
             <a class="nav-link text-dark" href="/cart">
-                <div class="sb-nav-link-icon text-dark"></div>
+                <div class="sb-nav-link-icon text-v"></div>
                 Keranjang
             </a>
             <div class="sb-sidenav-menu-heading text-dark"><h6><i class="fa fa-history"></i> Riwayat Penjualan</h6></div>

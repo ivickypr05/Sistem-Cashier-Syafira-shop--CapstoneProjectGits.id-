@@ -1,6 +1,9 @@
 @extends('layouts.cashier')
 @section('title', 'SRC Syafira | Keranjang Page')
 @section('content')
+<style>
+    
+</style>
     <div class="container mt-4 px-2">
         <div class="table-responsive mt-5">
             <table class="table table-responsive table-striped table-bordered text-center">

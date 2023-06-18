@@ -32,8 +32,7 @@
                                     <td>{{ number_format($item->payment) }}</td>
                                     <td>Rp{{ number_format($item->payment - $item->total_price) }}</td>
                                     <td>
-                                        <a href="{{ url('detail') }}/{{ $item->id }}" class="btn btn-primary"><i
-                                                class="fa fa-file-text-o"></i> Detail</a>
+                                        <a href="{{ url('detail') }}/{{ $item->id }}" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detail</a>
                                     </td>
                                 </tr>
                             @endforeach
