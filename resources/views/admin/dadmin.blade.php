@@ -17,7 +17,7 @@
 
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-lg-10 mt-5">
+                <div class="col-10 col-lg-20 mt-5">
 
                     <h1 class="mbr-section-title mbr-fonts-style text-dark align-center display-1"><strong>Selamat datang
                             kembali

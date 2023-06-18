@@ -41,19 +41,39 @@
 </head>
 <style>
     body {
-        background-color: aliceblue: 'Familjen Grotesk', sans-serif;
+        background-color:aliceblue: 'Familjen Grotesk', sans-serif;
     }
 
-    .nav h6:hover {
-        text-shadow: 0px -40px 0px rgba(255, 0, 0, 0);
-        transform: translateY(0%) translateZ(0) scale(1.1);
-        font-weight: 600;
+.nav a:hover {
+    text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
+    transform:translateY(0%) translateZ(0) scale(1.1);
+     font-weight:600;
+}
+.nav h6:hover {
+
+top:100%;
+background-color:#0a0a23;
+color: #fff;
+border:none; 
+border-radius: 6px 20px; 
+padding: 4px;
+min-height: 9px; 
+min-width: 100px;
+}
+.hover-:hover {
+    --_p: 100%;
+    color: var(--c);
+    }
+    .nav{
+    font-size: 13.5px;
+    padding: 20px 1px;
+    border-radius: 9px;
+    width: 220px;
+    margin: 10px ;
+    background-color: #ffffff;
     }
 
-    .hover-:hover {
-        --_p: 100%;
-        color: var(--c);
-    }
+
 </style>
 
 <body class="sb-nav-fixed">
@@ -94,7 +114,7 @@
     </nav>
     <div id="layoutSidenav">
         <div id="layoutSidenav_nav">
-            <nav class="sb-sidenav accordion bg-light" id="sidenavAccordion" style="background:#F7F7F7 !important">
+            <nav class="sb-sidenav accordion bg-dark" id="sidenavAccordion">
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading text-dark ">
@@ -108,7 +128,7 @@
                         </div>
                         <a class="nav-link text-dark collapsed" href="#" data-bs-toggle="collapse"
                             data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon text-dark text-center"></div>
+                            <div class="sb-nav-link-icon text-dark "></div>
                             Manajemen Data
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -117,7 +137,7 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link text-dark" href="{{ url('/category') }}">　Kategori</a>
                                 <a class="nav-link text-dark" href="{{ url('/product') }}">　Produk</a>
-                                <a class="nav-link text-dark" href="{{ url('/user') }}">Pengguna</a>
+                                <a class="nav-link text-dark" href="{{ url('/user') }}">　Pengguna</a>
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading text-dark">
@@ -128,7 +148,7 @@
                         <div class="sb-sidenav-menu-heading text-dark ">
                             <h6><i class="fa-solid fa-chart-line"></i> Transaksi Keluar</h6>
                         </div>
-                        <a class="nav-link text-dark " href="{{ url('/transactionlist') }}"> Riwayat Transaksi</a>
+                        <a class="nav-link text-dark " href="{{ url('/transactionlist') }}"> Riwayat Transaksi</a><br><br><br><br>
                     </div>
                 </div>
             </nav>
