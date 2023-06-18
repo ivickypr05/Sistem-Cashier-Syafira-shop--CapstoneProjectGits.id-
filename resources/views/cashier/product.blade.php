@@ -3,11 +3,10 @@
 @section('content')
 
     <style>
-        .card {
+
+        .card  {
             font-family: 'Familjen Grotesk', sans-serif;
-            line-height: 1.5;
-            min-height: 30vh;
-            background-color: rgb(240, 240, 240);
+
 
             &:hover,
             &:focus-within {
@@ -16,11 +15,27 @@
                 transform: translateY(-1rem);
                 backdrop-filter: blur(1.5rem);
             }
+            
+        }
+        .card-body .h6 {
+            position: relative;
+            width: 222px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 5px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            font-size: 20px;
         }
     </style>
-    <div class="d-flex justify-content-center mt-3 mb-2 sticky-container">
+
+    <div class="d-flex justify-content-center mt-2 mb-2 ">
         <!-- Navbar Search-->
-        <div class="col-6">
+        <div class="col-20">
             <form class="" action="/product/search" method="GET">
                 <div class="input-group">
                     <input class="form-control mr-2" type="search" placeholder="Search by name" name="keyword"
@@ -34,11 +49,11 @@
             </form>
         </div>
     </div>
-    <div class="d-flex container row mt-4 mb-5">
+    <div class="d-flex container colloum mt-2 mb- ">
         <div class="container row mt-4">
             @foreach ($products as $items)
                 {{-- col --}}
-                <div class="mt-1 mb-4 col-md-3 col-10">
+                <div class="a mt-1 mb-5 col-md-3 col-10">
                     {{-- card --}}
                     <div class="card card-deck">
                         <img src="{{ asset('storage/' . $items->photo) }}" class="card-img-top" width="100px"

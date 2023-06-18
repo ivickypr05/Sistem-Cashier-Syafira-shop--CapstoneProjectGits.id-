@@ -34,46 +34,69 @@
         body {
             background-color: aliceblue: 'Familjen Grotesk', sans-serif;
         }
+        .nav a:hover {
+    text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
+    transform:translateY(0%) translateZ(0) scale(1.1);
+     font-weight:600;
+}
+    .nav h6:hover {
 
+    top:100%;
+    background-color:#0a0a23;
+    color: #fff;
+    border:none; 
+    border-radius: 6px 20px; 
+    padding: 4px;
+    min-height: 9px; 
+    min-width: 100px;
+    }
         .nav h6:hover {
             text-shadow: 0px -40px 0px rgba(255, 0, 0, 0);
             transform: translateY(0%) translateZ(0) scale(1.1);
             font-weight: 600;
         }
-    </style>
-    <nav class="sb-topnav navbar navbar-expand navbar-light bg-dark">
+        .nav{
+        font-size: 13.5px;
+        padding: 20px 1px;
+        border-radius: 9px;
+        width: 220px;
+        margin: 10px ;
+        background-color: #ffffff;
 
+    }
+    
+    </style>
+     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2"></i> <strong>KASIR
+        <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2 text-light"></i> <strong>KASIR
                 SYAFIRA</strong></a>
         <!-- Sidebar Toggle-->
-        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0 text-light" id="sidebarToggle"
-            href="#!"><i class="fas fa-bars"></i></button>
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i
+                class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0 text-light">
         </form>
-        {{-- <form action="/product/search" class="d-flex justify-content-end ms-auto me-0 me-md-3 my-2 my-md-0"
-            method="GET">
-            <input class="form-control btn-outline-light me-2" type="search" placeholder="Search by name"
-                name="keyword" aria-label="Search">
-            <button class="btn btn-light" type="submit"><i class="fa fa-search"></i></button>
-        </form> --}}
         <!-- Navbar-->
-        <ul class=" d-flex justify-content-end navbar-nav  ms-md-0 me-3 me-lg-4">
-            <li class="nav-item dropdown">
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4 ">
+            <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle text-light" id="navbarDropdown" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>
                     {{ Auth::user()->name }}</a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/profile"><i class="fa-solid fa-user"></i> Profil</a>
+                    <a class="dropdown-item" href="/"><i class="fa-solid fa-house"></i> Home</a>
+
                     <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();
-            ">
-                        <i class="fa-solid fa-right-to-bracket"></i>{{ __(' Keluar') }} </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">@csrf </form>
-                </ul>
+                                         document.getElementById('logout-form').submit();">
+                        <i class="fa-solid fa-right-to-bracket"></i>{{ __(' Logout') }}
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
             </li>
+        </ul>
+        </li>
         </ul>
     </nav>
     <div id="layoutSidenav">
