@@ -18,6 +18,7 @@
             rel="stylesheet">
 
         <link rel="stylesheet" href="{{ asset('assets/css/profile.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/js/profile.js') }}">
         <title>Sistem Kasir SRC Syafira</title>
 
     </head>
@@ -123,8 +124,8 @@
                         <p>&copy; Copyright by <span>Kasir SRC Syafira</span> All Rights Reserved 2023.</p>
                     </div>
                 </div>
-
-            </div>
+                
+            </div><a class="gotopbtn" href="#"> <i class="fas fa-arrow-up"></i> </a>
         </div>
         </div>
         @include('sweetalert::alert')
