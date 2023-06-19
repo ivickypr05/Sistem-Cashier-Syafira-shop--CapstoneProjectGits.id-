@@ -62,11 +62,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/product/{id}/delete', [ProductController::class, 'destroy']);
     // CRUD Product
 
+    //User
     Route::get('/user', [UserController::class, 'index'])->name('user');
-    // Add Product
-    Route::get('/user/add', [UserController::class, 'create']);
-    Route::post('/user', [UserController::class, 'store']);
-    // Edit Product
+    // Edit User
     Route::get('/user/{id}/edit', [UserController::class, 'edit']);
     Route::put('/user/{id}', [UserController::class, 'update']);
     //Delete Product

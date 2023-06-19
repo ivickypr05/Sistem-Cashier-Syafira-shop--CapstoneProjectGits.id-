@@ -34,39 +34,42 @@
         body {
             background-color: aliceblue: 'Familjen Grotesk', sans-serif;
         }
-        .nav a:hover {
-    text-shadow:0px -40px 0px rgba(255, 0, 0, 0);
-    transform:translateY(0%) translateZ(0) scale(1.1);
-     font-weight:600;
-}
-    .nav h6:hover {
 
-    top:100%;
-    background-color:#0a0a23;
-    color: #fff;
-    border:none; 
-    border-radius: 6px 20px; 
-    padding: 4px;
-    min-height: 9px; 
-    min-width: 100px;
-    }
+        .nav a:hover {
+            text-shadow: 0px -40px 0px rgba(255, 0, 0, 0);
+            transform: translateY(0%) translateZ(0) scale(1.1);
+            font-weight: 600;
+        }
+
+        .nav h6:hover {
+
+            top: 100%;
+            background-color: #0a0a23;
+            color: #fff;
+            border: none;
+            border-radius: 6px 20px;
+            padding: 4px;
+            min-height: 9px;
+            min-width: 100px;
+        }
+
         .nav h6:hover {
             text-shadow: 0px -40px 0px rgba(255, 0, 0, 0);
             transform: translateY(0%) translateZ(0) scale(1.1);
             font-weight: 600;
         }
-        .nav{
-        font-size: 13.5px;
-        padding: 20px 1px;
-        border-radius: 9px;
-        width: 220px;
-        margin: 10px ;
-        background-color: #ffffff;
 
-    }
-    
+        .nav {
+            font-size: 13.5px;
+            padding: 20px 1px;
+            border-radius: 9px;
+            width: 220px;
+            margin: 10px;
+            background-color: #ffffff;
+
+        }
     </style>
-     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
         <a class="navbar-brand text-light mx-2"><i class="fa-solid fa-shop me-2 text-light"></i> <strong>KASIR
                 SYAFIRA</strong></a>
@@ -103,7 +106,7 @@
         <div id="layoutSidenav_nav">@include('partials.sidebar') </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid">@yield('content') </div>
+                <div class="container mx-auto">@yield('content') </div>
             </main>
             <footer>
                 <div class="container text-dark">

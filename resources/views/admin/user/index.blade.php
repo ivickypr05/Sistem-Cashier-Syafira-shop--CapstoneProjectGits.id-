@@ -10,13 +10,6 @@
                     </h3>
                 </div>
                 <br>
-                <nav>
-                    <div class='d-flex justify-content-start'>
-                        <a class="btn btn-success btn-md" href="/user/add"><i class="fa fa-plus"></i> Tambah
-                            Data Baru</a>
-                    </div>
-                </nav>
-                <br>
                 <div class="card mb-4">
                     <div class="card-body table-responsive">
                         <table class="table table-bordered table-striped mt-1" id="datatablesSimple">
@@ -51,8 +44,8 @@
                                         <td>{{ $item->role }}</td>
                                         <td>
                                             <center>
-                                                <a href="/user/{{ $item->id }}/edit"
-                                                    class="btn btn-xs btn-warning"><i class="fas fa-edit"></i></a>
+                                                <a href="/user/{{ $item->id }}/edit" class="btn btn-xs btn-warning"><i
+                                                        class="fas fa-edit"></i></a>
                                                 <a href="/user/{{ $item->id }}/delete" class="btn btn-xs btn-danger"
                                                     onclick="return confirm('Apakah Anda Yakin?')"><i
                                                         class="fas fa-trash"></i></a>
