@@ -32,8 +32,9 @@
                         <div class="box">
                             <h1>PROFIL TOKO<br> SRC Syafira</h1>
                             <p>
-                                Toko Syafira, yang didirikan pada tahun 2017, adalah sebuah perusahaan yang
-                                menawarkan pengalaman berbelanja yang unik dan memikat bagi pelanggan
+                                Toko Syafira, yang didirikan pada tahun 2017 oleh bapak Kohar dan ibu Mehar, adalah
+                                sebuah perusahaan yang menawarkan pengalaman berbelanja yang unik dan memikat bagi
+                                pelanggan
                                 . Dengan daya tarik yang kaya akan kebutuhakan pokoknya, toko ini telah
                                 menjadi destinasi favorit bagi Ibu rumah tangga, Bapak-bapak, kalangan
                                 remaja serta, anak-anak di wilayah
@@ -109,9 +110,9 @@
                         <h3>Alamat</h3>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0755268190364!2d108.5442965!3d-6.760645099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6f1de48193cd23%3A0x88cfbe5ae19ff6ea!2sToko%20Safira!5e0!3m2!1sen!2sid!4v1684412941665!5m2!1sen!2sid"
-                            width="350" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                            width="320" height="200" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        <p><i class="fas fa-location"></i> Jl. Dwi Pantara, RT.03/RW.01, Argasunya, Kec.
+                        <p>Jl. Dwi Pantara, RT.03/RW.01, Argasunya, Kec.
                             Harjamukti, Kota Cirebon, Jawa Barat 45145</a></p>
                     </div>
 
@@ -124,7 +125,7 @@
                         <p>&copy; Copyright by <span>Kasir SRC Syafira</span> All Rights Reserved 2023.</p>
                     </div>
                 </div>
-                
+
             </div><a class="gotopbtn" href="#"> <i class="fas fa-arrow-up"></i> </a>
         </div>
         </div>
