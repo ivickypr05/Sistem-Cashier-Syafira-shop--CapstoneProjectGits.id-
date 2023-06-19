@@ -81,18 +81,10 @@
                             <div class="d-flex justify-content-center mt-3 login_container bg-danger">
                                 <button type="submit" name="button" class="btn login_btn">{{ __('Login') }}</button>
                             </div>
-
                     </div>
-
                     <div class="mt-4">
                         <div class="d-flex justify-content-center links">
                             Belum memiliki Akun? <a href="register" class="ml-2 text-danger">Register di sini</a>
-                        </div>
-                        <div class="d-flex justify-content-center links mt-2 ml-4">
-                            <a href="{{ route('password.request') }}" class="text-danger"> Lupa Katasandi?</a>
-                            @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}"></a>
-                            @endif
                         </div>
                     </div>
                     </form>
