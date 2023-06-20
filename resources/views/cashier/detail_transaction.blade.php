@@ -4,30 +4,31 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-12 mt-4">
-                <div class="card mt-2">
-                    <div class="card-body">
-                        <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
-                        {{-- <p align="right">Tanggal Pesan : {{ $transaction->created_at }}</p> --}}
-                        <div class="mt-3 d-flex justify-content-start">
-                            <button class="cetak btn btn-primary"><i class="fa-solid fa-print"></i> Cetak</button>
-                        </div>
-                        <div class="card mt-4 mb-4 cetak-area">
-                            <div class="card-body">
-                                <table class="col-4" class="table table-bordered table-striped mt-1">
-                                    <tr>
-                                        <td colspan="2">#{{ $transaction->invoice_nomor }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Nama Kasir</td>
-                                        <td>: {{ $transaction->user->name }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tanggal Transaksi</td>
-                                        <td>: {{ $transaction->created_at }}</td>
-                                    </tr>
-                                </table>
-                                <br>
+
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
+                    {{-- <p align="right">Tanggal Pesan : {{ $transaction->created_at }}</p> --}}
+                    <div class="mt-3 d-flex justify-content-start">
+                        <button class="cetak btn btn-primary"><i class="fa-solid fa-print"></i> Cetak</button>
+                    </div>
+                    <div class="card mt-4 mb-4 cetak-area">
+                        <div class="card-body">
+                            <table class="col-4" class="table table-bordered table-striped mt-1">
+                                <tr>
+                                    <td colspan="2">#{{ $transaction->invoice_nomor }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Nama Kasir </td>
+                                    <td>: {{ $transaction->user->name }}</td>
+                                </tr>
+                                <tr>
+                                    <td>Tanggal Transaksi </td>
+                                    <td>: {{ $transaction->created_at }}</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <div class="table-responsive">
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
@@ -60,23 +61,23 @@
 
 
                                         <tr>
-                                            <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-                                            <td align="right"><strong>Rp
-                                                    {{ number_format($transaction->total_price) }}</strong>
+                                            <td colspan="5" align="right"><strong>Total Harga : </strong></td>
+                                            <td align="right">
+                                                <strong>Rp{{ number_format($transaction->total_price) }}</strong>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td colspan="5" align="right"><strong>Total Pembayaran :</strong></td>
-                                            <td align="right"><strong>Rp
-                                                    {{ number_format($transaction->payment) }}</strong>
+                                            <td align="right">
+                                                <strong>Rp{{ number_format($transaction->payment) }}</strong>
                                             </td>
 
                                         </tr>
                                         <tr>
                                             <td colspan="5" align="right"><strong>Kembalian :</strong></td>
-                                            <td align="right"><strong>Rp
-                                                    {{ number_format($transaction->payment - $transaction->total_price) }}</strong>
+                                            <td align="right">
+                                                <strong>Rp{{ number_format($transaction->payment - $transaction->total_price) }}</strong>
                                             </td>
 
                                         </tr>
@@ -87,6 +88,7 @@
                     </div>
                 </div>
             </div>
+
         @endsection
         <script>
             document.addEventListener('DOMContentLoaded', function() {

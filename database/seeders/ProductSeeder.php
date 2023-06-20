@@ -17,6 +17,135 @@ class ProductSeeder extends Seeder
      * @return void
      */
     public function run()
+    // {
+    //     $product = [
+    //         [
+    //             'name' => 'Telur 1 Kg',
+    //             'stock' => '15',
+    //             'cap_price' => '19000',
+    //             'sell_price' => '25000',
+    //             'photo' => 'telur.jpg',
+    //             'category_id' => 1,
+    //         ],
+    //         [
+    //             'name' => 'Beras 1 Kg',
+    //             'stock' => '20',
+    //             'cap_price' => '12000',
+    //             'sell_price' => '14000',
+    //             'photo' => 'beras.jpg',
+    //             'category_id' => 1,
+    //         ],
+    //         [
+    //             'name' => 'Gula Pasir 1 kg',
+    //             'stock' => '30',
+    //             'cap_price' => '11500',
+    //             'sell_price' => '14000',
+    //             'photo' => 'gula.jpg',
+    //             'category_id' => 1,
+    //         ],
+    //         [
+
+    //             'name' => 'Kapal Api mix 1 renteng',
+    //             'stock' => '25',
+    //             'cap_price' => '10500',
+    //             'sell_price' => '12000',
+    //             'photo' => 'kopi.jpg',
+    //             'category_id' => 1,
+    //         ],
+    //         [
+    //             'name' => 'Signature 1 Bungkus',
+    //             'stock' => '35',
+    //             'cap_price' => '20000',
+    //             'sell_price' => '23000',
+    //             'photo' => 'signature.jpg',
+    //             'category_id' => 2,
+    //         ],
+    //         [
+    //             'name' => 'Sampoerna 1 Bungkus',
+    //             'stock' => '25',
+    //             'cap_price' => '16500',
+    //             'sell_price' => '18000',
+    //             'photo' => 'sampoerna.jpg',
+    //             'category_id' => 2,
+    //         ],
+    //         [
+    //             'name' => 'Djie Samsoe 1 Bungkus',
+    //             'stock' => '20',
+    //             'cap_price' => '18000',
+    //             'sell_price' => '20000',
+    //             'photo' => 'samsoe.jpg',
+    //             'category_id' => 2,
+    //         ],
+    //         [
+    //             'name' => 'Marlboro 1 Bungkus',
+    //             'stock' => '15',
+    //             'cap_price' => '35000',
+    //             'sell_price' => '39000',
+    //             'photo' => 'marlboro.jpg',
+    //             'category_id' => 2,
+    //         ],
+    //         [
+    //             'name' => 'Bodrex 1 Strip',
+    //             'stock' => '20',
+    //             'cap_price' => '5000',
+    //             'sell_price' => '6000',
+    //             'photo' => 'bodrex.jpg',
+    //             'category_id' => 3,
+    //         ],
+    //         [
+    //             'name' => 'Paramex 1 Pack',
+    //             'stock' => '15',
+    //             'cap_price' => '2000',
+    //             'sell_price' => '3000',
+    //             'photo' => 'paramex.jpg',
+    //             'category_id' => 3,
+    //         ],
+    //         [
+    //             'name' => 'Ultraflu 1 Pack',
+    //             'stock' => '15',
+    //             'cap_price' => '2500',
+    //             'sell_price' => '3500',
+    //             'photo' => 'ultraflu.jpg',
+    //             'category_id' => 3,
+    //         ],
+    //         [
+    //             'name' => 'Mixagrip 1 Pack',
+    //             'stock' => '10',
+    //             'cap_price' => '2500',
+    //             'sell_price' => '3500',
+    //             'photo' => 'mixagrip.jpg',
+    //             'category_id' => 3,
+    //         ],
+    //     ];
+
+    //     $client = new Client();
+
+    //     foreach ($product as $item) {
+    //         // Mengambil foto produk dari URL menggunakan GuzzleHttp Client
+    //         $response = $client->request('GET', url("/assets/img/{$item['photo']}"));
+
+    //         // Mengambil ekstensi file gambar dari URL
+    //         $extension = pathinfo($item['photo'], PATHINFO_EXTENSION);
+
+    //         // Menghasilkan nama unik untuk file gambar
+    //         $photoName = uniqid() . '.' . $extension;
+
+    //         // Menyimpan gambar ke dalam storage
+    //         Storage::put('public/' . $photoName, $response->getBody());
+
+    //         // Menyimpan data produk ke dalam database
+    //         Product::insert([
+    //             'name' => $item['name'],
+    //             'stock' => $item['stock'],
+    //             'cap_price' => $item['cap_price'],
+    //             'sell_price' => $item['sell_price'],
+    //             'photo' => $photoName,
+    //             'category_id' => $item['category_id'],
+    //             'created_at' => Carbon::now(),
+    //             'updated_at' => Carbon::now(),
+    //         ]);
+    //     }
+    // }
     {
         $product = [
             [

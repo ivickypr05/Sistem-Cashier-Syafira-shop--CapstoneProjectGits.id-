@@ -14,81 +14,83 @@
                 </div>
                 <div class="card mt-2 mb-4 cetak-area">
                     <div class="card-body">
-                        <table class="col-4" class="table table-bordered table-striped mt-1">
+                        <table class="" class="table table-striped mt-1">
                             <tr>
                                 <td colspan="2">#{{ $transactions->invoice_nomor }}</td>
                             </tr>
                             <tr>
-                                <td>Nama Kasir</td>
+                                <td>Nama Kasir </td>
                                 <td>: {{ $transactions->user->name }}</td>
                             </tr>
                             <tr>
-                                <td>Tanggal Transaksi</td>
+                                <td>Tanggal Transaksi </td>
                                 <td>: {{ $transactions->created_at }}</td>
                             </tr>
                             <tr>
-                                <td>Total Harga</td>
+                                <td>Total Harga </td>
                                 <td>: Rp{{ number_format($transactions->total_price) }}</td>
                             </tr>
                             <tr>
-                                <td>Bayar Cash</td>
+                                <td>Bayar Cash </td>
                                 <td>: Rp{{ number_format($transactions->payment) }}</td>
                             </tr>
                             <tr>
-                                <td>Kembalian</td>
+                                <td>Kembalian </td>
                                 <td>: Rp{{ number_format($transactions->payment - $transactions->total_price) }}</td>
                             </tr>
                             <tr>
-                                <td>Total Keuntungan</td>
+                                <td>Total Keuntungan </td>
                                 <td>: Rp{{ number_format($transactions->total_profit) }}</td>
                             </tr>
                         </table>
                         <br>
-                        <table class="table table-bordered table-striped mt-1">
-                            <thead>
-                                <tr>
-                                    <th>
-                                        <center>No</center>
-                                    </th>
-                                    <th>
-                                        <center>Nama Produk</center>
-                                    </th>
-                                    <th>
-                                        <center>Harga Modal</center>
-                                    </th>
-                                    <th>
-                                        <center>Harga Jual</center>
-                                    </th>
-                                    <th>
-                                        <center>Kuantitas</center>
-                                    </th>
-                                    <th>
-                                        <center>Subtotal Harga</center>
-                                    </th>
-                                    <th>
-                                        <center>Subtotal Keuntungan</center>
-                                    </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($transactions->detail_transaction as $item)
-                                    <?php $no = 1; ?>
+                        <div class="table-responsive">
+                            <table class="table table-striped mt-1">
+                                <thead>
                                     <tr>
                                         <th>
-                                            <center>{{ $no++ }}.</center>
+                                            <center>No</center>
                                         </th>
-                                        <td>{{ $item->name }}</td>
-                                        <td>Rp{{ number_format($item->cap_price) }}</td>
-                                        <td>Rp{{ number_format($item->sell_price) }}</td>
-                                        <td>{{ $item->amount }}</td>
-                                        <td>Rp{{ number_format($item->sell_price * $item->amount) }}</td>
-                                        <td>Rp{{ number_format($item->sell_price * $item->amount - $item->cap_price * $item->amount) }}
-                                        </td>
+                                        <th>
+                                            <center>Nama Produk</center>
+                                        </th>
+                                        <th>
+                                            <center>Harga Modal</center>
+                                        </th>
+                                        <th>
+                                            <center>Harga Jual</center>
+                                        </th>
+                                        <th>
+                                            <center>Kuantitas</center>
+                                        </th>
+                                        <th>
+                                            <center>Subtotal Harga</center>
+                                        </th>
+                                        <th>
+                                            <center>Subtotal Keuntungan</center>
+                                        </th>
+
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    <?php $no = 1; ?>
+                                    @foreach ($transactions->detail_transaction as $item)
+                                        <tr>
+                                            <th>
+                                                <center>{{ $no++ }}.</center>
+                                            </th>
+                                            <td>{{ $item->name }}</td>
+                                            <td>Rp{{ number_format($item->cap_price) }}</td>
+                                            <td>Rp{{ number_format($item->sell_price) }}</td>
+                                            <td>{{ $item->amount }}</td>
+                                            <td>Rp{{ number_format($item->sell_price * $item->amount) }}</td>
+                                            <td>Rp{{ number_format($item->sell_price * $item->amount - $item->cap_price * $item->amount) }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
