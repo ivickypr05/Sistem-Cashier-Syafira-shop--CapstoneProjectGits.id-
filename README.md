@@ -1,4 +1,4 @@
-# Casptone Projecct | Studi Independen Program | PT GITS ID
+# Capstone Project | Studi Independen Program | PT GITS.id
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
@@ -31,7 +31,7 @@
 ## :open_book: How To Use this App
 1.  Clone this repository
     ```
-    git clone https://github.com/ivickypr05/gits-msib4-uts-kelompok14.git
+    git clone https://github.com/ivickypr05/Sistem-Cashier-Syafira-shop--CapstoneProjectGits.id-.git
     ```
 2.  Copy paste **.env.example** file and rename as **.env**
 3.  Change the database name in the .env 
@@ -52,13 +52,15 @@
     ```
     php artisan migrate
     ```
-
 7.  Insert the data from seeder to database (user login default)
     ```
     php artisan db:seed
     ```
+8.  Dont Forget to Install Sweet Alert
+    
+    - [Sweet Alert to Laravel](https://realrashid.github.io/sweet-alert/)
 
-8.  Start the server
+9.  Start the server
     ```
     php artisan serve
     ```
